@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agenda Belajar Kelas IX - Program Layanan BK</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%); color: #1f2937; line-height: 1.6; padding: 20px; }
+.container { max-width: 1450px; margin: 0 auto; background: #ffffff; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); overflow: hidden; }
+.kop-surat{ text-align:center; border-bottom:3px double #1e3a8a; padding:25px 30px 8px 30px; margin:20px 30px; line-height:1.15; display:flex; align-items:center; justify-content:space-between; gap:15px }
+.kop-logo{ flex:0 0 auto; width:90px; min-height:90px; display:flex; align-items:center; justify-content:center }
+.kop-logo img{ max-width:90px; max-height:95px; object-fit:contain }
+.kop-logo .placeholder-logo{ width:88px; height:88px; border:2px dashed #cbd5e1; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#94a3b8; font-size:11px; text-align:center; line-height:1.3 }
+.kop-teks{ flex:1; text-align:center; min-width:0 }
+.header-line{ display:block; width:100%; text-align:center; padding:1px 8px; margin:0; border:1px dashed transparent; border-radius:3px; cursor:text; min-height:20px; outline:none; line-height:1.15 }
+.header-line:hover{border-color:#cbd5e1;background:#f8fafc}
+.header-line:focus{border-color:#1e3a8a;background:#f0f9ff}
+.header-line.government{ font-size:14px; font-weight:bold; letter-spacing:3px; text-transform:uppercase; font-family:Arial,sans-serif }
+.header-line.school{ font-size:22px; font-weight:bold; color:#1e3a8a; text-transform:uppercase; letter-spacing:2px; margin:2px 0; font-family:Arial,sans-serif }
+.header-line.address,.header-line.contact{ font-size:12px; margin:1px 0 }
+.judul-dokumen{ text-align:center; margin:25px 30px }
+.judul-dokumen h3{ font-size:16px; text-decoration:underline; margin-bottom:5px }
+.info-banner { background:#ede9fe; border-left:5px solid #8b5cf6; padding:15px 25px; margin:20px 30px; border-radius:8px; font-size:0.95em; color:#5b21b6 }
+.info-banner strong { color:#4c1d95 }
+.integrasi-banner { background:#eff6ff; border-left-color:#1e3a8a; color:#1e293b }
+.integrasi-baris { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; align-items:center }
+.integrasi-baris input[type="text"] { flex:1; min-width:260px; padding:9px 12px; border:1px solid #cbd5e1; border-radius:8px; font-size:0.9em }
+.btn-tes { background:#6366f1; color:#fff } .btn-tes:hover { background:#4f46e5 }
+.btn-spreadsheet { background:#0f9d58; color:#fff } .btn-spreadsheet:hover { background:#0b7a45 }
+.btn-ttd { background:#db2777; color:#fff } .btn-ttd:hover { background:#be185d }
+.btn-laporan { background:#7c3aed; color:#fff } .btn-laporan:hover { background:#6d28d9 }
+.btn-muat { background:#14b8a6; color:#fff } .btn-muat:hover { background:#0d9488 }
+.backend-status { margin-top:10px; font-size:0.85em; font-weight:600; color:#475569 }
+section { padding:35px 30px }
+h2 { color:#6d28d9; font-size:1.6em; margin-bottom:20px; padding-bottom:10px; border-bottom:3px solid #8b5cf6; display:inline-block }
+.kelas-header { padding:15px 20px; border-radius:10px; background:linear-gradient(135deg,#8b5cf6,#6d28d9); color:white; margin-bottom:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px }
+.kelas-header h3 { color:white; margin:0; font-size:1.3em }
+.kelas-header span { font-size:0.9em; opacity:0.9 }
+.table-wrapper { overflow-x:auto; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.06); margin-bottom:15px; border:1px solid #000 }
+table { width:100%; border-collapse:collapse; border-spacing:0; font-size:0.92em; background:white; border:1px solid #000; table-layout:auto }
+thead { background:#4c1d95; color:white }
+thead th { border:1px solid #000 }
+th, td { padding:12px 14px; text-align:left; border:1px solid #000; vertical-align:middle; white-space:normal; word-wrap:break-word; overflow-wrap:break-word; word-break:normal }
+th { font-weight:600; text-transform:uppercase; font-size:0.8em; letter-spacing:0.5px; border:1px solid #000 !important }
+td:first-child { text-align:center; font-weight:bold; color:#6d28d9 }
+td[contenteditable="true"] { cursor:text; transition:all 0.2s ease; min-width:80px }
+td[contenteditable="true"]:hover { background:#fef9c3 !important }
+td[contenteditable="true"]:focus { background:#fffbeb !important; outline:2px solid #8b5cf6; outline-offset:-2px; z-index:2; position:relative }
+td[contenteditable="true"].edited { background:#ecfdf5 !important }
+td.kelas-cell { cursor:text; background:#ede9fe !important; font-weight:600; color:#5b21b6; position:relative; border:1px solid #000 !important; text-align:center !important; min-width:70px }
+td.kelas-cell:hover { background:#ddd6fe !important }
+td.kelas-cell:focus { background:#fffbeb !important; outline:2px solid #8b5cf6; outline-offset:-2px }
+tr.baris-tambahan { background:#faf5ff !important }
+td.cell-rowspan { background:#f8fafc !important; text-align:center; vertical-align:middle; font-weight:600; border:1px solid #000 !important }
+.col-aksi { width:110px !important; text-align:center !important; background:#f8fafc !important }
+
+/* ====== KOLOM KETERANGAN (TEKS + URL + FOTO) ====== */
+td.ket-cell { min-width:190px; }
+.ket-teks { min-height:22px; cursor:text; padding:2px 4px; border-radius:4px; transition:all 0.2s ease; }
+.ket-teks:hover { background:#fef9c3; }
+.ket-teks:focus { background:#fffbeb; outline:2px solid #8b5cf6; outline-offset:-2px; }
+.ket-teks.edited { background:#ecfdf5; }
+.ket-media { margin-top:6px; display:flex; flex-wrap:wrap; gap:6px; align-items:center; }
+.ket-link { font-size:0.82em; color:#6d28d9; text-decoration:underline; word-break:break-all; }
+.ket-foto-wrap { display:inline-flex; align-items:flex-start; gap:2px; }
+.ket-foto { max-width:64px; max-height:48px; border:1px solid #cbd5e1; border-radius:4px; cursor:zoom-in; }
+.ket-tools { margin-top:6px; display:flex; gap:4px; }
+.btn-mini { border:none; background:#e2e8f0; border-radius:5px; padding:3px 6px; cursor:pointer; font-size:0.8em; transition:all 0.2s; }
+.btn-mini:hover { background:#cbd5e1; transform:scale(1.05); }
+.btn-mini-danger { background:#fee2e2; }
+.btn-mini-danger:hover { background:#fecaca; }
+#fotoModal { position:fixed; inset:0; background:rgba(0,0,0,.75); display:none; align-items:center; justify-content:center; z-index:2000; cursor:zoom-out; }
+#fotoModal.show { display:flex; }
+#fotoModal img { max-width:92%; max-height:92%; border-radius:8px; }
+/* =================================================== */
+
+.btn-hapus { background:#ef4444; color:white; border:none; padding:6px 10px; border-radius:6px; cursor:pointer; font-size:0.85em; transition:all 0.2s }
+.btn-hapus:hover { background:#b91c1c; transform:scale(1.05) }
+.btn-plus { background:#8b5cf6; color:white; border:none; padding:6px 9px; border-radius:6px; cursor:pointer; font-size:0.85em; transition:all 0.2s; margin-right:4px }
+.btn-plus:hover { background:#6d28d9; transform:scale(1.05) }
+.table-actions { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:25px }
+.btn { padding:9px 16px; border:none; border-radius:8px; font-size:0.9em; font-weight:500; cursor:pointer; transition:all 0.2s; display:inline-flex; align-items:center; gap:6px }
+.btn-tambah { background:#8b5cf6; color:white } .btn-tambah:hover { background:#6d28d9 }
+.btn-tambah-no { background:#8b5cf6; color:white; font-weight:600; font-size:1em } .btn-tambah-no:hover { background:#6d28d9 }
+.btn-kurangi { background:#f97316; color:white } .btn-kurangi:hover { background:#ea580c }
+.btn-simpan { background:#0ea5e9; color:white } .btn-simpan:hover { background:#0284c7 }
+.btn-reset { background:#f59e0b; color:white } .btn-reset:hover { background:#d97706 }
+.btn-ekspor { background:#8b5cf6; color:white } .btn-ekspor:hover { background:#6d28d9 }
+.notif { position:fixed; top:20px; right:20px; background:#10b981; color:white; padding:14px 22px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.15); font-weight:500; z-index:1000; transform:translateX(400px); transition:transform 0.4s ease }
+.notif.show { transform:translateX(0) }
+.notif.error { background:#ef4444 }
+.notif.info { background:#8b5cf6 }
+.print-btn { position:fixed; bottom:25px; right:25px; background:#10b981; color:white; border:none; padding:12px 22px; border-radius:30px; font-size:0.95em; font-weight:600; cursor:pointer; box-shadow:0 4px 15px rgba(16,185,129,0.4); transition:all 0.3s; z-index:100 }
+.print-btn:hover { background:#059669; transform:scale(1.05) }
+footer { background:#4c1d95; color:#cbd5e1; padding:25px 30px; text-align:center; font-size:0.9em }
+footer strong { color:white }
+.ttd-section{ margin:30px 30px 0 30px; padding:20px; border:2px dashed #1e3a8a; border-radius:8px; background:#f0f9ff }
+.ttd-section h4{ text-align:center; color:#1e3a8a; margin-bottom:15px; font-family:Arial,sans-serif; font-size:14px }
+.ttd-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.ttd-box-input{background:#fff;padding:15px;border-radius:5px;border:1px solid #cbd5e1}
+.ttd-box-input h5{text-align:center;margin-bottom:10px;color:#1e3a8a;font-family:Arial,sans-serif;font-size:13px}
+.ttd-box-input label{display:block;font-size:12px;font-weight:bold;margin-bottom:3px;font-family:Arial,sans-serif}
+.ttd-box-input input[type="text"]{width:100%;padding:6px 8px;margin-bottom:8px;border:1px solid #cbd5e1;border-radius:3px;font-size:13px}
+.upload-area{margin-top:10px;padding:10px;border:2px dashed #94a3b8;border-radius:5px;text-align:center;background:#f8fafc;cursor:pointer}
+.upload-area:hover{background:#e0f2fe;border-color:#1e3a8a}
+.upload-area input[type="file"]{display:none}
+.upload-label{font-size:12px;color:#64748b;font-family:Arial,sans-serif;pointer-events:none}
+.preview-img{max-width:100%;max-height:100px;margin-top:8px;border:1px solid #cbd5e1;border-radius:3px;display:none}
+.preview-img.active{display:block;margin:8px auto 0}
+.ttd-preview-final{margin:30px 30px;display:flex;justify-content:space-between;padding:20px;background:#fff;border-radius:5px}
+.ttd-final-box{width:45%;text-align:center}
+.ttd-final-box .img-ttd{min-height:70px;display:flex;align-items:center;justify-content:center;margin-bottom:5px}
+.ttd-final-box .img-ttd img{max-height:80px;max-width:200px}
+.ttd-final-box .nama{font-weight:bold;text-decoration:underline}
+.empty-state { text-align:center !important; color:#64748b !important; padding:25px !important }
+.empty-state .icon { font-size:2em; display:block; margin-bottom:8px }
+@media (max-width:640px) {
+.judul-dokumen h3 { font-size:14px }
+section { padding:25px 18px }
+th, td { padding:8px 10px; font-size:0.85em }
+.ttd-grid { grid-template-columns:1fr }
+.ttd-preview-final { flex-direction:column; gap:30px }
+.ttd-final-box { width:100% }
+.kop-surat { gap:8px }
+.kop-logo { width:60px; min-height:60px }
+.kop-logo img { max-width:60px; max-height:65px }
+}
+@media print {
+@page { size:A4 portrait; margin:0.5cm }
+body { background:white !important; padding:0 !important; font-size:8pt }
+.container { box-shadow:none !important; max-width:100% !important; border-radius:0 !important }
+.kop-surat{ margin:0 0 8px 0 !important; padding:2px 0 5px 0 !important; border-bottom:2px double #1e3a8a !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; display:flex !important; align-items:center !important; justify-content:space-between !important; gap:8px !important }
+.kop-logo{ width:60px !important; min-height:60px !important }
+.kop-logo img{ max-width:60px !important; max-height:70px !important }
+.kop-logo .placeholder-logo{ display:none !important }
+.kop-teks{ flex:1 !important }
+.header-line.government{font-size:9px !important;letter-spacing:2px !important}
+.header-line.school{font-size:14px !important;margin:1px 0 !important}
+.header-line.address,.header-line.contact{font-size:8px !important}
+.judul-dokumen{margin:8px 0 !important}
+.judul-dokumen h3{font-size:12px !important}
+.kelas-header { background:#8b5cf6 !important; padding:6px 10px !important; margin-bottom:6px !important; -webkit-print-color-adjust:exact; print-color-adjust:exact }
+.print-btn, .table-actions, .col-aksi, .info-banner { display:none !important }
+.ttd-section { display:none !important }
+.ttd-preview-final { margin:10px 0 0 0 !important; padding:10px 0 !important; page-break-inside:avoid }
+.table-wrapper { border:1px solid #000 !important; overflow:visible !important; border-radius:0 !important; margin-bottom:0 !important }
+table { border-collapse:collapse !important; border-spacing:0 !important; page-break-inside:auto; width:100% !important; border:1px solid #000 !important }
+thead { display:table-header-group }
+tr { page-break-inside:avoid; page-break-after:auto }
+th, td { padding:2px 3px !important; font-size:7pt !important; border:1px solid #000 !important; white-space:normal !important; word-wrap:break-word !important; vertical-align:middle }
+th { background:#4c1d95 !important; color:white !important; text-align:center; -webkit-print-color-adjust:exact; print-color-adjust:exact }
+td.cell-rowspan { background:#f0f0f0 !important; -webkit-print-color-adjust:exact; print-color-adjust:exact }
+td.kelas-cell { background:#ede9fe !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; text-align:center !important }
+tr.baris-tambahan { background:#f8f8f8 !important }
+td[contenteditable="true"]:hover, td[contenteditable="true"]:focus { outline:none !important; background:inherit !important }
+/* Kolom keterangan saat cetak */
+.ket-tools { display:none !important }
+.btn-mini { display:none !important }
+.ket-teks:hover, .ket-teks:focus { outline:none !important; background:inherit !important }
+.ket-foto { max-width:45px; max-height:34px }
+a.ket-link { color:#000 !important; text-decoration:none !important; font-size:6.5pt !important }
+a.ket-link::after { content:" (" attr(href) ")"; font-size:5.5pt; word-break:break-all; }
+#fotoModal { display:none !important }
+footer { background:#4c1d95 !important; padding:6px 12px !important; margin-top:6px !important; -webkit-print-color-adjust:exact; print-color-adjust:exact }
+footer p { font-size:0.7em }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="kop-surat">
+<div class="kop-logo">
+<img id="logoKiriImg" src="" style="display:none">
+<div class="placeholder-logo" id="logoKiriPlaceholder">Logo<br>Kiri</div>
+</div>
+<div class="kop-teks">
+<div class="header-line government" id="headerGovernment" contenteditable="true">PEMERINTAH PROVINSI DKI JAKARTA</div>
+<div class="header-line school" id="headerSchool" contenteditable="true">SMP NEGERI 56 JAKARTA</div>
+<div class="header-line address" id="headerAddress" contenteditable="true">Jl. Pendidikan No. 56, Jakarta Pusat 10310</div>
+<div class="header-line contact" id="headerContact" contenteditable="true">Telp. (021) 3912345 | Email: smpn56@jakarta.sch.id</div>
+</div>
+<div class="kop-logo">
+<img id="logoKananImg" src="" style="display:none">
+<div class="placeholder-logo" id="logoKananPlaceholder">Logo<br>Kanan</div>
+</div>
+</div>
+<div class="judul-dokumen"><h3>AGENDA BELAJAR KELAS IX</h3></div>
+<div class="info-banner">
+💡 <strong>Petunjuk:</strong>
+<br>• Semua cell bisa diedit langsung, termasuk <strong>Kelas</strong> dan <strong>Hari, Tanggal</strong>.
+<br>• Kolom <strong>Keterangan</strong> bisa diisi <strong>teks</strong>, <strong>link URL (🔗 URL)</strong>, dan <strong>upload foto (📷 Foto)</strong>.
+<br>• Klik foto pada kolom Keterangan untuk memperbesar; klik <strong>✖</strong> untuk menghapus URL/foto.
+<br>• Gunakan tombol <strong>➕</strong> di kolom Aksi untuk menambah baris dalam No. yang sama.
+<br>• Klik <strong>💾 Simpan</strong> untuk menyimpan ke browser dan mengirim ke Spreadsheet.
+<br>• Klik <strong>📂 Muat Ulang</strong> untuk mengambil data terakhir dari penyimpanan browser.
+<br>• Klik <strong>🔄 Reset</strong> untuk membersihkan dashboard dan menandai periode baru.
+<br>• Setelah Reset, saat data baru disimpan, data lama tetap di Sheet aktif dan diduplikasi ke Sheet Riwayat.
+<br>• Klik <strong>📄 Generate &amp; Upload Laporan PDF</strong> untuk membuat PDF terbaru berisi data aktif saat ini.
+</div>
+<div class="info-banner integrasi-banner">
+🖼️ <strong>PENGATURAN LOGO KOP SURAT</strong>
+<div class="integrasi-baris">
+<button class="btn btn-ttd" onclick="document.getElementById('fileLogoKiri').click()">📎 Upload Logo Kiri</button>
+<input type="file" id="fileLogoKiri" accept="image/*" style="display:none" onchange="uploadLogo('kiri', this)">
+<button class="btn btn-ttd" onclick="document.getElementById('fileLogoKanan').click()">📎 Upload Logo Kanan</button>
+<input type="file" id="fileLogoKanan" accept="image/*" style="display:none" onchange="uploadLogo('kanan', this)">
+<button class="btn btn-reset" onclick="hapusLogo()">🗑️ Hapus Semua Logo</button>
+</div>
+<div style="margin-top:10px; display:flex; gap:15px; align-items:center;">
+<img id="logoPreviewKiri" src="" style="max-height:70px; max-width:70px; border:1px solid #cbd5e1; border-radius:6px; display:none;">
+<img id="logoPreviewKanan" src="" style="max-height:70px; max-width:70px; border:1px solid #cbd5e1; border-radius:6px; display:none;">
+<span id="logoStatus" style="font-size:0.85em; color:#475569;">Belum ada logo ter-upload.</span>
+</div>
+</div>
+<div class="info-banner integrasi-banner">
+🔌 <strong>INTEGRASI GOOGLE — Spreadsheet &amp; Drive</strong>
+<div class="integrasi-baris">
+<input type="text" id="backendUrl" placeholder="URL Web App backend — kosongkan untuk memakai URL bawaan sistem">
+<button class="btn btn-simpan" onclick="simpanBackendUrl()">💾 Simpan URL</button>
+<button class="btn btn-tes" onclick="tesKoneksi()">📡 Tes Koneksi</button>
+</div>
+<div class="integrasi-baris">
+<button class="btn btn-spreadsheet" onclick="kirimKeSpreadsheet(false)">📊 Kirim Data ke Spreadsheet</button>
+<button class="btn btn-ttd" onclick="uploadSemuaTTD()">✍️ Upload TTD ke Drive</button>
+<button class="btn btn-laporan" onclick="generateLaporan()">📄 Generate &amp; Upload Laporan PDF</button>
+</div>
+<div id="backendStatus" class="backend-status">Status: belum terhubung ke backend.</div>
+</div>
+<section>
+<h2>📗 Agenda Layanan Kelas 9</h2>
+<div class="kelas-header">
+<h3>🟪 Kelas 9 — Fase D Akhir</h3>
+<span>Fokus: Transisi &amp; Perencanaan</span>
+</div>
+<div class="table-actions">
+<button class="btn btn-tambah" onclick="tambahBarisDalamGrupTerakhir()">➕ Tambah Baris (No. Sama)</button>
+<button class="btn btn-tambah-no" onclick="tambahNoBaru()">🔢 Tambah No. Baru</button>
+<button class="btn btn-kurangi" onclick="kurangiBaris()">➖ Kurangi Baris</button>
+<button class="btn btn-simpan" onclick="simpanData()">💾 Simpan</button>
+<button class="btn btn-muat" onclick="muatUlangData()">📂 Muat Ulang</button>
+<button class="btn btn-reset" onclick="resetTabel()">🔄 Reset</button>
+<button class="btn btn-ekspor" onclick="eksporCSV()">⬇️ Ekspor CSV</button>
+</div>
+<div class="table-wrapper">
+<table id="tabel-kelas9">
+<thead>
+<tr>
+<th>No</th>
+<th>Hari, Tanggal</th>
+<th>Kelas</th>
+<th>Kehadiran Siswa</th>
+<th>Pertemuan Ke-</th>
+<th>Topik / Materi Layanan</th>
+<th>Bidang</th>
+<th>Jenis</th>
+<th>Keterangan</th>
+<th class="col-aksi">Aksi</th>
+</tr>
+</thead>
+<tbody id="tbody-kelas9"></tbody>
+</table>
+</div>
+</section>
+<div class="ttd-section">
+<h4>✍️ BAGIAN TANDA TANGAN</h4>
+<div class="ttd-grid">
+<div class="ttd-box-input">
+<h5>Kepala Sekolah</h5>
+<label>Nama Lengkap:</label><input type="text" id="namaKepsek" placeholder="Nama Kepala Sekolah">
+<label>NIP:</label><input type="text" id="nipKepsek" placeholder="NIP Kepala Sekolah">
+<label>Upload Tanda Tangan / Stempel:</label>
+<div class="upload-area" onclick="document.getElementById('fileKepsek').click()">
+<input type="file" id="fileKepsek" accept="image/*" onchange="previewGambar(this,'previewKepsek','imgKepsek','kepsek')">
+<div class="upload-label">📎 <strong>Klik untuk upload</strong></div>
+<img id="previewKepsek" class="preview-img">
+</div>
+</div>
+<div class="ttd-box-input">
+<h5>Guru BK / Koordinator BK</h5>
+<label>Kota:</label><input type="text" id="kotaKepsek" value="Jakarta">
+<label>Tanggal:</label><input type="text" id="tanggalKepsek" value="4 Agustus 2026">
+<label>Nama Lengkap:</label><input type="text" id="namaGuruTTD" placeholder="Nama Guru BK">
+<label>NIP:</label><input type="text" id="nipGuruTTD" placeholder="NIP Guru BK">
+<label>Upload Tanda Tangan:</label>
+<div class="upload-area" onclick="document.getElementById('fileGuru').click()">
+<input type="file" id="fileGuru" accept="image/*" onchange="previewGambar(this,'previewGuru','imgGuru','guru')">
+<div class="upload-label">📎 <strong>Klik untuk upload</strong></div>
+<img id="previewGuru" class="preview-img">
+</div>
+</div>
+</div>
+</div>
+<div class="ttd-preview-final">
+<div class="ttd-final-box">
+<p>Mengetahui,</p>
+<p>Kepala Sekolah</p>
+<div class="img-ttd" id="imgKepsek"></div>
+<p class="nama" id="previewNamaKepsek">(...................................................)</p>
+<p>NIP. <span id="previewNipKepsek">................................</span></p>
+</div>
+<div class="ttd-final-box">
+<p id="previewTanggalKepsek">Jakarta, 4 Agustus 2026</p>
+<p>Koordinator BK / Guru BK</p>
+<div class="img-ttd" id="imgGuru"></div>
+<p class="nama" id="previewNamaGuru">(...................................................)</p>
+<p>NIP. <span id="previewNipGuru">................................</span></p>
+</div>
+</div>
+<footer>
+<p>📘 <strong>Agenda Belajar Kelas IX — Program Layanan BK SMP</strong></p>
+<p style="margin-top:6px; font-size:0.85em;">© 2026 — Data tersimpan otomatis di browser &amp; Google Spreadsheet.</p>
+</footer>
+</div>
+
+<!-- Modal preview foto keterangan -->
+<div id="fotoModal" onclick="tutupFotoModal()"><img id="fotoModalImg" alt="Preview foto"></div>
+<!-- Input file global untuk upload foto keterangan -->
+<input type="file" id="fileKetInput" accept="image/*" style="display:none" onchange="uploadFotoKeterangan(this)">
+
+<div id="notif" class="notif"></div>
+<button class="print-btn" onclick="window.print()">🖨️ Cetak / Simpan PDF</button>
+<script>
+const STORAGE_KEY = 'agendaBK_kelas9';
+const BACKEND_KEY = 'agendaBK_backendUrl';
+const HEADER_STORAGE_KEY = 'agendaBK_headerData';
+const PERIODE_KEY = 'agendaBK_periodeBaru';
+const DEFAULT_BACKEND_URL = 'https://script.google.com/macros/s/AKfycbx4LjXzWuBoMJWhH3I1fxEsR7lB0lr2m1jbh72ZUbAeybAPRX09T14tr__stXSGYhM/exec';
+var imgKepsekBase64 = '';
+var imgGuruBase64 = '';
+var logoKiriBase64 = '';
+var logoKananBase64 = '';
+var logoKiriUrl = '';
+var logoKananUrl = '';
+var targetFotoKet = null;
+
+let dataTabel = [
+{
+no: "1",
+hariTanggal: "Senin, 3 Agustus 2026",
+baris: [
+{ kelas: "9A", kehadiran: "28/28", pertemuan: "1", topik: "Menyongsong Kelas 9 (Growth Mindset)", bidang: "Pribadi", jenis: "Klasikal", keterangan: "Asesmen Kebutuhan Peserta Didik", url: "", foto: [] },
+{ kelas: "9B", kehadiran: "27/27", pertemuan: "1", topik: "Menyongsong Kelas 9 (Growth Mindset)", bidang: "Pribadi", jenis: "Klasikal", keterangan: "Asesmen Kebutuhan Peserta Didik", url: "", foto: [] }
+]
+},
+{
+no: "2",
+hariTanggal: "Selasa, 4 Agustus 2026",
+baris: [
+{ kelas: "9A", kehadiran: "27/28", pertemuan: "2", topik: "Manajemen Stres & Kecemasan", bidang: "Pribadi", jenis: "Klasikal", keterangan: "Profil Pelajar Pancasila", url: "", foto: [] },
+{ kelas: "9B", kehadiran: "26/27", pertemuan: "2", topik: "Manajemen Stres & Kecemasan", bidang: "Pribadi", jenis: "Klasikal", keterangan: "Profil Pelajar Pancasila", url: "", foto: [] }
+]
+}
+];
+
+function escapeHtml(s) {
+  return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+function shortenUrl(u) {
+  try { return u.length > 30 ? u.substring(0, 30) + '…' : u; } catch (e) { return u; }
+}
+
+function normalisasiData(data) {
+if (!Array.isArray(data)) return [];
+return data.map(function(grup) {
+if (!grup || typeof grup !== 'object') return null;
+var g = {
+no: grup.no !== undefined ? String(grup.no) : '',
+hariTanggal: '',
+baris: []
+};
+if (grup.hariTanggal !== undefined && grup.hariTanggal !== '') {
+g.hariTanggal = String(grup.hariTanggal);
+} else if (grup.bulan !== undefined && grup.bulan !== '') {
+g.hariTanggal = String(grup.bulan);
+} else {
+g.hariTanggal = '—';
+}
+if (Array.isArray(grup.baris)) {
+g.baris = grup.baris.map(function(b) {
+if (!b || typeof b !== 'object') return null;
+return {
+kelas: b.kelas !== undefined ? String(b.kelas) : '',
+kehadiran: b.kehadiran !== undefined ? String(b.kehadiran) : '0/0',
+pertemuan: b.pertemuan !== undefined ? String(b.pertemuan) : '1',
+topik: b.topik !== undefined ? String(b.topik) : '',
+bidang: b.bidang !== undefined ? String(b.bidang) : '',
+jenis: b.jenis !== undefined ? String(b.jenis) : '',
+keterangan: b.keterangan !== undefined ? String(b.keterangan) : '',
+url: (b.url !== undefined && b.url !== null) ? String(b.url) : '',
+foto: Array.isArray(b.foto) ? b.foto.filter(function(x){ return typeof x === 'string' && x.length > 0; }) : []
+};
+}).filter(function(x) { return x !== null; });
+}
+return g;
+}).filter(function(x) { return x !== null; });
+}
+function tampilkanNotif(pesan, tipe) {
+tipe = tipe || 'success';
+const notif = document.getElementById('notif');
+notif.textContent = pesan;
+notif.className = 'notif show ' + tipe;
+setTimeout(function(){ notif.classList.remove('show'); }, 2500);
+}
+function simpanLocal(senyap) {
+try {
+const json = JSON.stringify(Array.isArray(dataTabel) ? dataTabel : []);
+localStorage.setItem(STORAGE_KEY, json);
+try { sessionStorage.setItem(STORAGE_KEY, json); } catch (e) {}
+return true;
+} catch (e) {
+console.error('Gagal simpan lokal:', e);
+if (!senyap) tampilkanNotif('❌ Gagal menyimpan (kemungkinan foto terlalu besar / penyimpanan penuh)', 'error');
+return false;
+}
+}
+function bacaLocal() {
+try {
+let x = localStorage.getItem(STORAGE_KEY);
+if (x === null || x === '') x = sessionStorage.getItem(STORAGE_KEY);
+if (x === null || x === '') return null;
+return x;
+} catch (e) { return null; }
+}
+function getBackendUrl() {
+var url = '';
+try {
+url = (localStorage.getItem(BACKEND_KEY) || '').trim();
+} catch (e) {
+url = '';
+}
+if (!url) url = DEFAULT_BACKEND_URL.trim();
+return url;
+}
+function setBackendStatus(teks, warna) {
+const el = document.getElementById('backendStatus');
+el.textContent = teks;
+el.style.color = warna || '#475569';
+}
+function simpanBackendUrl() {
+var url = document.getElementById('backendUrl').value.trim();
+if (!url) {
+try { localStorage.removeItem(BACKEND_KEY); } catch (e) {}
+document.getElementById('backendUrl').value = DEFAULT_BACKEND_URL;
+tampilkanNotif('🔗 URL dikosongkan — kembali ke URL bawaan sistem', 'info');
+setBackendStatus('Status: memakai URL bawaan sistem.', '#0369a1');
+return;
+}
+try { localStorage.setItem(BACKEND_KEY, url); } catch (e) {}
+tampilkanNotif('🔗 URL backend disimpan', 'success');
+setBackendStatus('Status: URL tersimpan.', '#0369a1');
+}
+async function postKeBackend(payload) {
+const url = getBackendUrl();
+if (!url) throw new Error('URL Web App belum diatur.');
+const res = await fetch(url, {
+method: 'POST',
+headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+body: JSON.stringify(payload)
+});
+if (!res.ok) throw new Error('HTTP ' + res.status);
+return res.json();
+}
+function bacaHeader() {
+return {
+government: document.getElementById('headerGovernment').innerText.trim(),
+school: document.getElementById('headerSchool').innerText.trim(),
+address: document.getElementById('headerAddress').innerText.trim(),
+contact: document.getElementById('headerContact').innerText.trim()
+};
+}
+function bacaTTD() {
+return {
+kota: document.getElementById('kotaKepsek').value.trim(),
+tanggal: document.getElementById('tanggalKepsek').value.trim(),
+namaKepsek: document.getElementById('namaKepsek').value.trim(),
+nipKepsek: document.getElementById('nipKepsek').value.trim(),
+namaGuru: document.getElementById('namaGuruTTD').value.trim(),
+nipGuru: document.getElementById('nipGuruTTD').value.trim()
+};
+}
+async function tesKoneksi() {
+const url = getBackendUrl();
+if (!url) {
+tampilkanNotif('⚠️ URL backend belum tersedia', 'error');
+return;
+}
+setBackendStatus('📡 Menguji koneksi ...', '#475569');
+try {
+const res = await fetch(url);
+const info = await res.json();
+if (info.status === 'online') {
+tampilkanNotif('✅ Terhubung ke backend!', 'success');
+setBackendStatus('✅ Terhubung.', '#059669');
+} else {
+setBackendStatus('❌ Respons tidak dikenal', '#b91c1c');
+}
+} catch (err) {
+tampilkanNotif('❌ Gagal: ' + err.message, 'error');
+setBackendStatus('❌ Tidak terhubung', '#b91c1c');
+}
+}
+async function kirimKeSpreadsheet(senyap) {
+try {
+if (!getBackendUrl()) {
+if (!senyap) tampilkanNotif('⚠️ URL backend belum diatur', 'error');
+return false;
+}
+if (!dataTabel || dataTabel.length === 0) {
+if (!senyap) tampilkanNotif('ℹ️ Tidak ada data baru untuk dikirim', 'info');
+return true;
+}
+var periodeBaru = false;
+try {
+periodeBaru = localStorage.getItem(PERIODE_KEY) === '1';
+} catch (e) {
+periodeBaru = false;
+}
+var payload = {
+action: 'simpanData',
+periodeBaru: periodeBaru,
+header: bacaHeader(),
+ttd: bacaTTD(),
+dataTabel: (dataTabel || []).map(function(grup) {
+var ht = grup.hariTanggal || grup.bulan || '';
+return {
+no: grup.no || '',
+hariTanggal: ht,
+bulan: ht,
+baris: (grup.baris || []).map(function(b) {
+return {
+kelas: b.kelas || '',
+kehadiran: b.kehadiran || '',
+pertemuan: b.pertemuan || '',
+topik: b.topik || '',
+bidang: b.bidang || '',
+jenis: b.jenis || '',
+keterangan: b.keterangan || '',
+url: b.url || '',
+foto: Array.isArray(b.foto) ? b.foto : []
+};
+})
+};
+})
+};
+const res = await postKeBackend(payload);
+if (res.ok) {
+if (periodeBaru) {
+try { localStorage.removeItem(PERIODE_KEY); } catch (e) {}
+}
+if (!senyap) {
+tampilkanNotif('📊 Data terkirim ke Spreadsheet (' + res.totalBaris + ' baris)', 'success');
+}
+if (res.diarsipkan > 0) {
+tampilkanNotif('🗂️ ' + res.diarsipkan + ' baris lama diduplikasi ke Sheet Riwayat', 'info');
+}
+var statusTeks = '✅ Sinkron ' + res.totalBaris + ' baris';
+if (res.diarsipkan > 0) {
+statusTeks += ' | Duplikasi Riwayat: ' + res.diarsipkan;
+}
+setBackendStatus(statusTeks, '#059669');
+return true;
+}
+throw new Error(res.error || 'Gagal menyimpan');
+} catch (err) {
+if (!senyap) tampilkanNotif('❌ Gagal kirim: ' + err.message, 'error');
+setBackendStatus('❌ Gagal sinkron', '#b91c1c');
+return false;
+}
+}
+function kompresGambar(file, maksLebar, maksTinggi, cb) {
+var reader = new FileReader();
+reader.onload = function(e) {
+var img = new Image();
+img.onload = function() {
+var skala = Math.min(1, maksLebar / img.width, maksTinggi / img.height);
+var w = Math.round(img.width * skala), h = Math.round(img.height * skala);
+var c = document.createElement('canvas');
+c.width = w; c.height = h;
+c.getContext('2d').drawImage(img, 0, 0, w, h);
+cb(c.toDataURL('image/png'));
+};
+img.onerror = function() { cb(e.target.result); };
+img.src = e.target.result;
+};
+reader.readAsDataURL(file);
+}
+function kompresGambarJPG(file, maksLebar, maksTinggi, kualitas, cb) {
+var reader = new FileReader();
+reader.onload = function(e) {
+var img = new Image();
+img.onload = function() {
+var skala = Math.min(1, maksLebar / img.width, maksTinggi / img.height);
+var w = Math.round(img.width * skala), h = Math.round(img.height * skala);
+var c = document.createElement('canvas');
+c.width = w; c.height = h;
+c.getContext('2d').drawImage(img, 0, 0, w, h);
+cb(c.toDataURL('image/jpeg', kualitas));
+};
+img.onerror = function() { cb(e.target.result); };
+img.src = e.target.result;
+};
+reader.readAsDataURL(file);
+}
+async function uploadSatuTTD(tipe, base64) {
+try {
+return await postKeBackend({ action: 'uploadTtd', type: tipe, base64: base64 });
+} catch (err) {
+return { ok: false, error: err.message };
+}
+}
+async function uploadSemuaTTD() {
+if (!getBackendUrl()) {
+tampilkanNotif('⚠️ URL backend belum diatur', 'error');
+return;
+}
+if (!imgKepsekBase64 && !imgGuruBase64) {
+tampilkanNotif('⚠️ Belum ada gambar ttd.', 'error');
+return;
+}
+let sukses = 0;
+if (imgKepsekBase64) {
+const r = await uploadSatuTTD('kepsek', imgKepsekBase64);
+if (r.ok) sukses++;
+}
+if (imgGuruBase64) {
+const r = await uploadSatuTTD('guru', imgGuruBase64);
+if (r.ok) sukses++;
+}
+if (sukses > 0) tampilkanNotif('✍️ ' + sukses + ' ttd ter-upload', 'success');
+else tampilkanNotif('❌ Gagal upload', 'error');
+}
+function uploadLogo(sisi, inp) {
+var f = inp.files[0];
+if (!f) return;
+kompresGambar(f, 400, 400, function(b) {
+if (sisi === 'kiri') {
+logoKiriBase64 = b;
+setLogoKiriPreview(b);
+} else {
+logoKananBase64 = b;
+setLogoKananPreview(b);
+}
+if (!getBackendUrl()) {
+tampilkanNotif('⚠️ URL backend belum diatur', 'error');
+return;
+}
+postKeBackend({ action: 'uploadLogo', sisi: sisi, base64: b })
+.then(function(res) {
+if (res && res.ok) {
+if (sisi === 'kiri') {
+logoKiriUrl = res.url;
+try {
+localStorage.setItem('agendaBK_logoKiriUrl', res.url);
+localStorage.setItem('agendaBK_logoKiriB64', b);
+} catch (e) {}
+} else {
+logoKananUrl = res.url;
+try {
+localStorage.setItem('agendaBK_logoKananUrl', res.url);
+localStorage.setItem('agendaBK_logoKananB64', b);
+} catch (e) {}
+}
+tampilkanNotif('🖼️ Logo ' + (sisi === 'kiri' ? 'Kiri' : 'Kanan') + ' ter-upload ke Drive', 'success');
+updateLogoStatus();
+} else {
+tampilkanNotif('❌ Gagal upload logo', 'error');
+}
+})
+.catch(function() {
+tampilkanNotif('❌ Gagal upload logo', 'error');
+});
+});
+}
+function setLogoKiriPreview(src) {
+var img = document.getElementById('logoKiriImg');
+var prev = document.getElementById('logoPreviewKiri');
+var ph = document.getElementById('logoKiriPlaceholder');
+if (img) { img.src = src; img.style.display = 'block'; }
+if (prev) { prev.src = src; prev.style.display = 'block'; }
+if (ph) ph.style.display = 'none';
+}
+function setLogoKananPreview(src) {
+var img = document.getElementById('logoKananImg');
+var prev = document.getElementById('logoPreviewKanan');
+var ph = document.getElementById('logoKananPlaceholder');
+if (img) { img.src = src; img.style.display = 'block'; }
+if (prev) { prev.src = src; prev.style.display = 'block'; }
+if (ph) ph.style.display = 'none';
+}
+function updateLogoStatus() {
+var st = document.getElementById('logoStatus');
+if (!st) return;
+var adaKiri = !!logoKiriUrl;
+var adaKanan = !!logoKananUrl;
+if (adaKiri && adaKanan) st.textContent = '✅ Logo kiri & kanan tersimpan.';
+else if (adaKiri) st.textContent = '⚠️ Baru logo kiri tersimpan.';
+else if (adaKanan) st.textContent = '⚠️ Baru logo kanan tersimpan.';
+else st.textContent = 'Belum ada logo ter-upload.';
+}
+function hapusLogo() {
+if (!confirm('Hapus semua logo dari dashboard? (File di Drive tidak ikut terhapus)')) return;
+logoKiriBase64 = '';
+logoKananBase64 = '';
+logoKiriUrl = '';
+logoKananUrl = '';
+try {
+localStorage.removeItem('agendaBK_logoKiriUrl');
+localStorage.removeItem('agendaBK_logoKiriB64');
+localStorage.removeItem('agendaBK_logoKananUrl');
+localStorage.removeItem('agendaBK_logoKananB64');
+} catch (e) {}
+['logoKiriImg', 'logoKananImg', 'logoPreviewKiri', 'logoPreviewKanan'].forEach(function(id) {
+var el = document.getElementById(id);
+if (el) {
+el.src = '';
+el.style.display = 'none';
+}
+});
+['logoKiriPlaceholder', 'logoKananPlaceholder'].forEach(function(id) {
+var el = document.getElementById(id);
+if (el) el.style.display = 'flex';
+});
+updateLogoStatus();
+tampilkanNotif('🗑️ Semua logo dihapus dari dashboard', 'info');
+}
+function muatLogoDariStorage() {
+try {
+var kiriB64 = localStorage.getItem('agendaBK_logoKiriB64');
+var kananB64 = localStorage.getItem('agendaBK_logoKananB64');
+var kiriUrl = localStorage.getItem('agendaBK_logoKiriUrl');
+var kananUrl = localStorage.getItem('agendaBK_logoKananUrl');
+if (kiriB64) {
+setLogoKiriPreview(kiriB64);
+logoKiriBase64 = kiriB64;
+logoKiriUrl = kiriUrl || '';
+}
+if (kananB64) {
+setLogoKananPreview(kananB64);
+logoKananBase64 = kananB64;
+logoKananUrl = kananUrl || '';
+}
+updateLogoStatus();
+} catch (e) {}
+}
+async function generateLaporan() {
+if (!getBackendUrl()) {
+tampilkanNotif('⚠️ URL backend belum diatur', 'error');
+return;
+}
+tampilkanNotif('⏳ Sinkronisasi data ...', 'info');
+const ok = await kirimKeSpreadsheet(true);
+if (!ok) return;
+window.open(getBackendUrl() + '?page=laporan', '_blank');
+tampilkanNotif('📄 Halaman laporan dibuka.', 'info');
+}
+
+/* ====== FUNGSI KOLOM KETERANGAN: URL & FOTO ====== */
+function setUrlKeterangan(grupIndex, barisIndex) {
+var grup = dataTabel[grupIndex];
+var baris = grup && grup.baris[barisIndex];
+if (!baris) return;
+var awal = baris.url || '';
+var input = prompt('Masukkan URL untuk kolom Keterangan (kosongkan lalu OK untuk menghapus):', awal || 'https://');
+if (input === null) return;
+baris.url = input.trim();
+simpanLocal(true);
+renderTabel();
+tampilkanNotif(baris.url ? '🔗 URL disimpan di Keterangan' : '🔗 URL dihapus dari Keterangan', 'info');
+}
+function hapusUrlKeterangan(grupIndex, barisIndex) {
+var grup = dataTabel[grupIndex];
+var baris = grup && grup.baris[barisIndex];
+if (!baris) return;
+if (!confirm('Hapus URL dari keterangan baris ini?')) return;
+baris.url = '';
+simpanLocal(true);
+renderTabel();
+tampilkanNotif('🔗 URL dihapus', 'info');
+}
+function pilihFotoKeterangan(grupIndex, barisIndex) {
+targetFotoKet = { g: grupIndex, b: barisIndex };
+document.getElementById('fileKetInput').click();
+}
+function uploadFotoKeterangan(inp) {
+var f = inp.files && inp.files[0];
+var t = targetFotoKet;
+inp.value = '';
+if (!f || !t) return;
+kompresGambarJPG(f, 420, 420, 0.72, function(b64) {
+var grup = dataTabel[t.g];
+var baris = grup && grup.baris[t.b];
+if (!baris) return;
+if (!Array.isArray(baris.foto)) baris.foto = [];
+baris.foto.push(b64);
+var ok = simpanLocal(false);
+renderTabel();
+if (ok) tampilkanNotif('📷 Foto ditambahkan ke Keterangan', 'success');
+});
+}
+function hapusFotoKeterangan(grupIndex, barisIndex, idx) {
+var grup = dataTabel[grupIndex];
+var baris = grup && grup.baris[barisIndex];
+if (!baris || !Array.isArray(baris.foto)) return;
+if (!confirm('Hapus foto ini dari keterangan?')) return;
+baris.foto.splice(idx, 1);
+simpanLocal(true);
+renderTabel();
+tampilkanNotif('📷 Foto dihapus dari Keterangan', 'info');
+}
+function lihatFotoKet(grupIndex, barisIndex, idx) {
+var grup = dataTabel[grupIndex];
+var baris = grup && grup.baris[barisIndex];
+if (!baris || !Array.isArray(baris.foto) || !baris.foto[idx]) return;
+document.getElementById('fotoModalImg').src = baris.foto[idx];
+document.getElementById('fotoModal').classList.add('show');
+}
+function tutupFotoModal() {
+document.getElementById('fotoModal').classList.remove('show');
+document.getElementById('fotoModalImg').src = '';
+}
+/* ================================================= */
+
+function renderTabel() {
+const tbody = document.getElementById('tbody-kelas9');
+tbody.innerHTML = '';
+if (!Array.isArray(dataTabel) || dataTabel.length === 0) {
+tbody.innerHTML = '<tr><td colspan="10"><div class="empty-state"><span class="icon">📭</span>Belum ada data agenda.</div></td></tr>';
+return;
+}
+dataTabel.forEach(function(grup, grupIndex) {
+const rowspan = grup.baris.length;
+grup.baris.forEach(function(baris, barisIndex) {
+const tr = document.createElement('tr');
+if (barisIndex > 0) tr.classList.add('baris-tambahan');
+var isi = '';
+if (barisIndex === 0) {
+isi += '<td rowspan="' + rowspan + '" class="cell-rowspan" contenteditable="true" data-grup="' + grupIndex + '" data-field="no">' + escapeHtml(grup.no) + '</td>';
+isi += '<td rowspan="' + rowspan + '" class="cell-rowspan" contenteditable="true" data-grup="' + grupIndex + '" data-field="hariTanggal">' + escapeHtml(grup.hariTanggal) + '</td>';
+}
+isi += '<td class="kelas-cell" contenteditable="true" data-grup="' + grupIndex + '" data-baris="' + barisIndex + '" data-field="kelas">' + escapeHtml(baris.kelas) + '</td>';
+isi += '<td contenteditable="true" data-grup="' + grupIndex + '" data-baris="' + barisIndex + '" data-field="kehadiran">' + escapeHtml(baris.kehadiran) + '</td>';
+isi += '<td contenteditable="true" data-grup="' + grupIndex + '" data-baris="' + barisIndex + '" data-field="pertemuan">' + escapeHtml(baris.pertemuan) + '</td>';
+isi += '<td contenteditable="true" data-grup="' + grupIndex + '" data-baris="' + barisIndex + '" data-field="topik">' + escapeHtml(baris.topik) + '</td>';
+isi += '<td contenteditable="true" data-grup="' + grupIndex + '" data-baris="' + barisIndex + '" data-field="bidang">' + escapeHtml(baris.bidang) + '</td>';
+isi += '<td contenteditable="true" data-grup="' + grupIndex + '" data-baris="' + barisIndex + '" data-field="jenis">' + escapeHtml(baris.jenis) + '</td>';
+
+/* Kolom Keterangan: teks + URL + foto */
+isi += '<td class="ket-cell">';
+isi += '<div class="ket-teks" contenteditable="true" data-grup="' + grupIndex + '" data-baris="' + barisIndex + '" data-field="keterangan">' + escapeHtml(baris.keterangan) + '</div>';
+var adaUrl = !!baris.url;
+var adaFoto = Array.isArray(baris.foto) && baris.foto.length > 0;
+if (adaUrl || adaFoto) {
+isi += '<div class="ket-media">';
+if (adaUrl) {
+isi += '<span style="display:inline-flex;align-items:center;gap:2px;">';
+isi += '<a class="ket-link" href="' + escapeHtml(baris.url) + '" target="_blank" rel="noopener" title="' + escapeHtml(baris.url) + '">🔗 ' + escapeHtml(shortenUrl(baris.url)) + '</a>';
+isi += '<button class="btn-mini btn-mini-danger" onclick="hapusUrlKeterangan(' + grupIndex + ',' + barisIndex + ')" title="Hapus URL">✖</button>';
+isi += '</span>';
+}
+if (adaFoto) {
+baris.foto.forEach(function(f, fi) {
+isi += '<span class="ket-foto-wrap">';
+isi += '<img class="ket-foto" src="' + f + '" onclick="lihatFotoKet(' + grupIndex + ',' + barisIndex + ',' + fi + ')" title="Klik untuk memperbesar">';
+isi += '<button class="btn-mini btn-mini-danger" onclick="hapusFotoKeterangan(' + grupIndex + ',' + barisIndex + ',' + fi + ')" title="Hapus foto">✖</button>';
+isi += '</span>';
+});
+}
+isi += '</div>';
+}
+isi += '<div class="ket-tools">';
+isi += '<button class="btn-mini" onclick="setUrlKeterangan(' + grupIndex + ',' + barisIndex + ')" title="Isi / ubah URL">🔗 URL</button>';
+isi += '<button class="btn-mini" onclick="pilihFotoKeterangan(' + grupIndex + ',' + barisIndex + ')" title="Upload foto">📷 Foto</button>';
+isi += '</div>';
+isi += '</td>';
+
+isi += '<td class="col-aksi">';
+isi += '<button class="btn-plus" onclick="tambahBarisKeGrup(' + grupIndex + ')" title="Tambah baris">➕</button>';
+isi += '<button class="btn-hapus" onclick="hapusBaris(' + grupIndex + ', ' + barisIndex + ')" title="Hapus baris">🗑️</button>';
+isi += '</td>';
+tr.innerHTML = isi;
+tbody.appendChild(tr);
+});
+});
+document.querySelectorAll('#tabel-kelas9 [contenteditable="true"]').forEach(function(el) {
+el.addEventListener('blur', function() {
+const grupIdx = parseInt(this.dataset.grup);
+const barisIdx = parseInt(this.dataset.baris);
+const field = this.dataset.field;
+if (isNaN(grupIdx) || !dataTabel[grupIdx]) return;
+if (field === 'no' || field === 'hariTanggal') {
+dataTabel[grupIdx][field] = this.innerText.trim();
+if (field === 'hariTanggal') {
+dataTabel[grupIdx].bulan = this.innerText.trim();
+}
+} else if (!isNaN(barisIdx) && dataTabel[grupIdx].baris[barisIdx]) {
+dataTabel[grupIdx].baris[barisIdx][field] = this.innerText.trim();
+} else {
+return;
+}
+this.classList.add('edited');
+simpanLocal(true);
+});
+});
+}
+function tambahBarisKeGrup(grupIndex) {
+const grup = dataTabel[grupIndex];
+if (!grup) return;
+const huruf = String.fromCharCode(65 + (grup.baris.length % 26));
+const barisTerakhir = grup.baris[grup.baris.length - 1] || {};
+grup.baris.push({
+kelas: '9' + huruf,
+kehadiran: '0/0',
+pertemuan: barisTerakhir.pertemuan || '1',
+topik: 'Topik Layanan Tambahan',
+bidang: 'Pribadi',
+jenis: 'Klasikal',
+keterangan: 'Pertemuan tambahan',
+url: '',
+foto: []
+});
+renderTabel();
+simpanLocal(true);
+tampilkanNotif('✅ Baris baru ditambahkan', 'info');
+}
+function tambahBarisDalamGrupTerakhir() {
+if (!dataTabel || dataTabel.length === 0) {
+tampilkanNotif('⚠️ Belum ada data', 'error');
+return;
+}
+tambahBarisKeGrup(dataTabel.length - 1);
+}
+function tambahNoBaru() {
+const noBaru = String(dataTabel.length + 1);
+dataTabel.push({
+no: noBaru,
+hariTanggal: '—',
+bulan: '—',
+baris: [{
+kelas: '9A',
+kehadiran: '0/0',
+pertemuan: '1',
+topik: 'Topik Baru',
+bidang: 'Pribadi',
+jenis: 'Klasikal',
+keterangan: '—',
+url: '',
+foto: []
+}]
+});
+renderTabel();
+simpanLocal(true);
+tampilkanNotif('🔢 No. ' + noBaru + ' ditambahkan', 'success');
+}
+function hapusBaris(grupIndex, barisIndex) {
+if (!confirm('Yakin ingin menghapus baris ini?')) return;
+dataTabel[grupIndex].baris.splice(barisIndex, 1);
+if (dataTabel[grupIndex].baris.length === 0) dataTabel.splice(grupIndex, 1);
+renderTabel();
+simpanLocal(true);
+tampilkanNotif('🗑️ Baris dihapus', 'error');
+}
+function kurangiBaris() {
+if (!dataTabel || dataTabel.length === 0) {
+tampilkanNotif('⚠️ Tidak ada data', 'error');
+return;
+}
+const grupTerakhir = dataTabel[dataTabel.length - 1];
+grupTerakhir.baris.pop();
+if (grupTerakhir.baris.length === 0) dataTabel.pop();
+renderTabel();
+simpanLocal(true);
+tampilkanNotif('➖ Baris terakhir dihapus', 'error');
+}
+function simpanData() {
+const ok = simpanLocal(false);
+if (!ok) {
+tampilkanNotif('❌ Gagal menyimpan', 'error');
+return;
+}
+tampilkanNotif('💾 Data disimpan di browser', 'success');
+kirimKeSpreadsheet(true);
+}
+function muatUlangData() {
+loadHeaderFromStorage();
+const tersimpan = bacaLocal();
+if (tersimpan === null) {
+tampilkanNotif('⚠️ Tidak ada data tersimpan', 'error');
+return;
+}
+try {
+const parsed = JSON.parse(tersimpan);
+dataTabel = normalisasiData(parsed);
+renderTabel();
+simpanLocal(true);
+tampilkanNotif('📂 Data berhasil dimuat ulang', 'success');
+} catch (e) {
+tampilkanNotif('❌ Data rusak', 'error');
+}
+}
+function resetTabel() {
+if (!confirm('Yakin ingin membersihkan dashboard?\nData lama akan tetap ada di Sheet aktif dan diduplikasi ke Sheet Riwayat saat Anda menyimpan data baru.')) return;
+try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+try { sessionStorage.removeItem(STORAGE_KEY); } catch (e) {}
+try { localStorage.setItem(PERIODE_KEY, '1'); } catch (e) {}
+dataTabel = [];
+renderTabel();
+tampilkanNotif('🧹 Dashboard dibersihkan — penyimpanan berikutnya akan menduplikasi data lama ke Riwayat', 'info');
+}
+function eksporCSV() {
+let csv = 'No,Hari/Tanggal,Kelas,Kehadiran,Pertemuan,Topik,Bidang,Jenis,Keterangan,URL,Foto\n';
+dataTabel.forEach(function(grup) {
+grup.baris.forEach(function(baris, index) {
+const no = index === 0 ? grup.no : '';
+const ht = index === 0 ? (grup.hariTanggal || grup.bulan || '') : '';
+const jumlahFoto = Array.isArray(baris.foto) && baris.foto.length > 0 ? baris.foto.length + ' foto' : '';
+csv += '"' + no + '","' + ht + '","' + baris.kelas + '","' + baris.kehadiran + '","' + baris.pertemuan + '","' + baris.topik + '","' + baris.bidang + '","' + baris.jenis + '","' + baris.keterangan + '","' + (baris.url || '') + '","' + jumlahFoto + '"\n';
+});
+});
+const blob = new Blob(['\ufeff' + csv], { type: 'text/csv;charset=utf-8;' });
+const link = document.createElement('a');
+link.href = URL.createObjectURL(blob);
+link.download = 'Agenda-Belajar-Kelas-IX.csv';
+link.click();
+tampilkanNotif('⬇️ CSV diunduh', 'success');
+}
+const HEADER_IDS = ['headerGovernment', 'headerSchool', 'headerAddress', 'headerContact'];
+function saveHeaderToStorage() {
+var headerData = {};
+HEADER_IDS.forEach(function(id) {
+var el = document.getElementById(id);
+if (el) headerData[id] = el.innerText.trim();
+});
+try {
+localStorage.setItem(HEADER_STORAGE_KEY, JSON.stringify(headerData));
+} catch (e) {}
+}
+function loadHeaderFromStorage() {
+try {
+var saved = localStorage.getItem(HEADER_STORAGE_KEY);
+if (!saved) return;
+var headerData = JSON.parse(saved);
+HEADER_IDS.forEach(function(id) {
+var el = document.getElementById(id);
+if (el && headerData[id] !== undefined && headerData[id] !== '') {
+el.innerText = headerData[id];
+}
+});
+} catch (e) {}
+}
+function previewGambar(inp, prevId, contId, type) {
+var f = inp.files[0];
+if (!f) return;
+kompresGambar(f, 500, 320, function(b) {
+document.getElementById(prevId).src = b;
+document.getElementById(prevId).classList.add('active');
+document.getElementById(contId).innerHTML = '<img src="' + b + '" style="max-height:80px;max-width:200px">';
+if (type === 'kepsek') imgKepsekBase64 = b;
+else imgGuruBase64 = b;
+if (getBackendUrl()) {
+uploadSatuTTD(type, b).then(function(res) {
+if (res && res.ok) tampilkanNotif('✍️ TTD ' + (type === 'kepsek' ? 'Kepsek' : 'Guru BK') + ' ter-upload', 'success');
+});
+}
+});
+}
+function updatePreviewTTD() {
+document.getElementById('previewTanggalKepsek').textContent =
+(document.getElementById('kotaKepsek').value || '[Kota]') + ', ' +
+(document.getElementById('tanggalKepsek').value || '...');
+document.getElementById('previewNamaKepsek').textContent =
+document.getElementById('namaKepsek').value ? '(' + document.getElementById('namaKepsek').value + ')' : '(...................................................)';
+document.getElementById('previewNipKepsek').textContent =
+document.getElementById('nipKepsek').value || '................................';
+document.getElementById('previewNamaGuru').textContent =
+document.getElementById('namaGuruTTD').value ? '(' + document.getElementById('namaGuruTTD').value + ')' : '(...................................................)';
+document.getElementById('previewNipGuru').textContent =
+document.getElementById('nipGuruTTD').value || '................................';
+}
+var ttdInputs = ['kotaKepsek','tanggalKepsek','namaKepsek','nipKepsek','namaGuruTTD','nipGuruTTD'];
+for (var i = 0; i < ttdInputs.length; i++) {
+document.getElementById(ttdInputs[i]).addEventListener('input', updatePreviewTTD);
+}
+function muatData() {
+const tersimpan = bacaLocal();
+if (tersimpan !== null) {
+try {
+const parsed = JSON.parse(tersimpan);
+dataTabel = normalisasiData(parsed);
+if (dataTabel.length > 0) tampilkanNotif('📂 Data tersimpan dimuat', 'info');
+} catch (e) {}
+}
+renderTabel();
+}
+window.addEventListener('beforeunload', function() {
+simpanLocal(true);
+});
+document.addEventListener('keydown', function(e) {
+if (e.key === 'Escape') tutupFotoModal();
+});
+window.addEventListener('DOMContentLoaded', function() {
+muatData();
+loadHeaderFromStorage();
+HEADER_IDS.forEach(function(id) {
+var el = document.getElementById(id);
+if (el) {
+el.addEventListener('blur', saveHeaderToStorage);
+el.addEventListener('input', saveHeaderToStorage);
+}
+});
+updatePreviewTTD();
+muatLogoDariStorage();
+var be = document.getElementById('backendUrl');
+if (be) be.value = getBackendUrl();
+if (getBackendUrl()) setBackendStatus('🔗 URL backend terpasang', '#0369a1');
+});
+</script>
+</body>
+</html>
