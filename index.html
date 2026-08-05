@@ -94,8 +94,6 @@ footer strong { color:white }
 .ttd-final-box .nama{font-weight:bold;text-decoration:underline}
 .empty-state { text-align:center !important; color:#64748b !important; padding:25px !important }
 .empty-state .icon { font-size:2em; display:block; margin-bottom:8px }
-
-/* ====== Kolom Keterangan: teks + URL + foto ====== */
 td.keterangan-cell { min-width:210px; }
 .ket-text { min-height:30px; padding:4px 6px; border:1px dashed transparent; border-radius:4px; cursor:text; white-space:pre-wrap; overflow-wrap:break-word; word-break:normal; }
 .ket-text:hover { border-color:#cbd5e1; background:#f8fafc; }
@@ -113,7 +111,6 @@ td.keterangan-cell { min-width:210px; }
 .btn-mini-hapus { background:#fee2e2; color:#b91c1c; padding:3px 6px; } .btn-mini-hapus:hover { background:#fecaca; }
 .ket-lightbox { position:fixed; inset:0; background:rgba(15,23,42,0.8); display:flex; align-items:center; justify-content:center; z-index:2000; cursor:zoom-out; }
 .ket-lightbox img { max-width:92vw; max-height:92vh; border-radius:8px; box-shadow:0 10px 40px rgba(0,0,0,0.5); background:#fff; }
-
 @media (max-width:640px) {
 .judul-dokumen h3 { font-size:14px }
 section { padding:25px 18px }
@@ -153,7 +150,6 @@ td.cell-rowspan { background:#f0f0f0 !important; -webkit-print-color-adjust:exac
 td.kelas-cell { background:#ede9fe !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; text-align:center !important }
 tr.baris-tambahan { background:#f8f8f8 !important }
 td[contenteditable="true"]:hover, td[contenteditable="true"]:focus { outline:none !important; background:inherit !important }
-/* keterangan saat cetak */
 .ket-tools { display:none !important }
 .btn-mini, .btn-mini-hapus { display:none !important }
 .ket-text { border:none !important; padding:0 !important; min-height:0 !important; background:transparent !important }
@@ -189,12 +185,12 @@ footer p { font-size:0.7em }
 💡 <strong>Petunjuk:</strong>
 <br>• Semua cell bisa diedit langsung, termasuk <strong>Kelas</strong> dan <strong>Hari, Tanggal</strong>.
 <br>• Kolom <strong>Keterangan</strong> bisa diisi <strong>teks</strong>, referensi link (tombol <strong>🔗 URL</strong>), dan bukti foto (tombol <strong>📷 Foto</strong>).
+<br>• Foto keterangan otomatis ter-upload ke Drive saat dipilih, sehingga pasti masuk ke laporan PDF.
 <br>• Gunakan tombol <strong>➕</strong> di kolom Aksi untuk menambah baris dalam No. yang sama.
 <br>• Klik <strong>💾 Simpan</strong> untuk menyimpan ke browser dan mengirim ke Spreadsheet.
-<br>• Klik <strong>📂 Muat Ulang</strong> untuk mengambil data terakhir dari penyimpanan browser.
 <br>• Klik <strong>🔄 Reset</strong> untuk membersihkan dashboard dan menandai periode baru.
-<br>• Setelah Reset, saat data baru disimpan, data lama tetap di Sheet aktif dan diduplikasi ke Sheet Riwayat.
-<br>• Klik <strong>📄 Generate &amp; Upload Laporan PDF</strong> untuk membuat PDF terbaru berisi data aktif saat ini.
+<br>• Setelah Reset, data lama tetap di Sheet aktif dan diduplikasi ke Sheet Riwayat.
+<br>• Klik <strong>📄 Generate &amp; Upload Laporan PDF</strong> untuk membuat PDF berisi seluruh data aktif.
 </div>
 <div class="info-banner integrasi-banner">
 🖼️ <strong>PENGATURAN LOGO KOP SURAT</strong>
@@ -277,7 +273,7 @@ footer p { font-size:0.7em }
 <div class="ttd-box-input">
 <h5>Guru BK / Koordinator BK</h5>
 <label>Kota:</label><input type="text" id="kotaKepsek" value="Jakarta">
-<label>Tanggal:</label><input type="text" id="tanggalKepsek" value="4 Agustus 2026">
+<label>Tanggal:</label><input type="text" id="tanggalKepsek" value="5 Agustus 2026">
 <label>Nama Lengkap:</label><input type="text" id="namaGuruTTD" placeholder="Nama Guru BK">
 <label>NIP:</label><input type="text" id="nipGuruTTD" placeholder="NIP Guru BK">
 <label>Upload Tanda Tangan:</label>
@@ -298,7 +294,7 @@ footer p { font-size:0.7em }
 <p>NIP. <span id="previewNipKepsek">................................</span></p>
 </div>
 <div class="ttd-final-box">
-<p id="previewTanggalKepsek">Jakarta, 4 Agustus 2026</p>
+<p id="previewTanggalKepsek">Jakarta, 5 Agustus 2026</p>
 <p>Koordinator BK / Guru BK</p>
 <div class="img-ttd" id="imgGuru"></div>
 <p class="nama" id="previewNamaGuru">(...................................................)</p>
@@ -316,6 +312,7 @@ footer p { font-size:0.7em }
 const STORAGE_KEY = 'agendaBK_kelas9';
 const BACKEND_KEY = 'agendaBK_backendUrl';
 const HEADER_STORAGE_KEY = 'agendaBK_headerData';
+const TTD_INFO_STORAGE_KEY = 'agendaBK_ttdInfoData';
 const PERIODE_KEY = 'agendaBK_periodeBaru';
 const DEFAULT_BACKEND_URL = 'https://script.google.com/macros/s/AKfycbwiqUBQ8KMeTzWws0wjVXrZXAZeAs283yu70V-T65Rsz9E6cIx3yszt7nuVFrjsMA9u9w/exec';
 var imgKepsekBase64 = '';
@@ -798,6 +795,7 @@ renderTabel();
 simpanLocal(true);
 tampilkanNotif('🔗 URL keterangan dihapus', 'info');
 }
+/* ====== UPLOAD FOTO KETERANGAN: langsung ke Drive agar pasti masuk PDF ====== */
 function uploadFotoKeterangan(grupIdx, barisIdx, input) {
 var f = input.files && input.files[0];
 if (!f) return;
@@ -808,11 +806,31 @@ return;
 }
 kompresGambarJpeg(f, 640, 480, function(base64) {
 if (!dataTabel[grupIdx] || !dataTabel[grupIdx].baris[barisIdx]) return;
+// Preview langsung pakai base64
 dataTabel[grupIdx].baris[barisIdx].keteranganGambar = base64;
 renderTabel();
-var ok = simpanLocal(true);
-if (ok) tampilkanNotif('📷 Foto keterangan terpasang', 'success');
-else tampilkanNotif('⚠️ Foto terpasang, tapi penyimpanan browser penuh', 'error');
+simpanLocal(true);
+
+if (!getBackendUrl()) {
+tampilkanNotif('⚠️ URL backend belum diatur — foto hanya tersimpan lokal', 'error');
+return;
+}
+tampilkanNotif('⏳ Meng-upload foto ke Drive...', 'info');
+postKeBackend({ action: 'uploadKeterangan', base64: base64 })
+.then(function(res) {
+if (res && res.ok && res.url) {
+if (dataTabel[grupIdx] && dataTabel[grupIdx].baris[barisIdx]) {
+dataTabel[grupIdx].baris[barisIdx].keteranganGambar = res.url;
+simpanLocal(true);
+tampilkanNotif('📷 Foto ter-upload ke Drive & siap masuk laporan PDF', 'success');
+}
+} else {
+tampilkanNotif('❌ Gagal upload foto ke Drive: ' + (res && res.error ? res.error : ''), 'error');
+}
+})
+.catch(function(err) {
+tampilkanNotif('❌ Gagal upload foto ke Drive: ' + err.message, 'error');
+});
 });
 input.value = '';
 }
@@ -859,7 +877,6 @@ isi += '<td contenteditable="true" data-grup="' + grupIndex + '" data-baris="' +
 isi += '<td contenteditable="true" data-grup="' + grupIndex + '" data-baris="' + barisIndex + '" data-field="topik">' + escapeHtml(baris.topik) + '</td>';
 isi += '<td contenteditable="true" data-grup="' + grupIndex + '" data-baris="' + barisIndex + '" data-field="bidang">' + escapeHtml(baris.bidang) + '</td>';
 isi += '<td contenteditable="true" data-grup="' + grupIndex + '" data-baris="' + barisIndex + '" data-field="jenis">' + escapeHtml(baris.jenis) + '</td>';
-/* Kolom Keterangan: teks + URL + foto */
 isi += '<td class="keterangan-cell">'
 + '<div class="ket-text" contenteditable="true" data-grup="' + grupIndex + '" data-baris="' + barisIndex + '">' + escapeHtml(baris.keterangan || '') + '</div>'
 + bangunMediaKeterangan(grupIndex, barisIndex, baris)
@@ -895,7 +912,6 @@ this.classList.add('edited');
 simpanLocal(true);
 });
 });
-/* Simpan teks keterangan (div editable terpisah) */
 document.querySelectorAll('.ket-text[contenteditable="true"]').forEach(function(cell) {
 cell.addEventListener('blur', function() {
 const g = parseInt(this.dataset.grup);
@@ -982,19 +998,18 @@ simpanLocal(true);
 tampilkanNotif('➖ Baris terakhir dihapus', 'error');
 }
 function simpanData() {
-  const ok = simpanLocal(false);
-  if (!ok) {
-    tampilkanNotif('❌ Gagal menyimpan', 'error');
-    return;
-  }
-  tampilkanNotif('💾 Data disimpan di browser', 'success');
-  kirimKeSpreadsheet(true);
-  // Simpan header dan TTD info ke backend juga
-  simpanHeaderKeBackend();
-  simpanTTDInfoKeBackend();
+const ok = simpanLocal(false);
+if (!ok) {
+tampilkanNotif('❌ Gagal menyimpan', 'error');
+return;
+}
+tampilkanNotif('💾 Data disimpan di browser', 'success');
+kirimKeSpreadsheet(true);
+simpanHeaderKeBackend();
+simpanTTDInfoKeBackend();
 }
 function muatUlangData() {
-loadHeaderFromStorage();
+loadHeaderDariStorageAtauBackend();
 const tersimpan = bacaLocal();
 if (tersimpan === null) {
 tampilkanNotif('⚠️ Tidak ada data tersimpan', 'error');
@@ -1009,113 +1024,6 @@ tampilkanNotif('📂 Data berhasil dimuat ulang', 'success');
 } catch (e) {
 tampilkanNotif('❌ Data rusak', 'error');
 }
-}
-/* ====== TTD INFO PERSISTENCE (Nama, NIP, Kota, Tanggal) ====== */
-
-function bacaTTDInfoDariForm() {
-  return {
-    kota: document.getElementById('kotaKepsek').value.trim(),
-    tanggal: document.getElementById('tanggalKepsek').value.trim(),
-    namaKepsek: document.getElementById('namaKepsek').value.trim(),
-    nipKepsek: document.getElementById('nipKepsek').value.trim(),
-    namaGuru: document.getElementById('namaGuruTTD').value.trim(),
-    nipGuru: document.getElementById('nipGuruTTD').value.trim()
-  };
-}
-
-function applyTTDInfoKeForm(ttdInfo) {
-  if (!ttdInfo) return;
-  if (ttdInfo.kota !== undefined && ttdInfo.kota !== '') document.getElementById('kotaKepsek').value = ttdInfo.kota;
-  if (ttdInfo.tanggal !== undefined && ttdInfo.tanggal !== '') document.getElementById('tanggalKepsek').value = ttdInfo.tanggal;
-  if (ttdInfo.namaKepsek !== undefined && ttdInfo.namaKepsek !== '') document.getElementById('namaKepsek').value = ttdInfo.namaKepsek;
-  if (ttdInfo.nipKepsek !== undefined && ttdInfo.nipKepsek !== '') document.getElementById('nipKepsek').value = ttdInfo.nipKepsek;
-  if (ttdInfo.namaGuru !== undefined && ttdInfo.namaGuru !== '') document.getElementById('namaGuruTTD').value = ttdInfo.namaGuru;
-  if (ttdInfo.nipGuru !== undefined && ttdInfo.nipGuru !== '') document.getElementById('nipGuruTTD').value = ttdInfo.nipGuru;
-  updatePreviewTTD();
-}
-
-function simpanTTDInfoKeStorage() {
-  var ttdInfo = bacaTTDInfoDariForm();
-  try {
-    localStorage.setItem(TTD_INFO_STORAGE_KEY, JSON.stringify(ttdInfo));
-  } catch (e) {}
-  return ttdInfo;
-}
-
-function muatTTDInfoDariStorage() {
-  try {
-    var saved = localStorage.getItem(TTD_INFO_STORAGE_KEY);
-    if (!saved) return null;
-    var ttdInfo = JSON.parse(saved);
-    var adaIsi = false;
-    Object.keys(ttdInfo).forEach(function(key) {
-      if (ttdInfo[key] && ttdInfo[key] !== '') adaIsi = true;
-    });
-    return adaIsi ? ttdInfo : null;
-  } catch (e) {
-    return null;
-  }
-}
-
-async function muatTTDInfoDariBackend() {
-  try {
-    var url = getBackendUrl();
-    if (!url) return null;
-    var res = await fetch(url + '?action=getTTDInfo');
-    var data = await res.json();
-    if (data.ok && data.ttdInfo) {
-      var adaIsi = false;
-      Object.keys(data.ttdInfo).forEach(function(key) {
-        if (data.ttdInfo[key] && data.ttdInfo[key] !== '') adaIsi = true;
-      });
-      return adaIsi ? data.ttdInfo : null;
-    }
-  } catch (e) {
-    console.error('Gagal muat TTD info dari backend:', e);
-  }
-  return null;
-}
-
-async function muatTTDInfoDariStorageAtauBackend() {
-  // 1. Coba dari localStorage dulu
-  var dariLocal = muatTTDInfoDariStorage();
-  if (dariLocal) {
-    applyTTDInfoKeForm(dariLocal);
-    return;
-  }
-
-  // 2. Jika localStorage kosong, ambil dari backend
-  var dariBackend = await muatTTDInfoDariBackend();
-  if (dariBackend) {
-    applyTTDInfoKeForm(dariBackend);
-    // Simpan juga ke localStorage agar cepat dimuat berikutnya
-    try {
-      localStorage.setItem(TTD_INFO_STORAGE_KEY, JSON.stringify(dariBackend));
-    } catch (e) {}
-  }
-}
-
-async function simpanTTDInfoKeBackend() {
-  try {
-    var ttdInfo = simpanTTDInfoKeStorage();
-    var url = getBackendUrl();
-    if (!url) return;
-    await postKeBackend({
-      action: 'simpanTTDInfo',
-      ttdInfo: ttdInfo
-    });
-  } catch (e) {
-    console.error('Gagal simpan TTD info ke backend:', e);
-  }
-}
-
-// Debounce agar tidak terlalu sering kirim ke backend
-var debounceTTDInfoTimer = null;
-function debounceSimpanTTDInfoKeBackend() {
-  if (debounceTTDInfoTimer) clearTimeout(debounceTTDInfoTimer);
-  debounceTTDInfoTimer = setTimeout(function() {
-    simpanTTDInfoKeBackend();
-  }, 1500);
 }
 function resetTabel() {
 if (!confirm('Yakin ingin membersihkan dashboard?\nData lama akan tetap ada di Sheet aktif dan diduplikasi ke Sheet Riwayat saat Anda menyimpan data baru.')) return;
@@ -1146,102 +1054,154 @@ link.download = 'Agenda-Belajar-Kelas-IX.csv';
 link.click();
 tampilkanNotif('⬇️ CSV diunduh', 'success');
 }
+/* ====== HEADER KOP: persistence localStorage + backend ====== */
 const HEADER_IDS = ['headerGovernment', 'headerSchool', 'headerAddress', 'headerContact'];
 function applyHeaderData(headerData) {
-  HEADER_IDS.forEach(function(id) {
-    var el = document.getElementById(id);
-    if (el && headerData[id] !== undefined && headerData[id] !== '') {
-      el.innerText = headerData[id];
-    }
-  });
+HEADER_IDS.forEach(function(id) {
+var el = document.getElementById(id);
+if (el && headerData[id] !== undefined && headerData[id] !== '') {
+el.innerText = headerData[id];
 }
-
+});
+}
 function saveHeaderToStorage() {
-  var headerData = {};
-  HEADER_IDS.forEach(function(id) {
-    var el = document.getElementById(id);
-    if (el) headerData[id] = el.innerText.trim();
-  });
-  try {
-    localStorage.setItem(HEADER_STORAGE_KEY, JSON.stringify(headerData));
-  } catch (e) {}
-  return headerData;
+var headerData = {};
+HEADER_IDS.forEach(function(id) {
+var el = document.getElementById(id);
+if (el) headerData[id] = el.innerText.trim();
+});
+try {
+localStorage.setItem(HEADER_STORAGE_KEY, JSON.stringify(headerData));
+} catch (e) {}
+return headerData;
 }
-
-function loadHeaderFromStorage() {
-  try {
-    var saved = localStorage.getItem(HEADER_STORAGE_KEY);
-    if (!saved) return null;
-    var headerData = JSON.parse(saved);
-    var adaIsi = false;
-    HEADER_IDS.forEach(function(id) {
-      if (headerData[id] && headerData[id] !== '') adaIsi = true;
-    });
-    return adaIsi ? headerData : null;
-  } catch (e) {
-    return null;
-  }
+function loadHeaderDariStorage() {
+try {
+var saved = localStorage.getItem(HEADER_STORAGE_KEY);
+if (!saved) return null;
+var headerData = JSON.parse(saved);
+var adaIsi = false;
+HEADER_IDS.forEach(function(id) {
+if (headerData[id] && headerData[id] !== '') adaIsi = true;
+});
+return adaIsi ? headerData : null;
+} catch (e) { return null; }
 }
-
 async function muatHeaderDariBackend() {
-  try {
-    var url = getBackendUrl();
-    if (!url) return null;
-    var res = await fetch(url + '?action=getHeader');
-    var data = await res.json();
-    if (data.ok && data.header) {
-      var adaIsi = false;
-      HEADER_IDS.forEach(function(id) {
-        if (data.header[id] && data.header[id] !== '') adaIsi = true;
-      });
-      return adaIsi ? data.header : null;
-    }
-  } catch (e) {
-    console.error('Gagal muat header dari backend:', e);
-  }
-  return null;
+try {
+var url = getBackendUrl();
+if (!url) return null;
+var res = await fetch(url + '?action=getHeader');
+var data = await res.json();
+if (data.ok && data.header) {
+var adaIsi = false;
+HEADER_IDS.forEach(function(id) {
+if (data.header[id] && data.header[id] !== '') adaIsi = true;
+});
+return adaIsi ? data.header : null;
 }
-
+} catch (e) { console.error('Gagal muat header dari backend:', e); }
+return null;
+}
 async function loadHeaderDariStorageAtauBackend() {
-  // 1. Coba dari localStorage dulu
-  var dariLocal = loadHeaderFromStorage();
-  if (dariLocal) {
-    applyHeaderData(dariLocal);
-    return;
-  }
-
-  // 2. Jika localStorage kosong, ambil dari backend
-  var dariBackend = await muatHeaderDariBackend();
-  if (dariBackend) {
-    applyHeaderData(dariBackend);
-    // Simpan juga ke localStorage agar cepat dimuat berikutnya
-    try {
-      localStorage.setItem(HEADER_STORAGE_KEY, JSON.stringify(dariBackend));
-    } catch (e) {}
-  }
+var dariLocal = loadHeaderDariStorage();
+if (dariLocal) { applyHeaderData(dariLocal); return; }
+var dariBackend = await muatHeaderDariBackend();
+if (dariBackend) {
+applyHeaderData(dariBackend);
+try { localStorage.setItem(HEADER_STORAGE_KEY, JSON.stringify(dariBackend)); } catch (e) {}
 }
-
+}
 async function simpanHeaderKeBackend() {
-  try {
-    var headerData = saveHeaderToStorage();
-    var url = getBackendUrl();
-    if (!url) return;
-    await postKeBackend({
-      action: 'simpanHeader',
-      header: headerData
-    });
-  } catch (e) {
-    console.error('Gagal simpan header ke backend:', e);
-  }
+try {
+var headerData = saveHeaderToStorage();
+var url = getBackendUrl();
+if (!url) return;
+await postKeBackend({ action: 'simpanHeader', header: headerData });
+} catch (e) { console.error('Gagal simpan header ke backend:', e); }
 }
-
-// Debounce agar tidak terlalu sering kirim ke backend
 var debounceHeaderTimer = null;
 function debounceSimpanHeaderKeBackend() {
-  if (debounceHeaderTimer) clearTimeout(debounceHeaderTimer);
-  debounceHeaderTimer = setTimeout(function() {
-    simpanHeaderKeBackend();
-  }, 1500);
+if (debounceHeaderTimer) clearTimeout(debounceHeaderTimer);
+debounceHeaderTimer = setTimeout(function() { simpanHeaderKeBackend(); }, 1500);
+}
+/* ====== TTD INFO: persistence localStorage + backend ====== */
+function bacaTTDInfoDariForm() {
+return {
+kota: document.getElementById('kotaKepsek').value.trim(),
+tanggal: document.getElementById('tanggalKepsek').value.trim(),
+namaKepsek: document.getElementById('namaKepsek').value.trim(),
+nipKepsek: document.getElementById('nipKepsek').value.trim(),
+namaGuru: document.getElementById('namaGuruTTD').value.trim(),
+nipGuru: document.getElementById('nipGuruTTD').value.trim()
+};
+}
+function applyTTDInfoKeForm(ttdInfo) {
+if (!ttdInfo) return;
+if (ttdInfo.kota !== undefined && ttdInfo.kota !== '') document.getElementById('kotaKepsek').value = ttdInfo.kota;
+if (ttdInfo.tanggal !== undefined && ttdInfo.tanggal !== '') document.getElementById('tanggalKepsek').value = ttdInfo.tanggal;
+if (ttdInfo.namaKepsek !== undefined && ttdInfo.namaKepsek !== '') document.getElementById('namaKepsek').value = ttdInfo.namaKepsek;
+if (ttdInfo.nipKepsek !== undefined && ttdInfo.nipKepsek !== '') document.getElementById('nipKepsek').value = ttdInfo.nipKepsek;
+if (ttdInfo.namaGuru !== undefined && ttdInfo.namaGuru !== '') document.getElementById('namaGuruTTD').value = ttdInfo.namaGuru;
+if (ttdInfo.nipGuru !== undefined && ttdInfo.nipGuru !== '') document.getElementById('nipGuruTTD').value = ttdInfo.nipGuru;
+updatePreviewTTD();
+}
+function simpanTTDInfoKeStorage() {
+var ttdInfo = bacaTTDInfoDariForm();
+try {
+localStorage.setItem(TTD_INFO_STORAGE_KEY, JSON.stringify(ttdInfo));
+} catch (e) {}
+return ttdInfo;
+}
+function muatTTDInfoDariStorage() {
+try {
+var saved = localStorage.getItem(TTD_INFO_STORAGE_KEY);
+if (!saved) return null;
+var ttdInfo = JSON.parse(saved);
+var adaIsi = false;
+Object.keys(ttdInfo).forEach(function(key) {
+if (ttdInfo[key] && ttdInfo[key] !== '') adaIsi = true;
+});
+return adaIsi ? ttdInfo : null;
+} catch (e) { return null; }
+}
+async function muatTTDInfoDariBackend() {
+try {
+var url = getBackendUrl();
+if (!url) return null;
+var res = await fetch(url + '?action=getTTDInfo');
+var data = await res.json();
+if (data.ok && data.ttdInfo) {
+var adaIsi = false;
+Object.keys(data.ttdInfo).forEach(function(key) {
+if (data.ttdInfo[key] && data.ttdInfo[key] !== '') adaIsi = true;
+});
+return adaIsi ? data.ttdInfo : null;
+}
+} catch (e) { console.error('Gagal muat TTD info dari backend:', e); }
+return null;
+}
+async function muatTTDInfoDariStorageAtauBackend() {
+var dariLocal = muatTTDInfoDariStorage();
+if (dariLocal) { applyTTDInfoKeForm(dariLocal); return; }
+var dariBackend = await muatTTDInfoDariBackend();
+if (dariBackend) {
+applyTTDInfoKeForm(dariBackend);
+try { localStorage.setItem(TTD_INFO_STORAGE_KEY, JSON.stringify(dariBackend)); } catch (e) {}
+}
+}
+async function simpanTTDInfoKeBackend() {
+try {
+var ttdInfo = simpanTTDInfoKeStorage();
+var url = getBackendUrl();
+if (!url) return;
+await postKeBackend({ action: 'simpanTTDInfo', ttdInfo: ttdInfo });
+} catch (e) { console.error('Gagal simpan TTD info ke backend:', e); }
+}
+var debounceTTDInfoTimer = null;
+function debounceSimpanTTDInfoKeBackend() {
+if (debounceTTDInfoTimer) clearTimeout(debounceTTDInfoTimer);
+debounceTTDInfoTimer = setTimeout(function() { simpanTTDInfoKeBackend(); }, 1500);
 }
 function previewGambar(inp, prevId, contId, type) {
 var f = inp.files[0];
@@ -1272,10 +1232,6 @@ document.getElementById('namaGuruTTD').value ? '(' + document.getElementById('na
 document.getElementById('previewNipGuru').textContent =
 document.getElementById('nipGuruTTD').value || '................................';
 }
-var ttdInputs = ['kotaKepsek','tanggalKepsek','namaKepsek','nipKepsek','namaGuruTTD','nipGuruTTD'];
-for (var i = 0; i < ttdInputs.length; i++) {
-document.getElementById(ttdInputs[i]).addEventListener('input', updatePreviewTTD);
-}
 function muatData() {
 const tersimpan = bacaLocal();
 if (tersimpan !== null) {
@@ -1287,46 +1243,42 @@ if (dataTabel.length > 0) tampilkanNotif('📂 Data tersimpan dimuat', 'info');
 }
 renderTabel();
 }
+window.addEventListener('beforeunload', function() {
+simpanLocal(true);
+});
 window.addEventListener('DOMContentLoaded', function() {
-  muatData();
-  loadHeaderDariStorageAtauBackend();
-  muatTTDInfoDariStorageAtauBackend();
-
-  // Header: simpan ke localStorage + backend saat blur
-  HEADER_IDS.forEach(function(id) {
-    var el = document.getElementById(id);
-    if (el) {
-      el.addEventListener('input', function() {
-        saveHeaderToStorage();
-      });
-      el.addEventListener('blur', function() {
-        saveHeaderToStorage();
-        debounceSimpanHeaderKeBackend();
-      });
-    }
-  });
-
-  // TTD Info: simpan ke localStorage + backend saat blur
-  var ttdInfoInputs = ['kotaKepsek', 'tanggalKepsek', 'namaKepsek', 'nipKepsek', 'namaGuruTTD', 'nipGuruTTD'];
-  ttdInfoInputs.forEach(function(id) {
-    var el = document.getElementById(id);
-    if (el) {
-      el.addEventListener('input', function() {
-        updatePreviewTTD();
-        simpanTTDInfoKeStorage();
-      });
-      el.addEventListener('blur', function() {
-        updatePreviewTTD();
-        simpanTTDInfoKeStorage();
-        debounceSimpanTTDInfoKeBackend();
-      });
-    }
-  });
-
-  muatLogoDariStorage();
-  var be = document.getElementById('backendUrl');
-  if (be) be.value = getBackendUrl();
-  if (getBackendUrl()) setBackendStatus('🔗 URL backend terpasang', '#0369a1');
+muatData();
+loadHeaderDariStorageAtauBackend();
+muatTTDInfoDariStorageAtauBackend();
+HEADER_IDS.forEach(function(id) {
+var el = document.getElementById(id);
+if (el) {
+el.addEventListener('input', function() { saveHeaderToStorage(); });
+el.addEventListener('blur', function() {
+saveHeaderToStorage();
+debounceSimpanHeaderKeBackend();
+});
+}
+});
+var ttdInfoInputs = ['kotaKepsek', 'tanggalKepsek', 'namaKepsek', 'nipKepsek', 'namaGuruTTD', 'nipGuruTTD'];
+ttdInfoInputs.forEach(function(id) {
+var el = document.getElementById(id);
+if (el) {
+el.addEventListener('input', function() {
+updatePreviewTTD();
+simpanTTDInfoKeStorage();
+});
+el.addEventListener('blur', function() {
+updatePreviewTTD();
+simpanTTDInfoKeStorage();
+debounceSimpanTTDInfoKeBackend();
+});
+}
+});
+muatLogoDariStorage();
+var be = document.getElementById('backendUrl');
+if (be) be.value = getBackendUrl();
+if (getBackendUrl()) setBackendStatus('🔗 URL backend terpasang', '#0369a1');
 });
 </script>
 </body>
