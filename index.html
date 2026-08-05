@@ -54,27 +54,6 @@ td.kelas-cell:focus { background:#fffbeb !important; outline:2px solid #8b5cf6; 
 tr.baris-tambahan { background:#faf5ff !important }
 td.cell-rowspan { background:#f8fafc !important; text-align:center; vertical-align:middle; font-weight:600; border:1px solid #000 !important }
 .col-aksi { width:110px !important; text-align:center !important; background:#f8fafc !important }
-
-/* ====== KOLOM KETERANGAN (TEKS + URL + FOTO) ====== */
-td.ket-cell { min-width:190px; }
-.ket-teks { min-height:22px; cursor:text; padding:2px 4px; border-radius:4px; transition:all 0.2s ease; }
-.ket-teks:hover { background:#fef9c3; }
-.ket-teks:focus { background:#fffbeb; outline:2px solid #8b5cf6; outline-offset:-2px; }
-.ket-teks.edited { background:#ecfdf5; }
-.ket-media { margin-top:6px; display:flex; flex-wrap:wrap; gap:6px; align-items:center; }
-.ket-link { font-size:0.82em; color:#6d28d9; text-decoration:underline; word-break:break-all; }
-.ket-foto-wrap { display:inline-flex; align-items:flex-start; gap:2px; }
-.ket-foto { max-width:64px; max-height:48px; border:1px solid #cbd5e1; border-radius:4px; cursor:zoom-in; }
-.ket-tools { margin-top:6px; display:flex; gap:4px; }
-.btn-mini { border:none; background:#e2e8f0; border-radius:5px; padding:3px 6px; cursor:pointer; font-size:0.8em; transition:all 0.2s; }
-.btn-mini:hover { background:#cbd5e1; transform:scale(1.05); }
-.btn-mini-danger { background:#fee2e2; }
-.btn-mini-danger:hover { background:#fecaca; }
-#fotoModal { position:fixed; inset:0; background:rgba(0,0,0,.75); display:none; align-items:center; justify-content:center; z-index:2000; cursor:zoom-out; }
-#fotoModal.show { display:flex; }
-#fotoModal img { max-width:92%; max-height:92%; border-radius:8px; }
-/* =================================================== */
-
 .btn-hapus { background:#ef4444; color:white; border:none; padding:6px 10px; border-radius:6px; cursor:pointer; font-size:0.85em; transition:all 0.2s }
 .btn-hapus:hover { background:#b91c1c; transform:scale(1.05) }
 .btn-plus { background:#8b5cf6; color:white; border:none; padding:6px 9px; border-radius:6px; cursor:pointer; font-size:0.85em; transition:all 0.2s; margin-right:4px }
@@ -90,7 +69,7 @@ td.ket-cell { min-width:190px; }
 .notif { position:fixed; top:20px; right:20px; background:#10b981; color:white; padding:14px 22px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.15); font-weight:500; z-index:1000; transform:translateX(400px); transition:transform 0.4s ease }
 .notif.show { transform:translateX(0) }
 .notif.error { background:#ef4444 }
-.notif.info { background:#8b5cf6 }
+.notif.info { background:#0ea5e9 }
 .print-btn { position:fixed; bottom:25px; right:25px; background:#10b981; color:white; border:none; padding:12px 22px; border-radius:30px; font-size:0.95em; font-weight:600; cursor:pointer; box-shadow:0 4px 15px rgba(16,185,129,0.4); transition:all 0.3s; z-index:100 }
 .print-btn:hover { background:#059669; transform:scale(1.05) }
 footer { background:#4c1d95; color:#cbd5e1; padding:25px 30px; text-align:center; font-size:0.9em }
@@ -115,6 +94,26 @@ footer strong { color:white }
 .ttd-final-box .nama{font-weight:bold;text-decoration:underline}
 .empty-state { text-align:center !important; color:#64748b !important; padding:25px !important }
 .empty-state .icon { font-size:2em; display:block; margin-bottom:8px }
+
+/* ====== Kolom Keterangan: teks + URL + foto ====== */
+td.keterangan-cell { min-width:210px; }
+.ket-text { min-height:30px; padding:4px 6px; border:1px dashed transparent; border-radius:4px; cursor:text; white-space:pre-wrap; overflow-wrap:break-word; word-break:normal; }
+.ket-text:hover { border-color:#cbd5e1; background:#f8fafc; }
+.ket-text:focus { border-color:#8b5cf6; background:#fffbeb; outline:none; }
+.ket-text:empty::before { content:"Ketik keterangan..."; color:#94a3b8; font-style:italic; font-size:0.85em; }
+.ket-media { margin-top:6px; display:flex; flex-direction:column; gap:5px; align-items:flex-start; }
+.ket-media-row { display:inline-flex; align-items:center; gap:4px; max-width:100%; }
+.ket-link { display:inline-block; font-size:0.8em; background:#eff6ff; border:1px solid #bfdbfe; color:#1d4ed8; padding:3px 8px; border-radius:12px; text-decoration:none; max-width:200px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.ket-link:hover { background:#dbeafe; }
+.ket-img { max-width:150px; max-height:100px; border-radius:6px; border:1px solid #cbd5e1; display:block; cursor:zoom-in; }
+.ket-tools { margin-top:6px; display:flex; gap:4px; flex-wrap:wrap; }
+.btn-mini { border:none; padding:3px 8px; border-radius:5px; cursor:pointer; font-size:0.75em; transition:all 0.2s; font-weight:600; }
+.btn-mini-url { background:#dbeafe; color:#1d4ed8; } .btn-mini-url:hover { background:#bfdbfe; }
+.btn-mini-foto { background:#fce7f3; color:#be185d; } .btn-mini-foto:hover { background:#fbcfe8; }
+.btn-mini-hapus { background:#fee2e2; color:#b91c1c; padding:3px 6px; } .btn-mini-hapus:hover { background:#fecaca; }
+.ket-lightbox { position:fixed; inset:0; background:rgba(15,23,42,0.8); display:flex; align-items:center; justify-content:center; z-index:2000; cursor:zoom-out; }
+.ket-lightbox img { max-width:92vw; max-height:92vh; border-radius:8px; box-shadow:0 10px 40px rgba(0,0,0,0.5); background:#fff; }
+
 @media (max-width:640px) {
 .judul-dokumen h3 { font-size:14px }
 section { padding:25px 18px }
@@ -154,14 +153,14 @@ td.cell-rowspan { background:#f0f0f0 !important; -webkit-print-color-adjust:exac
 td.kelas-cell { background:#ede9fe !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; text-align:center !important }
 tr.baris-tambahan { background:#f8f8f8 !important }
 td[contenteditable="true"]:hover, td[contenteditable="true"]:focus { outline:none !important; background:inherit !important }
-/* Kolom keterangan saat cetak */
+/* keterangan saat cetak */
 .ket-tools { display:none !important }
-.btn-mini { display:none !important }
-.ket-teks:hover, .ket-teks:focus { outline:none !important; background:inherit !important }
-.ket-foto { max-width:45px; max-height:34px }
-a.ket-link { color:#000 !important; text-decoration:none !important; font-size:6.5pt !important }
-a.ket-link::after { content:" (" attr(href) ")"; font-size:5.5pt; word-break:break-all; }
-#fotoModal { display:none !important }
+.btn-mini, .btn-mini-hapus { display:none !important }
+.ket-text { border:none !important; padding:0 !important; min-height:0 !important; background:transparent !important }
+.ket-text:empty::before { content:none !important }
+.ket-media { margin-top:2px !important; gap:2px !important }
+.ket-img { max-width:90px !important; max-height:55px !important }
+.ket-link { background:transparent !important; border:none !important; padding:0 !important; font-size:6.5pt !important; max-width:160px !important; }
 footer { background:#4c1d95 !important; padding:6px 12px !important; margin-top:6px !important; -webkit-print-color-adjust:exact; print-color-adjust:exact }
 footer p { font-size:0.7em }
 }
@@ -189,8 +188,7 @@ footer p { font-size:0.7em }
 <div class="info-banner">
 💡 <strong>Petunjuk:</strong>
 <br>• Semua cell bisa diedit langsung, termasuk <strong>Kelas</strong> dan <strong>Hari, Tanggal</strong>.
-<br>• Kolom <strong>Keterangan</strong> bisa diisi <strong>teks</strong>, <strong>link URL (🔗 URL)</strong>, dan <strong>upload foto (📷 Foto)</strong>.
-<br>• Klik foto pada kolom Keterangan untuk memperbesar; klik <strong>✖</strong> untuk menghapus URL/foto.
+<br>• Kolom <strong>Keterangan</strong> bisa diisi <strong>teks</strong>, referensi link (tombol <strong>🔗 URL</strong>), dan bukti foto (tombol <strong>📷 Foto</strong>).
 <br>• Gunakan tombol <strong>➕</strong> di kolom Aksi untuk menambah baris dalam No. yang sama.
 <br>• Klik <strong>💾 Simpan</strong> untuk menyimpan ke browser dan mengirim ke Spreadsheet.
 <br>• Klik <strong>📂 Muat Ulang</strong> untuk mengambil data terakhir dari penyimpanan browser.
@@ -312,12 +310,6 @@ footer p { font-size:0.7em }
 <p style="margin-top:6px; font-size:0.85em;">© 2026 — Data tersimpan otomatis di browser &amp; Google Spreadsheet.</p>
 </footer>
 </div>
-
-<!-- Modal preview foto keterangan -->
-<div id="fotoModal" onclick="tutupFotoModal()"><img id="fotoModalImg" alt="Preview foto"></div>
-<!-- Input file global untuk upload foto keterangan -->
-<input type="file" id="fileKetInput" accept="image/*" style="display:none" onchange="uploadFotoKeterangan(this)">
-
 <div id="notif" class="notif"></div>
 <button class="print-btn" onclick="window.print()">🖨️ Cetak / Simpan PDF</button>
 <script>
@@ -325,41 +317,39 @@ const STORAGE_KEY = 'agendaBK_kelas9';
 const BACKEND_KEY = 'agendaBK_backendUrl';
 const HEADER_STORAGE_KEY = 'agendaBK_headerData';
 const PERIODE_KEY = 'agendaBK_periodeBaru';
-const DEFAULT_BACKEND_URL = 'https://script.google.com/macros/s/AKfycbx4LjXzWuBoMJWhH3I1fxEsR7lB0lr2m1jbh72ZUbAeybAPRX09T14tr__stXSGYhM/exec';
+const DEFAULT_BACKEND_URL = 'https://script.google.com/macros/s/AKfycbwiqUBQ8KMeTzWws0wjVXrZXAZeAs283yu70V-T65Rsz9E6cIx3yszt7nuVFrjsMA9u9w/exec';
 var imgKepsekBase64 = '';
 var imgGuruBase64 = '';
 var logoKiriBase64 = '';
 var logoKananBase64 = '';
 var logoKiriUrl = '';
 var logoKananUrl = '';
-var targetFotoKet = null;
-
 let dataTabel = [
 {
 no: "1",
 hariTanggal: "Senin, 3 Agustus 2026",
 baris: [
-{ kelas: "9A", kehadiran: "28/28", pertemuan: "1", topik: "Menyongsong Kelas 9 (Growth Mindset)", bidang: "Pribadi", jenis: "Klasikal", keterangan: "Asesmen Kebutuhan Peserta Didik", url: "", foto: [] },
-{ kelas: "9B", kehadiran: "27/27", pertemuan: "1", topik: "Menyongsong Kelas 9 (Growth Mindset)", bidang: "Pribadi", jenis: "Klasikal", keterangan: "Asesmen Kebutuhan Peserta Didik", url: "", foto: [] }
+{ kelas: "9A", kehadiran: "28/28", pertemuan: "1", topik: "Menyongsong Kelas 9 (Growth Mindset)", bidang: "Pribadi", jenis: "Klasikal", keterangan: "Asesmen Kebutuhan Peserta Didik", keteranganUrl: "", keteranganGambar: "" },
+{ kelas: "9B", kehadiran: "27/27", pertemuan: "1", topik: "Menyongsong Kelas 9 (Growth Mindset)", bidang: "Pribadi", jenis: "Klasikal", keterangan: "Asesmen Kebutuhan Peserta Didik", keteranganUrl: "", keteranganGambar: "" }
 ]
 },
 {
 no: "2",
 hariTanggal: "Selasa, 4 Agustus 2026",
 baris: [
-{ kelas: "9A", kehadiran: "27/28", pertemuan: "2", topik: "Manajemen Stres & Kecemasan", bidang: "Pribadi", jenis: "Klasikal", keterangan: "Profil Pelajar Pancasila", url: "", foto: [] },
-{ kelas: "9B", kehadiran: "26/27", pertemuan: "2", topik: "Manajemen Stres & Kecemasan", bidang: "Pribadi", jenis: "Klasikal", keterangan: "Profil Pelajar Pancasila", url: "", foto: [] }
+{ kelas: "9A", kehadiran: "27/28", pertemuan: "2", topik: "Manajemen Stres & Kecemasan", bidang: "Pribadi", jenis: "Klasikal", keterangan: "Profil Pelajar Pancasila", keteranganUrl: "", keteranganGambar: "" },
+{ kelas: "9B", kehadiran: "26/27", pertemuan: "2", topik: "Manajemen Stres & Kecemasan", bidang: "Pribadi", jenis: "Klasikal", keterangan: "Profil Pelajar Pancasila", keteranganUrl: "", keteranganGambar: "" }
 ]
 }
 ];
-
 function escapeHtml(s) {
-  return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+return String(s === undefined || s === null ? '' : s)
+.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
-function shortenUrl(u) {
-  try { return u.length > 30 ? u.substring(0, 30) + '…' : u; } catch (e) { return u; }
+function singkatTeks(s, maks) {
+s = String(s || '');
+return s.length > maks ? s.substring(0, maks) + '…' : s;
 }
-
 function normalisasiData(data) {
 if (!Array.isArray(data)) return [];
 return data.map(function(grup) {
@@ -387,8 +377,8 @@ topik: b.topik !== undefined ? String(b.topik) : '',
 bidang: b.bidang !== undefined ? String(b.bidang) : '',
 jenis: b.jenis !== undefined ? String(b.jenis) : '',
 keterangan: b.keterangan !== undefined ? String(b.keterangan) : '',
-url: (b.url !== undefined && b.url !== null) ? String(b.url) : '',
-foto: Array.isArray(b.foto) ? b.foto.filter(function(x){ return typeof x === 'string' && x.length > 0; }) : []
+keteranganUrl: b.keteranganUrl !== undefined ? String(b.keteranganUrl) : '',
+keteranganGambar: b.keteranganGambar !== undefined ? String(b.keteranganGambar) : ''
 };
 }).filter(function(x) { return x !== null; });
 }
@@ -410,7 +400,7 @@ try { sessionStorage.setItem(STORAGE_KEY, json); } catch (e) {}
 return true;
 } catch (e) {
 console.error('Gagal simpan lokal:', e);
-if (!senyap) tampilkanNotif('❌ Gagal menyimpan (kemungkinan foto terlalu besar / penyimpanan penuh)', 'error');
+if (!senyap) tampilkanNotif('❌ Browser memblokir penyimpanan lokal', 'error');
 return false;
 }
 }
@@ -536,8 +526,8 @@ topik: b.topik || '',
 bidang: b.bidang || '',
 jenis: b.jenis || '',
 keterangan: b.keterangan || '',
-url: b.url || '',
-foto: Array.isArray(b.foto) ? b.foto : []
+keteranganUrl: b.keteranganUrl || '',
+keteranganGambar: b.keteranganGambar || ''
 };
 })
 };
@@ -585,7 +575,7 @@ img.src = e.target.result;
 };
 reader.readAsDataURL(file);
 }
-function kompresGambarJPG(file, maksLebar, maksTinggi, kualitas, cb) {
+function kompresGambarJpeg(file, maksLebar, maksTinggi, cb) {
 var reader = new FileReader();
 reader.onload = function(e) {
 var img = new Image();
@@ -594,8 +584,11 @@ var skala = Math.min(1, maksLebar / img.width, maksTinggi / img.height);
 var w = Math.round(img.width * skala), h = Math.round(img.height * skala);
 var c = document.createElement('canvas');
 c.width = w; c.height = h;
-c.getContext('2d').drawImage(img, 0, 0, w, h);
-cb(c.toDataURL('image/jpeg', kualitas));
+var ctx = c.getContext('2d');
+ctx.fillStyle = '#ffffff';
+ctx.fillRect(0, 0, w, h);
+ctx.drawImage(img, 0, 0, w, h);
+cb(c.toDataURL('image/jpeg', 0.85));
 };
 img.onerror = function() { cb(e.target.result); };
 img.src = e.target.result;
@@ -754,73 +747,95 @@ if (!ok) return;
 window.open(getBackendUrl() + '?page=laporan', '_blank');
 tampilkanNotif('📄 Halaman laporan dibuka.', 'info');
 }
-
-/* ====== FUNGSI KOLOM KETERANGAN: URL & FOTO ====== */
-function setUrlKeterangan(grupIndex, barisIndex) {
-var grup = dataTabel[grupIndex];
-var baris = grup && grup.baris[barisIndex];
-if (!baris) return;
-var awal = baris.url || '';
-var input = prompt('Masukkan URL untuk kolom Keterangan (kosongkan lalu OK untuk menghapus):', awal || 'https://');
+/* ====== Keterangan: builder media (URL + foto) ====== */
+function bangunMediaKeterangan(g, b, baris) {
+var adaUrl = baris.keteranganUrl && baris.keteranganUrl.trim() !== '';
+var adaFoto = baris.keteranganGambar && baris.keteranganGambar.trim() !== '';
+if (!adaUrl && !adaFoto) return '';
+var html = '<div class="ket-media">';
+if (adaUrl) {
+html += '<span class="ket-media-row">'
++ '<a class="ket-link" href="' + escapeHtml(baris.keteranganUrl) + '" target="_blank" rel="noopener" title="' + escapeHtml(baris.keteranganUrl) + '">🔗 ' + escapeHtml(singkatTeks(baris.keteranganUrl, 30)) + '</a>'
++ '<button class="btn-mini btn-mini-hapus" title="Hapus URL" onclick="hapusUrlKeterangan(' + g + ',' + b + ')">✖</button>'
++ '</span>';
+}
+if (adaFoto) {
+html += '<span class="ket-media-row">'
++ '<img class="ket-img" src="' + baris.keteranganGambar + '" alt="Foto keterangan" title="Klik untuk memperbesar" onclick="lihatFotoKeterangan(' + g + ',' + b + ')">'
++ '<button class="btn-mini btn-mini-hapus" title="Hapus foto" onclick="hapusFotoKeterangan(' + g + ',' + b + ')">✖</button>'
++ '</span>';
+}
+html += '</div>';
+return html;
+}
+function inputUrlKeterangan(grupIdx, barisIdx) {
+if (!dataTabel[grupIdx] || !dataTabel[grupIdx].baris[barisIdx]) return;
+var sekarang = dataTabel[grupIdx].baris[barisIdx].keteranganUrl || '';
+var input = prompt('Masukkan URL referensi untuk keterangan baris ini:', sekarang);
 if (input === null) return;
-baris.url = input.trim();
+var url = input.trim();
+if (url === '') {
+dataTabel[grupIdx].baris[barisIdx].keteranganUrl = '';
+renderTabel();
 simpanLocal(true);
-renderTabel();
-tampilkanNotif(baris.url ? '🔗 URL disimpan di Keterangan' : '🔗 URL dihapus dari Keterangan', 'info');
+tampilkanNotif('🔗 URL keterangan dikosongkan', 'info');
+return;
 }
-function hapusUrlKeterangan(grupIndex, barisIndex) {
-var grup = dataTabel[grupIndex];
-var baris = grup && grup.baris[barisIndex];
-if (!baris) return;
-if (!confirm('Hapus URL dari keterangan baris ini?')) return;
-baris.url = '';
+if (!/^https?:\/\//i.test(url)) url = 'https://' + url;
+try { new URL(url); } catch (e) {
+tampilkanNotif('❌ Format URL tidak valid', 'error');
+return;
+}
+dataTabel[grupIdx].baris[barisIdx].keteranganUrl = url;
+renderTabel();
 simpanLocal(true);
-renderTabel();
-tampilkanNotif('🔗 URL dihapus', 'info');
+tampilkanNotif('🔗 URL keterangan disimpan', 'success');
 }
-function pilihFotoKeterangan(grupIndex, barisIndex) {
-targetFotoKet = { g: grupIndex, b: barisIndex };
-document.getElementById('fileKetInput').click();
-}
-function uploadFotoKeterangan(inp) {
-var f = inp.files && inp.files[0];
-var t = targetFotoKet;
-inp.value = '';
-if (!f || !t) return;
-kompresGambarJPG(f, 420, 420, 0.72, function(b64) {
-var grup = dataTabel[t.g];
-var baris = grup && grup.baris[t.b];
-if (!baris) return;
-if (!Array.isArray(baris.foto)) baris.foto = [];
-baris.foto.push(b64);
-var ok = simpanLocal(false);
+function hapusUrlKeterangan(grupIdx, barisIdx) {
+if (!dataTabel[grupIdx] || !dataTabel[grupIdx].baris[barisIdx]) return;
+dataTabel[grupIdx].baris[barisIdx].keteranganUrl = '';
 renderTabel();
-if (ok) tampilkanNotif('📷 Foto ditambahkan ke Keterangan', 'success');
+simpanLocal(true);
+tampilkanNotif('🔗 URL keterangan dihapus', 'info');
+}
+function uploadFotoKeterangan(grupIdx, barisIdx, input) {
+var f = input.files && input.files[0];
+if (!f) return;
+if (!/^image\//.test(f.type)) {
+tampilkanNotif('❌ File harus berupa gambar', 'error');
+input.value = '';
+return;
+}
+kompresGambarJpeg(f, 640, 480, function(base64) {
+if (!dataTabel[grupIdx] || !dataTabel[grupIdx].baris[barisIdx]) return;
+dataTabel[grupIdx].baris[barisIdx].keteranganGambar = base64;
+renderTabel();
+var ok = simpanLocal(true);
+if (ok) tampilkanNotif('📷 Foto keterangan terpasang', 'success');
+else tampilkanNotif('⚠️ Foto terpasang, tapi penyimpanan browser penuh', 'error');
 });
+input.value = '';
 }
-function hapusFotoKeterangan(grupIndex, barisIndex, idx) {
-var grup = dataTabel[grupIndex];
-var baris = grup && grup.baris[barisIndex];
-if (!baris || !Array.isArray(baris.foto)) return;
-if (!confirm('Hapus foto ini dari keterangan?')) return;
-baris.foto.splice(idx, 1);
-simpanLocal(true);
+function hapusFotoKeterangan(grupIdx, barisIdx) {
+if (!confirm('Hapus foto keterangan ini?')) return;
+if (!dataTabel[grupIdx] || !dataTabel[grupIdx].baris[barisIdx]) return;
+dataTabel[grupIdx].baris[barisIdx].keteranganGambar = '';
 renderTabel();
-tampilkanNotif('📷 Foto dihapus dari Keterangan', 'info');
+simpanLocal(true);
+tampilkanNotif('🗑️ Foto keterangan dihapus', 'info');
 }
-function lihatFotoKet(grupIndex, barisIndex, idx) {
-var grup = dataTabel[grupIndex];
-var baris = grup && grup.baris[barisIndex];
-if (!baris || !Array.isArray(baris.foto) || !baris.foto[idx]) return;
-document.getElementById('fotoModalImg').src = baris.foto[idx];
-document.getElementById('fotoModal').classList.add('show');
+function lihatFotoKeterangan(grupIdx, barisIdx) {
+if (!dataTabel[grupIdx] || !dataTabel[grupIdx].baris[barisIdx]) return;
+var src = dataTabel[grupIdx].baris[barisIdx].keteranganGambar;
+if (!src) return;
+var overlay = document.createElement('div');
+overlay.className = 'ket-lightbox';
+overlay.innerHTML = '<img src="' + src + '" alt="Foto keterangan">';
+overlay.addEventListener('click', function() {
+if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
+});
+document.body.appendChild(overlay);
 }
-function tutupFotoModal() {
-document.getElementById('fotoModal').classList.remove('show');
-document.getElementById('fotoModalImg').src = '';
-}
-/* ================================================= */
-
 function renderTabel() {
 const tbody = document.getElementById('tbody-kelas9');
 tbody.innerHTML = '';
@@ -844,36 +859,16 @@ isi += '<td contenteditable="true" data-grup="' + grupIndex + '" data-baris="' +
 isi += '<td contenteditable="true" data-grup="' + grupIndex + '" data-baris="' + barisIndex + '" data-field="topik">' + escapeHtml(baris.topik) + '</td>';
 isi += '<td contenteditable="true" data-grup="' + grupIndex + '" data-baris="' + barisIndex + '" data-field="bidang">' + escapeHtml(baris.bidang) + '</td>';
 isi += '<td contenteditable="true" data-grup="' + grupIndex + '" data-baris="' + barisIndex + '" data-field="jenis">' + escapeHtml(baris.jenis) + '</td>';
-
 /* Kolom Keterangan: teks + URL + foto */
-isi += '<td class="ket-cell">';
-isi += '<div class="ket-teks" contenteditable="true" data-grup="' + grupIndex + '" data-baris="' + barisIndex + '" data-field="keterangan">' + escapeHtml(baris.keterangan) + '</div>';
-var adaUrl = !!baris.url;
-var adaFoto = Array.isArray(baris.foto) && baris.foto.length > 0;
-if (adaUrl || adaFoto) {
-isi += '<div class="ket-media">';
-if (adaUrl) {
-isi += '<span style="display:inline-flex;align-items:center;gap:2px;">';
-isi += '<a class="ket-link" href="' + escapeHtml(baris.url) + '" target="_blank" rel="noopener" title="' + escapeHtml(baris.url) + '">🔗 ' + escapeHtml(shortenUrl(baris.url)) + '</a>';
-isi += '<button class="btn-mini btn-mini-danger" onclick="hapusUrlKeterangan(' + grupIndex + ',' + barisIndex + ')" title="Hapus URL">✖</button>';
-isi += '</span>';
-}
-if (adaFoto) {
-baris.foto.forEach(function(f, fi) {
-isi += '<span class="ket-foto-wrap">';
-isi += '<img class="ket-foto" src="' + f + '" onclick="lihatFotoKet(' + grupIndex + ',' + barisIndex + ',' + fi + ')" title="Klik untuk memperbesar">';
-isi += '<button class="btn-mini btn-mini-danger" onclick="hapusFotoKeterangan(' + grupIndex + ',' + barisIndex + ',' + fi + ')" title="Hapus foto">✖</button>';
-isi += '</span>';
-});
-}
-isi += '</div>';
-}
-isi += '<div class="ket-tools">';
-isi += '<button class="btn-mini" onclick="setUrlKeterangan(' + grupIndex + ',' + barisIndex + ')" title="Isi / ubah URL">🔗 URL</button>';
-isi += '<button class="btn-mini" onclick="pilihFotoKeterangan(' + grupIndex + ',' + barisIndex + ')" title="Upload foto">📷 Foto</button>';
-isi += '</div>';
-isi += '</td>';
-
+isi += '<td class="keterangan-cell">'
++ '<div class="ket-text" contenteditable="true" data-grup="' + grupIndex + '" data-baris="' + barisIndex + '">' + escapeHtml(baris.keterangan || '') + '</div>'
++ bangunMediaKeterangan(grupIndex, barisIndex, baris)
++ '<div class="ket-tools">'
++ '<button class="btn-mini btn-mini-url" title="Isi / edit URL referensi" onclick="inputUrlKeterangan(' + grupIndex + ',' + barisIndex + ')">🔗 URL</button>'
++ '<button class="btn-mini btn-mini-foto" title="Upload foto pendukung" onclick="document.getElementById(\'ketFile-' + grupIndex + '-' + barisIndex + '\').click()">📷 Foto</button>'
++ '<input type="file" id="ketFile-' + grupIndex + '-' + barisIndex + '" accept="image/*" style="display:none" onchange="uploadFotoKeterangan(' + grupIndex + ',' + barisIndex + ', this)">'
++ '</div>'
++ '</td>';
 isi += '<td class="col-aksi">';
 isi += '<button class="btn-plus" onclick="tambahBarisKeGrup(' + grupIndex + ')" title="Tambah baris">➕</button>';
 isi += '<button class="btn-hapus" onclick="hapusBaris(' + grupIndex + ', ' + barisIndex + ')" title="Hapus baris">🗑️</button>';
@@ -882,12 +877,12 @@ tr.innerHTML = isi;
 tbody.appendChild(tr);
 });
 });
-document.querySelectorAll('#tabel-kelas9 [contenteditable="true"]').forEach(function(el) {
-el.addEventListener('blur', function() {
+document.querySelectorAll('td[contenteditable="true"]').forEach(function(cell) {
+cell.addEventListener('blur', function() {
 const grupIdx = parseInt(this.dataset.grup);
 const barisIdx = parseInt(this.dataset.baris);
 const field = this.dataset.field;
-if (isNaN(grupIdx) || !dataTabel[grupIdx]) return;
+if (!dataTabel[grupIdx]) return;
 if (field === 'no' || field === 'hariTanggal') {
 dataTabel[grupIdx][field] = this.innerText.trim();
 if (field === 'hariTanggal') {
@@ -895,11 +890,25 @@ dataTabel[grupIdx].bulan = this.innerText.trim();
 }
 } else if (!isNaN(barisIdx) && dataTabel[grupIdx].baris[barisIdx]) {
 dataTabel[grupIdx].baris[barisIdx][field] = this.innerText.trim();
-} else {
-return;
 }
 this.classList.add('edited');
 simpanLocal(true);
+});
+});
+/* Simpan teks keterangan (div editable terpisah) */
+document.querySelectorAll('.ket-text[contenteditable="true"]').forEach(function(cell) {
+cell.addEventListener('blur', function() {
+const g = parseInt(this.dataset.grup);
+const b = parseInt(this.dataset.baris);
+if (dataTabel[g] && dataTabel[g].baris[b]) {
+dataTabel[g].baris[b].keterangan = this.innerText.trim();
+simpanLocal(true);
+}
+});
+cell.addEventListener('paste', function(e) {
+e.preventDefault();
+var teks = (e.clipboardData || window.clipboardData).getData('text/plain');
+document.execCommand('insertText', false, teks);
 });
 });
 }
@@ -916,8 +925,8 @@ topik: 'Topik Layanan Tambahan',
 bidang: 'Pribadi',
 jenis: 'Klasikal',
 keterangan: 'Pertemuan tambahan',
-url: '',
-foto: []
+keteranganUrl: '',
+keteranganGambar: ''
 });
 renderTabel();
 simpanLocal(true);
@@ -944,8 +953,8 @@ topik: 'Topik Baru',
 bidang: 'Pribadi',
 jenis: 'Klasikal',
 keterangan: '—',
-url: '',
-foto: []
+keteranganUrl: '',
+keteranganGambar: ''
 }]
 });
 renderTabel();
@@ -973,13 +982,16 @@ simpanLocal(true);
 tampilkanNotif('➖ Baris terakhir dihapus', 'error');
 }
 function simpanData() {
-const ok = simpanLocal(false);
-if (!ok) {
-tampilkanNotif('❌ Gagal menyimpan', 'error');
-return;
-}
-tampilkanNotif('💾 Data disimpan di browser', 'success');
-kirimKeSpreadsheet(true);
+  const ok = simpanLocal(false);
+  if (!ok) {
+    tampilkanNotif('❌ Gagal menyimpan', 'error');
+    return;
+  }
+  tampilkanNotif('💾 Data disimpan di browser', 'success');
+  kirimKeSpreadsheet(true);
+  // Simpan header dan TTD info ke backend juga
+  simpanHeaderKeBackend();
+  simpanTTDInfoKeBackend();
 }
 function muatUlangData() {
 loadHeaderFromStorage();
@@ -998,6 +1010,113 @@ tampilkanNotif('📂 Data berhasil dimuat ulang', 'success');
 tampilkanNotif('❌ Data rusak', 'error');
 }
 }
+/* ====== TTD INFO PERSISTENCE (Nama, NIP, Kota, Tanggal) ====== */
+
+function bacaTTDInfoDariForm() {
+  return {
+    kota: document.getElementById('kotaKepsek').value.trim(),
+    tanggal: document.getElementById('tanggalKepsek').value.trim(),
+    namaKepsek: document.getElementById('namaKepsek').value.trim(),
+    nipKepsek: document.getElementById('nipKepsek').value.trim(),
+    namaGuru: document.getElementById('namaGuruTTD').value.trim(),
+    nipGuru: document.getElementById('nipGuruTTD').value.trim()
+  };
+}
+
+function applyTTDInfoKeForm(ttdInfo) {
+  if (!ttdInfo) return;
+  if (ttdInfo.kota !== undefined && ttdInfo.kota !== '') document.getElementById('kotaKepsek').value = ttdInfo.kota;
+  if (ttdInfo.tanggal !== undefined && ttdInfo.tanggal !== '') document.getElementById('tanggalKepsek').value = ttdInfo.tanggal;
+  if (ttdInfo.namaKepsek !== undefined && ttdInfo.namaKepsek !== '') document.getElementById('namaKepsek').value = ttdInfo.namaKepsek;
+  if (ttdInfo.nipKepsek !== undefined && ttdInfo.nipKepsek !== '') document.getElementById('nipKepsek').value = ttdInfo.nipKepsek;
+  if (ttdInfo.namaGuru !== undefined && ttdInfo.namaGuru !== '') document.getElementById('namaGuruTTD').value = ttdInfo.namaGuru;
+  if (ttdInfo.nipGuru !== undefined && ttdInfo.nipGuru !== '') document.getElementById('nipGuruTTD').value = ttdInfo.nipGuru;
+  updatePreviewTTD();
+}
+
+function simpanTTDInfoKeStorage() {
+  var ttdInfo = bacaTTDInfoDariForm();
+  try {
+    localStorage.setItem(TTD_INFO_STORAGE_KEY, JSON.stringify(ttdInfo));
+  } catch (e) {}
+  return ttdInfo;
+}
+
+function muatTTDInfoDariStorage() {
+  try {
+    var saved = localStorage.getItem(TTD_INFO_STORAGE_KEY);
+    if (!saved) return null;
+    var ttdInfo = JSON.parse(saved);
+    var adaIsi = false;
+    Object.keys(ttdInfo).forEach(function(key) {
+      if (ttdInfo[key] && ttdInfo[key] !== '') adaIsi = true;
+    });
+    return adaIsi ? ttdInfo : null;
+  } catch (e) {
+    return null;
+  }
+}
+
+async function muatTTDInfoDariBackend() {
+  try {
+    var url = getBackendUrl();
+    if (!url) return null;
+    var res = await fetch(url + '?action=getTTDInfo');
+    var data = await res.json();
+    if (data.ok && data.ttdInfo) {
+      var adaIsi = false;
+      Object.keys(data.ttdInfo).forEach(function(key) {
+        if (data.ttdInfo[key] && data.ttdInfo[key] !== '') adaIsi = true;
+      });
+      return adaIsi ? data.ttdInfo : null;
+    }
+  } catch (e) {
+    console.error('Gagal muat TTD info dari backend:', e);
+  }
+  return null;
+}
+
+async function muatTTDInfoDariStorageAtauBackend() {
+  // 1. Coba dari localStorage dulu
+  var dariLocal = muatTTDInfoDariStorage();
+  if (dariLocal) {
+    applyTTDInfoKeForm(dariLocal);
+    return;
+  }
+
+  // 2. Jika localStorage kosong, ambil dari backend
+  var dariBackend = await muatTTDInfoDariBackend();
+  if (dariBackend) {
+    applyTTDInfoKeForm(dariBackend);
+    // Simpan juga ke localStorage agar cepat dimuat berikutnya
+    try {
+      localStorage.setItem(TTD_INFO_STORAGE_KEY, JSON.stringify(dariBackend));
+    } catch (e) {}
+  }
+}
+
+async function simpanTTDInfoKeBackend() {
+  try {
+    var ttdInfo = simpanTTDInfoKeStorage();
+    var url = getBackendUrl();
+    if (!url) return;
+    await postKeBackend({
+      action: 'simpanTTDInfo',
+      ttdInfo: ttdInfo
+    });
+  } catch (e) {
+    console.error('Gagal simpan TTD info ke backend:', e);
+  }
+}
+
+// Debounce agar tidak terlalu sering kirim ke backend
+var debounceTTDInfoTimer = null;
+function debounceSimpanTTDInfoKeBackend() {
+  if (debounceTTDInfoTimer) clearTimeout(debounceTTDInfoTimer);
+  debounceTTDInfoTimer = setTimeout(function() {
+    simpanTTDInfoKeBackend();
+  }, 1500);
+}
 function resetTabel() {
 if (!confirm('Yakin ingin membersihkan dashboard?\nData lama akan tetap ada di Sheet aktif dan diduplikasi ke Sheet Riwayat saat Anda menyimpan data baru.')) return;
 try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
@@ -1007,14 +1126,17 @@ dataTabel = [];
 renderTabel();
 tampilkanNotif('🧹 Dashboard dibersihkan — penyimpanan berikutnya akan menduplikasi data lama ke Riwayat', 'info');
 }
+function csvEsc(s) {
+s = String(s === undefined || s === null ? '' : s);
+return s.replace(/"/g, '""');
+}
 function eksporCSV() {
-let csv = 'No,Hari/Tanggal,Kelas,Kehadiran,Pertemuan,Topik,Bidang,Jenis,Keterangan,URL,Foto\n';
+let csv = 'No,Hari/Tanggal,Kelas,Kehadiran,Pertemuan,Topik,Bidang,Jenis,Keterangan,URL Keterangan,Foto Keterangan\n';
 dataTabel.forEach(function(grup) {
 grup.baris.forEach(function(baris, index) {
 const no = index === 0 ? grup.no : '';
 const ht = index === 0 ? (grup.hariTanggal || grup.bulan || '') : '';
-const jumlahFoto = Array.isArray(baris.foto) && baris.foto.length > 0 ? baris.foto.length + ' foto' : '';
-csv += '"' + no + '","' + ht + '","' + baris.kelas + '","' + baris.kehadiran + '","' + baris.pertemuan + '","' + baris.topik + '","' + baris.bidang + '","' + baris.jenis + '","' + baris.keterangan + '","' + (baris.url || '') + '","' + jumlahFoto + '"\n';
+csv += '"' + csvEsc(no) + '","' + csvEsc(ht) + '","' + csvEsc(baris.kelas) + '","' + csvEsc(baris.kehadiran) + '","' + csvEsc(baris.pertemuan) + '","' + csvEsc(baris.topik) + '","' + csvEsc(baris.bidang) + '","' + csvEsc(baris.jenis) + '","' + csvEsc(baris.keterangan) + '","' + csvEsc(baris.keteranganUrl || '') + '","' + csvEsc(baris.keteranganGambar ? '[ada foto]' : '') + '"\n';
 });
 });
 const blob = new Blob(['\ufeff' + csv], { type: 'text/csv;charset=utf-8;' });
@@ -1025,28 +1147,101 @@ link.click();
 tampilkanNotif('⬇️ CSV diunduh', 'success');
 }
 const HEADER_IDS = ['headerGovernment', 'headerSchool', 'headerAddress', 'headerContact'];
+function applyHeaderData(headerData) {
+  HEADER_IDS.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el && headerData[id] !== undefined && headerData[id] !== '') {
+      el.innerText = headerData[id];
+    }
+  });
+}
+
 function saveHeaderToStorage() {
-var headerData = {};
-HEADER_IDS.forEach(function(id) {
-var el = document.getElementById(id);
-if (el) headerData[id] = el.innerText.trim();
-});
-try {
-localStorage.setItem(HEADER_STORAGE_KEY, JSON.stringify(headerData));
-} catch (e) {}
+  var headerData = {};
+  HEADER_IDS.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) headerData[id] = el.innerText.trim();
+  });
+  try {
+    localStorage.setItem(HEADER_STORAGE_KEY, JSON.stringify(headerData));
+  } catch (e) {}
+  return headerData;
 }
+
 function loadHeaderFromStorage() {
-try {
-var saved = localStorage.getItem(HEADER_STORAGE_KEY);
-if (!saved) return;
-var headerData = JSON.parse(saved);
-HEADER_IDS.forEach(function(id) {
-var el = document.getElementById(id);
-if (el && headerData[id] !== undefined && headerData[id] !== '') {
-el.innerText = headerData[id];
+  try {
+    var saved = localStorage.getItem(HEADER_STORAGE_KEY);
+    if (!saved) return null;
+    var headerData = JSON.parse(saved);
+    var adaIsi = false;
+    HEADER_IDS.forEach(function(id) {
+      if (headerData[id] && headerData[id] !== '') adaIsi = true;
+    });
+    return adaIsi ? headerData : null;
+  } catch (e) {
+    return null;
+  }
 }
-});
-} catch (e) {}
+
+async function muatHeaderDariBackend() {
+  try {
+    var url = getBackendUrl();
+    if (!url) return null;
+    var res = await fetch(url + '?action=getHeader');
+    var data = await res.json();
+    if (data.ok && data.header) {
+      var adaIsi = false;
+      HEADER_IDS.forEach(function(id) {
+        if (data.header[id] && data.header[id] !== '') adaIsi = true;
+      });
+      return adaIsi ? data.header : null;
+    }
+  } catch (e) {
+    console.error('Gagal muat header dari backend:', e);
+  }
+  return null;
+}
+
+async function loadHeaderDariStorageAtauBackend() {
+  // 1. Coba dari localStorage dulu
+  var dariLocal = loadHeaderFromStorage();
+  if (dariLocal) {
+    applyHeaderData(dariLocal);
+    return;
+  }
+
+  // 2. Jika localStorage kosong, ambil dari backend
+  var dariBackend = await muatHeaderDariBackend();
+  if (dariBackend) {
+    applyHeaderData(dariBackend);
+    // Simpan juga ke localStorage agar cepat dimuat berikutnya
+    try {
+      localStorage.setItem(HEADER_STORAGE_KEY, JSON.stringify(dariBackend));
+    } catch (e) {}
+  }
+}
+
+async function simpanHeaderKeBackend() {
+  try {
+    var headerData = saveHeaderToStorage();
+    var url = getBackendUrl();
+    if (!url) return;
+    await postKeBackend({
+      action: 'simpanHeader',
+      header: headerData
+    });
+  } catch (e) {
+    console.error('Gagal simpan header ke backend:', e);
+  }
+}
+
+// Debounce agar tidak terlalu sering kirim ke backend
+var debounceHeaderTimer = null;
+function debounceSimpanHeaderKeBackend() {
+  if (debounceHeaderTimer) clearTimeout(debounceHeaderTimer);
+  debounceHeaderTimer = setTimeout(function() {
+    simpanHeaderKeBackend();
+  }, 1500);
 }
 function previewGambar(inp, prevId, contId, type) {
 var f = inp.files[0];
@@ -1092,27 +1287,46 @@ if (dataTabel.length > 0) tampilkanNotif('📂 Data tersimpan dimuat', 'info');
 }
 renderTabel();
 }
-window.addEventListener('beforeunload', function() {
-simpanLocal(true);
-});
-document.addEventListener('keydown', function(e) {
-if (e.key === 'Escape') tutupFotoModal();
-});
 window.addEventListener('DOMContentLoaded', function() {
-muatData();
-loadHeaderFromStorage();
-HEADER_IDS.forEach(function(id) {
-var el = document.getElementById(id);
-if (el) {
-el.addEventListener('blur', saveHeaderToStorage);
-el.addEventListener('input', saveHeaderToStorage);
-}
-});
-updatePreviewTTD();
-muatLogoDariStorage();
-var be = document.getElementById('backendUrl');
-if (be) be.value = getBackendUrl();
-if (getBackendUrl()) setBackendStatus('🔗 URL backend terpasang', '#0369a1');
+  muatData();
+  loadHeaderDariStorageAtauBackend();
+  muatTTDInfoDariStorageAtauBackend();
+
+  // Header: simpan ke localStorage + backend saat blur
+  HEADER_IDS.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) {
+      el.addEventListener('input', function() {
+        saveHeaderToStorage();
+      });
+      el.addEventListener('blur', function() {
+        saveHeaderToStorage();
+        debounceSimpanHeaderKeBackend();
+      });
+    }
+  });
+
+  // TTD Info: simpan ke localStorage + backend saat blur
+  var ttdInfoInputs = ['kotaKepsek', 'tanggalKepsek', 'namaKepsek', 'nipKepsek', 'namaGuruTTD', 'nipGuruTTD'];
+  ttdInfoInputs.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) {
+      el.addEventListener('input', function() {
+        updatePreviewTTD();
+        simpanTTDInfoKeStorage();
+      });
+      el.addEventListener('blur', function() {
+        updatePreviewTTD();
+        simpanTTDInfoKeStorage();
+        debounceSimpanTTDInfoKeBackend();
+      });
+    }
+  });
+
+  muatLogoDariStorage();
+  var be = document.getElementById('backendUrl');
+  if (be) be.value = getBackendUrl();
+  if (getBackendUrl()) setBackendStatus('🔗 URL backend terpasang', '#0369a1');
 });
 </script>
 </body>
