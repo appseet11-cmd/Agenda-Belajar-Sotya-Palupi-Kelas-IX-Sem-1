@@ -956,6 +956,9 @@ return;
 tambahBarisKeGrup(dataTabel.length - 1);
 }
 function tambahNoBaru() {
+if (!dataTabel || dataTabel.length === 0) {
+tampilkanNotif('⚠️ Belum ada data, gunakan isi data terlebih dahulu', 'error');
+}
 const noBaru = String(dataTabel.length + 1);
 dataTabel.push({
 no: noBaru,
@@ -973,9 +976,11 @@ keteranganUrl: '',
 keteranganGambar: ''
 }]
 });
+// ===== ATURAN BARU: Tandai periode baru agar data sebelumnya terarsip ke Riwayat saat dikirim =====
+try { localStorage.setItem(PERIODE_KEY, '1'); } catch (e) {}
 renderTabel();
 simpanLocal(true);
-tampilkanNotif('🔢 No. ' + noBaru + ' ditambahkan', 'success');
+tampilkanNotif('🔢 No. ' + noBaru + ' ditambahkan — pengiriman berikutnya akan mengarsipkan data sebelumnya ke Riwayat', 'success');
 }
 function hapusBaris(grupIndex, barisIndex) {
 if (!confirm('Yakin ingin menghapus baris ini?')) return;
