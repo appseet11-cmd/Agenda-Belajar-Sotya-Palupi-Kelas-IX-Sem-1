@@ -3,86 +3,86 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agenda Belajar Kelas IX - Program Layanan BK</title>
+<title>Sotya Palupi_GBKIX — Agenda Belajar Kelas IX</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%); color: #1f2937; line-height: 1.6; padding: 20px; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #ccfbf1 0%, #99f6e4 100%); color: #1f2937; line-height: 1.6; padding: 20px; }
 .container { max-width: 1450px; margin: 0 auto; background: #ffffff; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); overflow: hidden; }
-.kop-surat{ text-align:center; border-bottom:3px double #1e3a8a; padding:25px 30px 8px 30px; margin:20px 30px; line-height:1.15; display:flex; align-items:center; justify-content:space-between; gap:15px }
+.kop-surat{ text-align:center; border-bottom:3px double #134e4a; padding:25px 30px 8px 30px; margin:20px 30px; line-height:1.15; display:flex; align-items:center; justify-content:space-between; gap:15px }
 .kop-logo{ flex:0 0 auto; width:90px; min-height:90px; display:flex; align-items:center; justify-content:center }
 .kop-logo img{ max-width:90px; max-height:95px; object-fit:contain }
 .kop-logo .placeholder-logo{ width:88px; height:88px; border:2px dashed #cbd5e1; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#94a3b8; font-size:11px; text-align:center; line-height:1.3 }
 .kop-teks{ flex:1; text-align:center; min-width:0 }
 .header-line{ display:block; width:100%; text-align:center; padding:1px 8px; margin:0; border:1px dashed transparent; border-radius:3px; cursor:text; min-height:20px; outline:none; line-height:1.15 }
 .header-line:hover{border-color:#cbd5e1;background:#f8fafc}
-.header-line:focus{border-color:#1e3a8a;background:#f0f9ff}
+.header-line:focus{border-color:#08E8DE;background:#f0fdfa}
 .header-line.government{ font-size:14px; font-weight:bold; letter-spacing:3px; text-transform:uppercase; font-family:Arial,sans-serif }
-.header-line.school{ font-size:22px; font-weight:bold; color:#1e3a8a; text-transform:uppercase; letter-spacing:2px; margin:2px 0; font-family:Arial,sans-serif }
+.header-line.school{ font-size:22px; font-weight:bold; color:#115e59; text-transform:uppercase; letter-spacing:2px; margin:2px 0; font-family:Arial,sans-serif }
 .header-line.address,.header-line.contact{ font-size:12px; margin:1px 0 }
 .judul-dokumen{ text-align:center; margin:25px 30px }
 .judul-dokumen h3{ font-size:16px; text-decoration:underline; margin-bottom:5px }
-.info-banner { background:#ede9fe; border-left:5px solid #8b5cf6; padding:15px 25px; margin:20px 30px; border-radius:8px; font-size:0.95em; color:#5b21b6 }
-.info-banner strong { color:#4c1d95 }
-.integrasi-banner { background:#eff6ff; border-left-color:#1e3a8a; color:#1e293b }
+.info-banner { background:#ccfbf1; border-left:5px solid #08E8DE; padding:15px 25px; margin:20px 30px; border-radius:8px; font-size:0.95em; color:#115e59 }
+.info-banner strong { color:#134e4a }
+.integrasi-banner { background:#f0fdfa; border-left-color:#0d9488; color:#134e4a }
 .integrasi-baris { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; align-items:center }
 .integrasi-baris input[type="text"] { flex:1; min-width:260px; padding:9px 12px; border:1px solid #cbd5e1; border-radius:8px; font-size:0.9em }
 .btn-tes { background:#6366f1; color:#fff } .btn-tes:hover { background:#4f46e5 }
 .btn-spreadsheet { background:#0f9d58; color:#fff } .btn-spreadsheet:hover { background:#0b7a45 }
 .btn-ttd { background:#db2777; color:#fff } .btn-ttd:hover { background:#be185d }
-.btn-laporan { background:#7c3aed; color:#fff } .btn-laporan:hover { background:#6d28d9 }
+.btn-laporan { background:#0d9488; color:#fff } .btn-laporan:hover { background:#115e59 }
 .btn-muat { background:#14b8a6; color:#fff } .btn-muat:hover { background:#0d9488 }
 .backend-status { margin-top:10px; font-size:0.85em; font-weight:600; color:#475569 }
 section { padding:35px 30px }
-h2 { color:#6d28d9; font-size:1.6em; margin-bottom:20px; padding-bottom:10px; border-bottom:3px solid #8b5cf6; display:inline-block }
-.kelas-header { padding:15px 20px; border-radius:10px; background:linear-gradient(135deg,#8b5cf6,#6d28d9); color:white; margin-bottom:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px }
+h2 { color:#0d9488; font-size:1.6em; margin-bottom:20px; padding-bottom:10px; border-bottom:3px solid #08E8DE; display:inline-block }
+.kelas-header { padding:15px 20px; border-radius:10px; background:linear-gradient(135deg,#08E8DE,#0d9488); color:white; margin-bottom:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px }
 .kelas-header h3 { color:white; margin:0; font-size:1.3em }
 .kelas-header span { font-size:0.9em; opacity:0.9 }
 .table-wrapper { overflow-x:auto; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.06); margin-bottom:15px; border:1px solid #000 }
 table { width:100%; border-collapse:collapse; border-spacing:0; font-size:0.92em; background:white; border:1px solid #000; table-layout:auto }
-thead { background:#4c1d95; color:white }
+thead { background:#134e4a; color:white }
 thead th { border:1px solid #000 }
 th, td { padding:12px 14px; text-align:left; border:1px solid #000; vertical-align:middle; white-space:normal; word-wrap:break-word; overflow-wrap:break-word; word-break:normal }
 th { font-weight:600; text-transform:uppercase; font-size:0.8em; letter-spacing:0.5px; border:1px solid #000 !important }
-td:first-child { text-align:center; font-weight:bold; color:#6d28d9 }
+td:first-child { text-align:center; font-weight:bold; color:#0d9488 }
 td[contenteditable="true"] { cursor:text; transition:all 0.2s ease; min-width:80px }
 td[contenteditable="true"]:hover { background:#fef9c3 !important }
-td[contenteditable="true"]:focus { background:#fffbeb !important; outline:2px solid #8b5cf6; outline-offset:-2px; z-index:2; position:relative }
+td[contenteditable="true"]:focus { background:#fffbeb !important; outline:2px solid #08E8DE; outline-offset:-2px; z-index:2; position:relative }
 td[contenteditable="true"].edited { background:#ecfdf5 !important }
-td.kelas-cell { cursor:text; background:#ede9fe !important; font-weight:600; color:#5b21b6; position:relative; border:1px solid #000 !important; text-align:center !important; min-width:70px }
-td.kelas-cell:hover { background:#ddd6fe !important }
-td.kelas-cell:focus { background:#fffbeb !important; outline:2px solid #8b5cf6; outline-offset:-2px }
-tr.baris-tambahan { background:#faf5ff !important }
+td.kelas-cell { cursor:text; background:#ccfbf1 !important; font-weight:600; color:#115e59; position:relative; border:1px solid #000 !important; text-align:center !important; min-width:70px }
+td.kelas-cell:hover { background:#99f6e4 !important }
+td.kelas-cell:focus { background:#fffbeb !important; outline:2px solid #08E8DE; outline-offset:-2px }
+tr.baris-tambahan { background:#f0fdfa !important }
 td.cell-rowspan { background:#f8fafc !important; text-align:center; vertical-align:middle; font-weight:600; border:1px solid #000 !important }
-.col-aksi { width:110px !important; text-align:center !important; background:#f8fafc !important }
+.col-aksi { width:110px !important; text-align:center !important; background:#f8fafc !important; }
 .btn-hapus { background:#ef4444; color:white; border:none; padding:6px 10px; border-radius:6px; cursor:pointer; font-size:0.85em; transition:all 0.2s }
 .btn-hapus:hover { background:#b91c1c; transform:scale(1.05) }
-.btn-plus { background:#8b5cf6; color:white; border:none; padding:6px 9px; border-radius:6px; cursor:pointer; font-size:0.85em; transition:all 0.2s; margin-right:4px }
-.btn-plus:hover { background:#6d28d9; transform:scale(1.05) }
+.btn-plus { background:#08E8DE; color:white; border:none; padding:6px 9px; border-radius:6px; cursor:pointer; font-size:0.85em; transition:all 0.2s; margin-right:4px }
+.btn-plus:hover { background:#06C5BC; transform:scale(1.05) }
 .table-actions { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:25px }
 .btn { padding:9px 16px; border:none; border-radius:8px; font-size:0.9em; font-weight:500; cursor:pointer; transition:all 0.2s; display:inline-flex; align-items:center; gap:6px }
-.btn-tambah { background:#8b5cf6; color:white } .btn-tambah:hover { background:#6d28d9 }
-.btn-tambah-no { background:#8b5cf6; color:white; font-weight:600; font-size:1em } .btn-tambah-no:hover { background:#6d28d9 }
+.btn-tambah { background:#08E8DE; color:white } .btn-tambah:hover { background:#06C5BC }
+.btn-tambah-no { background:#08E8DE; color:white; font-weight:600; font-size:1em } .btn-tambah-no:hover { background:#06C5BC }
 .btn-kurangi { background:#f97316; color:white } .btn-kurangi:hover { background:#ea580c }
 .btn-simpan { background:#0ea5e9; color:white } .btn-simpan:hover { background:#0284c7 }
 .btn-reset { background:#f59e0b; color:white } .btn-reset:hover { background:#d97706 }
-.btn-ekspor { background:#8b5cf6; color:white } .btn-ekspor:hover { background:#6d28d9 }
+.btn-ekspor { background:#08E8DE; color:white } .btn-ekspor:hover { background:#06C5BC }
 .notif { position:fixed; top:20px; right:20px; background:#10b981; color:white; padding:14px 22px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.15); font-weight:500; z-index:1000; transform:translateX(400px); transition:transform 0.4s ease }
 .notif.show { transform:translateX(0) }
 .notif.error { background:#ef4444 }
 .notif.info { background:#0ea5e9 }
 .print-btn { position:fixed; bottom:25px; right:25px; background:#10b981; color:white; border:none; padding:12px 22px; border-radius:30px; font-size:0.95em; font-weight:600; cursor:pointer; box-shadow:0 4px 15px rgba(16,185,129,0.4); transition:all 0.3s; z-index:100 }
 .print-btn:hover { background:#059669; transform:scale(1.05) }
-footer { background:#4c1d95; color:#cbd5e1; padding:25px 30px; text-align:center; font-size:0.9em }
+footer { background:#134e4a; color:#ccfbf1; padding:25px 30px; text-align:center; font-size:0.9em }
 footer strong { color:white }
-.ttd-section{ margin:30px 30px 0 30px; padding:20px; border:2px dashed #1e3a8a; border-radius:8px; background:#f0f9ff }
-.ttd-section h4{ text-align:center; color:#1e3a8a; margin-bottom:15px; font-family:Arial,sans-serif; font-size:14px }
+.ttd-section{ margin:30px 30px 0 30px; padding:20px; border:2px dashed #0d9488; border-radius:8px; background:#f0fdfa }
+.ttd-section h4{ text-align:center; color:#115e59; margin-bottom:15px; font-family:Arial,sans-serif; font-size:14px }
 .ttd-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .ttd-box-input{background:#fff;padding:15px;border-radius:5px;border:1px solid #cbd5e1}
-.ttd-box-input h5{text-align:center;margin-bottom:10px;color:#1e3a8a;font-family:Arial,sans-serif;font-size:13px}
+.ttd-box-input h5{text-align:center;margin-bottom:10px;color:#115e59;font-family:Arial,sans-serif;font-size:13px}
 .ttd-box-input label{display:block;font-size:12px;font-weight:bold;margin-bottom:3px;font-family:Arial,sans-serif}
 .ttd-box-input input[type="text"]{width:100%;padding:6px 8px;margin-bottom:8px;border:1px solid #cbd5e1;border-radius:3px;font-size:13px}
 .upload-area{margin-top:10px;padding:10px;border:2px dashed #94a3b8;border-radius:5px;text-align:center;background:#f8fafc;cursor:pointer}
-.upload-area:hover{background:#e0f2fe;border-color:#1e3a8a}
+.upload-area:hover{background:#ccfbf1;border-color:#08E8DE}
 .upload-area input[type="file"]{display:none}
 .upload-label{font-size:12px;color:#64748b;font-family:Arial,sans-serif;pointer-events:none}
 .preview-img{max-width:100%;max-height:100px;margin-top:8px;border:1px solid #cbd5e1;border-radius:3px;display:none}
@@ -92,12 +92,12 @@ footer strong { color:white }
 .ttd-final-box .img-ttd{min-height:70px;display:flex;align-items:center;justify-content:center;margin-bottom:5px}
 .ttd-final-box .img-ttd img{max-height:80px;max-width:200px}
 .ttd-final-box .nama{font-weight:bold;text-decoration:underline}
-.empty-state { text-align:center !important; color:#64748b !important; padding:25px !important }
+.empty-state { text-align:center !important; color:#64748b !important; padding:25px !important; }
 .empty-state .icon { font-size:2em; display:block; margin-bottom:8px }
 td.keterangan-cell { min-width:210px; }
 .ket-text { min-height:30px; padding:4px 6px; border:1px dashed transparent; border-radius:4px; cursor:text; white-space:pre-wrap; overflow-wrap:break-word; word-break:normal; }
 .ket-text:hover { border-color:#cbd5e1; background:#f8fafc; }
-.ket-text:focus { border-color:#8b5cf6; background:#fffbeb; outline:none; }
+.ket-text:focus { border-color:#08E8DE; background:#fffbeb; outline:none; }
 .ket-text:empty::before { content:"Ketik keterangan..."; color:#94a3b8; font-style:italic; font-size:0.85em; }
 .ket-media { margin-top:6px; display:flex; flex-direction:column; gap:5px; align-items:flex-start; }
 .ket-media-row { display:inline-flex; align-items:center; gap:4px; max-width:100%; }
@@ -107,7 +107,7 @@ td.keterangan-cell { min-width:210px; }
 .ket-tools { margin-top:6px; display:flex; gap:4px; flex-wrap:wrap; }
 .btn-mini { border:none; padding:3px 8px; border-radius:5px; cursor:pointer; font-size:0.75em; transition:all 0.2s; font-weight:600; }
 .btn-mini-url { background:#dbeafe; color:#1d4ed8; } .btn-mini-url:hover { background:#bfdbfe; }
-.btn-mini-foto { background:#fce7f3; color:#be185d; } .btn-mini-foto:hover { background:#fbcfe8; }
+.btn-mini-foto { background:#ccfbf1; color:#115e59; } .btn-mini-foto:hover { background:#99f6e4; }
 .btn-mini-hapus { background:#fee2e2; color:#b91c1c; padding:3px 6px; } .btn-mini-hapus:hover { background:#fecaca; }
 .ket-lightbox { position:fixed; inset:0; background:rgba(15,23,42,0.8); display:flex; align-items:center; justify-content:center; z-index:2000; cursor:zoom-out; }
 .ket-lightbox img { max-width:92vw; max-height:92vh; border-radius:8px; box-shadow:0 10px 40px rgba(0,0,0,0.5); background:#fff; }
@@ -126,7 +126,7 @@ th, td { padding:8px 10px; font-size:0.85em }
 @page { size:A4 portrait; margin:0.5cm }
 body { background:white !important; padding:0 !important; font-size:8pt }
 .container { box-shadow:none !important; max-width:100% !important; border-radius:0 !important }
-.kop-surat{ margin:0 0 8px 0 !important; padding:2px 0 5px 0 !important; border-bottom:2px double #1e3a8a !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; display:flex !important; align-items:center !important; justify-content:space-between !important; gap:8px !important }
+.kop-surat{ margin:0 0 8px 0 !important; padding:2px 0 5px 0 !important; border-bottom:2px double #134e4a !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; display:flex !important; align-items:center !important; justify-content:space-between !important; gap:8px !important }
 .kop-logo{ width:60px !important; min-height:60px !important }
 .kop-logo img{ max-width:60px !important; max-height:70px !important }
 .kop-logo .placeholder-logo{ display:none !important }
@@ -136,7 +136,7 @@ body { background:white !important; padding:0 !important; font-size:8pt }
 .header-line.address,.header-line.contact{font-size:8px !important}
 .judul-dokumen{margin:8px 0 !important}
 .judul-dokumen h3{font-size:12px !important}
-.kelas-header { background:#8b5cf6 !important; padding:6px 10px !important; margin-bottom:6px !important; -webkit-print-color-adjust:exact; print-color-adjust:exact }
+.kelas-header { background:#08E8DE !important; padding:6px 10px !important; margin-bottom:6px !important; -webkit-print-color-adjust:exact; print-color-adjust:exact }
 .print-btn, .table-actions, .col-aksi, .info-banner { display:none !important }
 .ttd-section { display:none !important }
 .ttd-preview-final { margin:10px 0 0 0 !important; padding:10px 0 !important; page-break-inside:avoid }
@@ -145,9 +145,9 @@ table { border-collapse:collapse !important; border-spacing:0 !important; page-b
 thead { display:table-header-group }
 tr { page-break-inside:avoid; page-break-after:auto }
 th, td { padding:2px 3px !important; font-size:7pt !important; border:1px solid #000 !important; white-space:normal !important; word-wrap:break-word !important; vertical-align:middle }
-th { background:#4c1d95 !important; color:white !important; text-align:center; -webkit-print-color-adjust:exact; print-color-adjust:exact }
+th { background:#134e4a !important; color:white !important; text-align:center; -webkit-print-color-adjust:exact; print-color-adjust:exact }
 td.cell-rowspan { background:#f0f0f0 !important; -webkit-print-color-adjust:exact; print-color-adjust:exact }
-td.kelas-cell { background:#ede9fe !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; text-align:center !important }
+td.kelas-cell { background:#ccfbf1 !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; text-align:center !important }
 tr.baris-tambahan { background:#f8f8f8 !important }
 td[contenteditable="true"]:hover, td[contenteditable="true"]:focus { outline:none !important; background:inherit !important }
 .ket-tools { display:none !important }
@@ -157,13 +157,14 @@ td[contenteditable="true"]:hover, td[contenteditable="true"]:focus { outline:non
 .ket-media { margin-top:2px !important; gap:2px !important }
 .ket-img { max-width:90px !important; max-height:55px !important }
 .ket-link { background:transparent !important; border:none !important; padding:0 !important; font-size:6.5pt !important; max-width:160px !important; }
-footer { background:#4c1d95 !important; padding:6px 12px !important; margin-top:6px !important; -webkit-print-color-adjust:exact; print-color-adjust:exact }
+footer { background:#134e4a !important; padding:6px 12px !important; margin-top:6px !important; -webkit-print-color-adjust:exact; print-color-adjust:exact }
 footer p { font-size:0.7em }
 }
 </style>
 </head>
 <body>
 <div class="container">
+
 <div class="kop-surat">
 <div class="kop-logo">
 <img id="logoKiriImg" src="" style="display:none">
@@ -180,18 +181,20 @@ footer p { font-size:0.7em }
 <div class="placeholder-logo" id="logoKananPlaceholder">Logo<br>Kanan</div>
 </div>
 </div>
+
 <div class="judul-dokumen"><h3>AGENDA BELAJAR KELAS IX</h3></div>
+
 <div class="info-banner">
-💡 <strong>Petunjuk:</strong>
+💡 <strong>Petunjuk (Sotya Palupi_GBKIX):</strong>
 <br>• Semua cell bisa diedit langsung, termasuk <strong>Kelas</strong> dan <strong>Hari, Tanggal</strong>.
-<br>• Kolom <strong>Keterangan</strong> bisa diisi <strong>teks</strong>, referensi link (tombol <strong>🔗 URL</strong>), dan bukti foto (tombol <strong>📷 Foto</strong>).
-<br>• Foto keterangan otomatis ter-upload ke Drive saat dipilih, sehingga pasti masuk ke laporan PDF.
-<br>• Gunakan tombol <strong>➕</strong> di kolom Aksi untuk menambah baris dalam No. yang sama.
-<br>• Klik <strong>💾 Simpan</strong> untuk menyimpan ke browser dan mengirim ke Spreadsheet.
-<br>• Klik <strong>🔄 Reset</strong> untuk membersihkan dashboard dan menandai periode baru.
-<br>• Setelah Reset, data lama tetap di Sheet aktif dan diduplikasi ke Sheet Riwayat.
-<br>• Klik <strong>📄 Generate &amp; Upload Laporan PDF</strong> untuk membuat PDF berisi seluruh data aktif.
+<br>• Kolom <strong>Keterangan</strong>: teks + referensi link (<strong>🔗 URL</strong>) + bukti foto (<strong>📷 Foto</strong>).
+<br>• <strong>Foto otomatis di-upload ke folder Drive “Keterangan Sotya_Palupi_GBK_IX”</strong> dan <strong>link-nya terekap di Spreadsheet</strong>, sehingga <strong>pasti muncul di laporan PDF</strong>.
+<br>• Gunakan <strong>➕</strong> di kolom Aksi untuk menambah baris dalam No. yang sama.
+<br>• <strong>Siklus periode:</strong> isi <strong>D1</strong> → <em>Kirim</em> → PDF berisi <strong>D1</strong>. Klik <strong>🔢 Tambah No. Baru</strong> (atau 🔄 Reset) → isi <strong>D2</strong> → <em>Kirim</em> → <strong>D1 diduplikasi ke Sheet Riwayat</strong>, PDF berisi <strong>D1+D2</strong>. Seterusnya: <strong>D3 → PDF D1+D2+D3</strong>, dst.
+<br>• <strong>Menghapus data di dashboard TIDAK menghapus data di Sheet Aktif</strong> — Sheet bersifat <em>append-only</em> dan PDF selalu membaca seluruh Sheet Aktif.
+<br>• Klik <strong>📄 Generate &amp; Upload Laporan PDF</strong> untuk membuat PDF dari seluruh data aktif.
 </div>
+
 <div class="info-banner integrasi-banner">
 🖼️ <strong>PENGATURAN LOGO KOP SURAT</strong>
 <div class="integrasi-baris">
@@ -207,10 +210,11 @@ footer p { font-size:0.7em }
 <span id="logoStatus" style="font-size:0.85em; color:#475569;">Belum ada logo ter-upload.</span>
 </div>
 </div>
+
 <div class="info-banner integrasi-banner">
-🔌 <strong>INTEGRASI GOOGLE — Spreadsheet &amp; Drive</strong>
+🔌 <strong>INTEGRASI GOOGLE — Spreadsheet &amp; Drive (Sotya Palupi GBK IX)</strong>
 <div class="integrasi-baris">
-<input type="text" id="backendUrl" placeholder="URL Web App backend — kosongkan untuk memakai URL bawaan sistem">
+<input type="text" id="backendUrl" placeholder="https://script.google.com/macros/s/AKfycbwOiHD2ygg1aoASC1UcrKbz0BOqhRydAh9O74e0-Ui3pxcV198ZjlDfIGnBCqJMsPgl/exec">
 <button class="btn btn-simpan" onclick="simpanBackendUrl()">💾 Simpan URL</button>
 <button class="btn btn-tes" onclick="tesKoneksi()">📡 Tes Koneksi</button>
 </div>
@@ -221,11 +225,12 @@ footer p { font-size:0.7em }
 </div>
 <div id="backendStatus" class="backend-status">Status: belum terhubung ke backend.</div>
 </div>
+
 <section>
-<h2>📗 Agenda Layanan Kelas 9</h2>
+<h2>📘 Agenda Layanan Kelas IX — Sotya Palupi (Guru BK)</h2>
 <div class="kelas-header">
-<h3>🟪 Kelas 9 — Fase D Akhir</h3>
-<span>Fokus: Transisi &amp; Perencanaan</span>
+<h3>📘 Kelas IX — Fase D Akhir</h3>
+<span>Fokus: Persiapan Karir &amp; Kelulusan</span>
 </div>
 <div class="table-actions">
 <button class="btn btn-tambah" onclick="tambahBarisDalamGrupTerakhir()">➕ Tambah Baris (No. Sama)</button>
@@ -237,7 +242,7 @@ footer p { font-size:0.7em }
 <button class="btn btn-ekspor" onclick="eksporCSV()">⬇️ Ekspor CSV</button>
 </div>
 <div class="table-wrapper">
-<table id="tabel-kelas9">
+<table id="tabel-Sotya-Palupi-GBK-IX">
 <thead>
 <tr>
 <th>No</th>
@@ -252,10 +257,11 @@ footer p { font-size:0.7em }
 <th class="col-aksi">Aksi</th>
 </tr>
 </thead>
-<tbody id="tbody-kelas9"></tbody>
+<tbody id="tbody-Sotya-Palupi-GBK-IX"></tbody>
 </table>
 </div>
 </section>
+
 <div class="ttd-section">
 <h4>✍️ BAGIAN TANDA TANGAN</h4>
 <div class="ttd-grid">
@@ -273,8 +279,8 @@ footer p { font-size:0.7em }
 <div class="ttd-box-input">
 <h5>Guru BK / Koordinator BK</h5>
 <label>Kota:</label><input type="text" id="kotaKepsek" value="Jakarta">
-<label>Tanggal:</label><input type="text" id="tanggalKepsek" value="5 Agustus 2026">
-<label>Nama Lengkap:</label><input type="text" id="namaGuruTTD" placeholder="Nama Guru BK">
+<label>Tanggal:</label><input type="text" id="tanggalKepsek" value="6 Agustus 2026">
+<label>Nama Lengkap:</label><input type="text" id="namaGuruTTD" value="Sotya Palupi" placeholder="Nama Guru BK">
 <label>NIP:</label><input type="text" id="nipGuruTTD" placeholder="NIP Guru BK">
 <label>Upload Tanda Tangan:</label>
 <div class="upload-area" onclick="document.getElementById('fileGuru').click()">
@@ -285,6 +291,7 @@ footer p { font-size:0.7em }
 </div>
 </div>
 </div>
+
 <div class="ttd-preview-final">
 <div class="ttd-final-box">
 <p>Mengetahui,</p>
@@ -294,996 +301,993 @@ footer p { font-size:0.7em }
 <p>NIP. <span id="previewNipKepsek">................................</span></p>
 </div>
 <div class="ttd-final-box">
-<p id="previewTanggalKepsek">Jakarta, 5 Agustus 2026</p>
+<p id="previewTanggalKepsek">Jakarta, 6 Agustus 2026</p>
 <p>Koordinator BK / Guru BK</p>
 <div class="img-ttd" id="imgGuru"></div>
 <p class="nama" id="previewNamaGuru">(...................................................)</p>
 <p>NIP. <span id="previewNipGuru">................................</span></p>
 </div>
 </div>
+
 <footer>
-<p>📘 <strong>Agenda Belajar Kelas IX — Program Layanan BK SMP</strong></p>
-<p style="margin-top:6px; font-size:0.85em;">© 2026 — Data tersimpan otomatis di browser &amp; Google Spreadsheet.</p>
+<p>📘 <strong>Agenda Belajar Kelas IX — Sotya Palupi (Guru BK) — Program Layanan BK SMP</strong></p>
+<p style="margin-top:6px; font-size:0.85em;">© 2026 — Data tersimpan otomatis di browser &amp; Google Spreadsheet (append-only).</p>
 </footer>
 </div>
+
 <div id="notif" class="notif"></div>
 <button class="print-btn" onclick="window.print()">🖨️ Cetak / Simpan PDF</button>
+
 <script>
-const STORAGE_KEY = 'agendaBK_kelas9';
-const BACKEND_KEY = 'agendaBK_backendUrl';
-const HEADER_STORAGE_KEY = 'agendaBK_headerData';
-const TTD_INFO_STORAGE_KEY = 'agendaBK_ttdInfoData';
-const PERIODE_KEY = 'agendaBK_periodeBaru';
-const DEFAULT_BACKEND_URL = 'https://script.google.com/macros/s/AKfycbwiqUBQ8KMeTzWws0wjVXrZXAZeAs283yu70V-T65Rsz9E6cIx3yszt7nuVFrjsMA9u9w/exec';
+const STORAGE_KEY = 'agendaBK_Sotya_Palupi_GBK_IX';
+const BACKEND_KEY = 'agendaBK_backendUrl_Sotya_Palupi_GBK_IX';
+const HEADER_STORAGE_KEY = 'agendaBK_headerData_Sotya_Palupi_GBK_IX';
+const TTD_INFO_STORAGE_KEY = 'agendaBK_ttdInfoData_Sotya_Palupi_GBK_IX';
+const PERIODE_KEY = 'agendaBK_periodeBaru_Sotya_Palupi_GBK_IX';
+const GRUP_TERKIRIM_KEY = 'agendaBK_grupTerkirim_Sotya_Palupi_GBK_IX';
+
+const DEFAULT_BACKEND_URL = '';
+
 var imgKepsekBase64 = '';
 var imgGuruBase64 = '';
 var logoKiriBase64 = '';
 var logoKananBase64 = '';
 var logoKiriUrl = '';
 var logoKananUrl = '';
+
 let dataTabel = [
-{
-no: "1",
-hariTanggal: "Senin, 3 Agustus 2026",
-baris: [
-{ kelas: "9A", kehadiran: "28/28", pertemuan: "1", topik: "Menyongsong Kelas 9 (Growth Mindset)", bidang: "Pribadi", jenis: "Klasikal", keterangan: "Asesmen Kebutuhan Peserta Didik", keteranganUrl: "", keteranganGambar: "" },
-{ kelas: "9B", kehadiran: "27/27", pertemuan: "1", topik: "Menyongsong Kelas 9 (Growth Mindset)", bidang: "Pribadi", jenis: "Klasikal", keterangan: "Asesmen Kebutuhan Peserta Didik", keteranganUrl: "", keteranganGambar: "" }
-]
-},
-{
-no: "2",
-hariTanggal: "Selasa, 4 Agustus 2026",
-baris: [
-{ kelas: "9A", kehadiran: "27/28", pertemuan: "2", topik: "Manajemen Stres & Kecemasan", bidang: "Pribadi", jenis: "Klasikal", keterangan: "Profil Pelajar Pancasila", keteranganUrl: "", keteranganGambar: "" },
-{ kelas: "9B", kehadiran: "26/27", pertemuan: "2", topik: "Manajemen Stres & Kecemasan", bidang: "Pribadi", jenis: "Klasikal", keterangan: "Profil Pelajar Pancasila", keteranganUrl: "", keteranganGambar: "" }
-]
-}
+  {
+    no: "1",
+    hariTanggal: "Kamis, 6 Agustus 2026",
+    baris: [
+      { kelas: "9A", kehadiran: "32/32", pertemuan: "1", topik: "Perencanaan Karir dan Studi Lanjut", bidang: "Karir", jenis: "Klasikal", keterangan: "Asesmen minat dan bakat", keteranganUrl: "", keteranganGambar: "" },
+      { kelas: "9B", kehadiran: "30/30", pertemuan: "1", topik: "Perencanaan Karir dan Studi Lanjut", bidang: "Karir", jenis: "Klasikal", keterangan: "Asesmen minat dan bakat", keteranganUrl: "", keteranganGambar: "" }
+    ]
+  },
+  {
+    no: "2",
+    hariTanggal: "Jumat, 7 Agustus 2026",
+    baris: [
+      { kelas: "9A", kehadiran: "30/32", pertemuan: "2", topik: "Manajemen Waktu & Strategi Belajar Efektif", bidang: "Belajar", jenis: "Klasikal", keterangan: "Persiapan menghadapi ujian", keteranganUrl: "", keteranganGambar: "" },
+      { kelas: "9B", kehadiran: "29/30", pertemuan: "2", topik: "Manajemen Waktu & Strategi Belajar Efektif", bidang: "Belajar", jenis: "Klasikal", keterangan: "Persiapan menghadapi ujian", keteranganUrl: "", keteranganGambar: "" }
+    ]
+  }
 ];
+
 function escapeHtml(s) {
-return String(s === undefined || s === null ? '' : s)
-.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  return String(s === undefined || s === null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 function singkatTeks(s, maks) {
-s = String(s || '');
-return s.length > maks ? s.substring(0, maks) + '…' : s;
+  s = String(s || '');
+  return s.length > maks ? s.substring(0, maks) + '…' : s;
 }
 function normalisasiData(data) {
-if (!Array.isArray(data)) return [];
-return data.map(function(grup) {
-if (!grup || typeof grup !== 'object') return null;
-var g = {
-no: grup.no !== undefined ? String(grup.no) : '',
-hariTanggal: '',
-baris: []
-};
-if (grup.hariTanggal !== undefined && grup.hariTanggal !== '') {
-g.hariTanggal = String(grup.hariTanggal);
-} else if (grup.bulan !== undefined && grup.bulan !== '') {
-g.hariTanggal = String(grup.bulan);
-} else {
-g.hariTanggal = '—';
-}
-if (Array.isArray(grup.baris)) {
-g.baris = grup.baris.map(function(b) {
-if (!b || typeof b !== 'object') return null;
-return {
-kelas: b.kelas !== undefined ? String(b.kelas) : '',
-kehadiran: b.kehadiran !== undefined ? String(b.kehadiran) : '0/0',
-pertemuan: b.pertemuan !== undefined ? String(b.pertemuan) : '1',
-topik: b.topik !== undefined ? String(b.topik) : '',
-bidang: b.bidang !== undefined ? String(b.bidang) : '',
-jenis: b.jenis !== undefined ? String(b.jenis) : '',
-keterangan: b.keterangan !== undefined ? String(b.keterangan) : '',
-keteranganUrl: b.keteranganUrl !== undefined ? String(b.keteranganUrl) : '',
-keteranganGambar: b.keteranganGambar !== undefined ? String(b.keteranganGambar) : ''
-};
-}).filter(function(x) { return x !== null; });
-}
-return g;
-}).filter(function(x) { return x !== null; });
+  if (!Array.isArray(data)) return [];
+  return data.map(function(grup) {
+    if (!grup || typeof grup !== 'object') return null;
+    var g = { no: grup.no !== undefined ? String(grup.no) : '', hariTanggal: '', baris: [] };
+    if (grup.hariTanggal !== undefined && grup.hariTanggal !== '') g.hariTanggal = String(grup.hariTanggal);
+    else if (grup.bulan !== undefined && grup.bulan !== '') g.hariTanggal = String(grup.bulan);
+    else g.hariTanggal = '—';
+    if (Array.isArray(grup.baris)) {
+      g.baris = grup.baris.map(function(b) {
+        if (!b || typeof b !== 'object') return null;
+        return {
+          kelas: b.kelas !== undefined ? String(b.kelas) : '',
+          kehadiran: b.kehadiran !== undefined ? String(b.kehadiran) : '0/0',
+          pertemuan: b.pertemuan !== undefined ? String(b.pertemuan) : '1',
+          topik: b.topik !== undefined ? String(b.topik) : '',
+          bidang: b.bidang !== undefined ? String(b.bidang) : '',
+          jenis: b.jenis !== undefined ? String(b.jenis) : '',
+          keterangan: b.keterangan !== undefined ? String(b.keterangan) : '',
+          keteranganUrl: b.keteranganUrl !== undefined ? String(b.keteranganUrl) : '',
+          keteranganGambar: b.keteranganGambar !== undefined ? String(b.keteranganGambar) : ''
+        };
+      }).filter(function(x) { return x !== null; });
+    }
+    return g;
+  }).filter(function(x) { return x !== null; });
 }
 function tampilkanNotif(pesan, tipe) {
-tipe = tipe || 'success';
-const notif = document.getElementById('notif');
-notif.textContent = pesan;
-notif.className = 'notif show ' + tipe;
-setTimeout(function(){ notif.classList.remove('show'); }, 2500);
+  tipe = tipe || 'success';
+  const notif = document.getElementById('notif');
+  notif.textContent = pesan;
+  notif.className = 'notif show ' + tipe;
+  setTimeout(function(){ notif.classList.remove('show'); }, 2500);
 }
 function simpanLocal(senyap) {
-try {
-const json = JSON.stringify(Array.isArray(dataTabel) ? dataTabel : []);
-localStorage.setItem(STORAGE_KEY, json);
-try { sessionStorage.setItem(STORAGE_KEY, json); } catch (e) {}
-return true;
-} catch (e) {
-console.error('Gagal simpan lokal:', e);
-if (!senyap) tampilkanNotif('❌ Browser memblokir penyimpanan lokal', 'error');
-return false;
-}
+  try {
+    const json = JSON.stringify(Array.isArray(dataTabel) ? dataTabel : []);
+    localStorage.setItem(STORAGE_KEY, json);
+    try { sessionStorage.setItem(STORAGE_KEY, json); } catch (e) {}
+    return true;
+  } catch (e) {
+    console.error('Gagal simpan lokal:', e);
+    if (!senyap) tampilkanNotif('❌ Browser memblokir penyimpanan lokal', 'error');
+    return false;
+  }
 }
 function bacaLocal() {
-try {
-let x = localStorage.getItem(STORAGE_KEY);
-if (x === null || x === '') x = sessionStorage.getItem(STORAGE_KEY);
-if (x === null || x === '') return null;
-return x;
-} catch (e) { return null; }
+  try {
+    let x = localStorage.getItem(STORAGE_KEY);
+    if (x === null || x === '') x = sessionStorage.getItem(STORAGE_KEY);
+    if (x === null || x === '') return null;
+    return x;
+  } catch (e) { return null; }
 }
+
+/* ====== DELTA: helper jumlah grup terkirim ====== */
+function getGrupTerkirim() {
+  try { return parseInt(localStorage.getItem(GRUP_TERKIRIM_KEY) || '0', 10) || 0; } catch (e) { return 0; }
+}
+function setGrupTerkirim(n) {
+  try { localStorage.setItem(GRUP_TERKIRIM_KEY, String(Math.max(0, n))); } catch (e) {}
+}
+
 function getBackendUrl() {
-var url = '';
-try {
-url = (localStorage.getItem(BACKEND_KEY) || '').trim();
-} catch (e) {
-url = '';
-}
-if (!url) url = DEFAULT_BACKEND_URL.trim();
-return url;
+  var url = '';
+  try { url = (localStorage.getItem(BACKEND_KEY) || '').trim(); } catch (e) { url = ''; }
+  if (!url) url = DEFAULT_BACKEND_URL.trim();
+  return url;
 }
 function setBackendStatus(teks, warna) {
-const el = document.getElementById('backendStatus');
-el.textContent = teks;
-el.style.color = warna || '#475569';
+  const el = document.getElementById('backendStatus');
+  el.textContent = teks;
+  el.style.color = warna || '#475569';
 }
 function simpanBackendUrl() {
-var url = document.getElementById('backendUrl').value.trim();
-if (!url) {
-try { localStorage.removeItem(BACKEND_KEY); } catch (e) {}
-document.getElementById('backendUrl').value = DEFAULT_BACKEND_URL;
-tampilkanNotif('🔗 URL dikosongkan — kembali ke URL bawaan sistem', 'info');
-setBackendStatus('Status: memakai URL bawaan sistem.', '#0369a1');
-return;
-}
-try { localStorage.setItem(BACKEND_KEY, url); } catch (e) {}
-tampilkanNotif('🔗 URL backend disimpan', 'success');
-setBackendStatus('Status: URL tersimpan.', '#0369a1');
+  var url = document.getElementById('backendUrl').value.trim();
+  if (!url) {
+    try { localStorage.removeItem(BACKEND_KEY); } catch (e) {}
+    document.getElementById('backendUrl').value = '';
+    tampilkanNotif('🔗 URL dikosongkan — isi URL backend secara manual', 'info');
+    setBackendStatus('Status: URL backend belum diisi.', '#b45309');
+    return;
+  }
+  try { localStorage.setItem(BACKEND_KEY, url); } catch (e) {}
+  tampilkanNotif('🔗 URL backend disimpan', 'success');
+  setBackendStatus('Status: URL tersimpan.', '#0369a1');
 }
 async function postKeBackend(payload) {
-const url = getBackendUrl();
-if (!url) throw new Error('URL Web App belum diatur.');
-const res = await fetch(url, {
-method: 'POST',
-headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-body: JSON.stringify(payload)
-});
-if (!res.ok) throw new Error('HTTP ' + res.status);
-return res.json();
+  const url = getBackendUrl();
+  if (!url) throw new Error('URL Web App belum diatur.');
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify(payload)
+  });
+  if (!res.ok) throw new Error('HTTP ' + res.status);
+  return res.json();
 }
 function bacaHeader() {
-return {
-government: document.getElementById('headerGovernment').innerText.trim(),
-school: document.getElementById('headerSchool').innerText.trim(),
-address: document.getElementById('headerAddress').innerText.trim(),
-contact: document.getElementById('headerContact').innerText.trim()
-};
+  return {
+    government: document.getElementById('headerGovernment').innerText.trim(),
+    school: document.getElementById('headerSchool').innerText.trim(),
+    address: document.getElementById('headerAddress').innerText.trim(),
+    contact: document.getElementById('headerContact').innerText.trim()
+  };
 }
 function bacaTTD() {
-return {
-kota: document.getElementById('kotaKepsek').value.trim(),
-tanggal: document.getElementById('tanggalKepsek').value.trim(),
-namaKepsek: document.getElementById('namaKepsek').value.trim(),
-nipKepsek: document.getElementById('nipKepsek').value.trim(),
-namaGuru: document.getElementById('namaGuruTTD').value.trim(),
-nipGuru: document.getElementById('nipGuruTTD').value.trim()
-};
+  return {
+    kota: document.getElementById('kotaKepsek').value.trim(),
+    tanggal: document.getElementById('tanggalKepsek').value.trim(),
+    namaKepsek: document.getElementById('namaKepsek').value.trim(),
+    nipKepsek: document.getElementById('nipKepsek').value.trim(),
+    namaGuru: document.getElementById('namaGuruTTD').value.trim(),
+    nipGuru: document.getElementById('nipGuruTTD').value.trim()
+  };
 }
 async function tesKoneksi() {
-const url = getBackendUrl();
-if (!url) {
-tampilkanNotif('⚠️ URL backend belum tersedia', 'error');
-return;
+  const url = getBackendUrl();
+  if (!url) { tampilkanNotif('⚠️ URL backend belum tersedia', 'error'); return; }
+  setBackendStatus('📡 Menguji koneksi ...', '#475569');
+  try {
+    const res = await fetch(url);
+    const info = await res.json();
+    if (info.status === 'online') {
+      tampilkanNotif('✅ Terhubung ke backend Sotya Palupi GBK IX!', 'success');
+      setBackendStatus('✅ Terhubung.', '#059669');
+    } else {
+      setBackendStatus('❌ Respons tidak dikenal', '#b91c1c');
+    }
+  } catch (err) {
+    tampilkanNotif('❌ Gagal: ' + err.message, 'error');
+    setBackendStatus('❌ Tidak terhubung', '#b91c1c');
+  }
 }
-setBackendStatus('📡 Menguji koneksi ...', '#475569');
-try {
-const res = await fetch(url);
-const info = await res.json();
-if (info.status === 'online') {
-tampilkanNotif('✅ Terhubung ke backend!', 'success');
-setBackendStatus('✅ Terhubung.', '#059669');
-} else {
-setBackendStatus('❌ Respons tidak dikenal', '#b91c1c');
+
+/* ================================================================
+   ATURAN FOTO: pastikan SEMUA foto keterangan sudah berupa link Drive
+   ================================================================ */
+async function pastikanSemuaFotoTerupload() {
+  if (!getBackendUrl()) return false;
+  var adaUpload = false;
+  for (var g = 0; g < dataTabel.length; g++) {
+    var grup = dataTabel[g];
+    if (!grup || !Array.isArray(grup.baris)) continue;
+    for (var b = 0; b < grup.baris.length; b++) {
+      var bar = grup.baris[b];
+      if (bar && bar.keteranganGambar && String(bar.keteranganGambar).indexOf('data:') === 0) {
+        try {
+          var res = await postKeBackend({ action: 'uploadKeterangan', base64: bar.keteranganGambar });
+          if (res && res.ok && res.url) {
+            bar.keteranganGambar = res.url;
+            adaUpload = true;
+          }
+        } catch (e) {
+          console.error('Gagal upload foto keterangan:', e);
+        }
+      }
+    }
+  }
+  if (adaUpload) {
+    simpanLocal(true);
+    renderTabel();
+    tampilkanNotif('📷 Foto keterangan ter-upload ke folder Drive Sotya_Palupi_GBK_IX', 'success');
+  }
+  return adaUpload;
 }
-} catch (err) {
-tampilkanNotif('❌ Gagal: ' + err.message, 'error');
-setBackendStatus('❌ Tidak terhubung', '#b91c1c');
-}
-}
+
+/* ================================================================
+   KIRIM KE SPREADSHEET (Sotya_Palupi_GBK_IX)
+   ================================================================ */
 async function kirimKeSpreadsheet(senyap) {
-try {
-if (!getBackendUrl()) {
-if (!senyap) tampilkanNotif('⚠️ URL backend belum diatur', 'error');
-return false;
+  try {
+    if (!getBackendUrl()) {
+      if (!senyap) tampilkanNotif('⚠️ URL backend belum diatur', 'error');
+      return false;
+    }
+    if (!dataTabel || dataTabel.length === 0) {
+      if (!senyap) tampilkanNotif('ℹ️ Tidak ada data untuk dikirim — Sheet Aktif tetap aman', 'info');
+      return true;
+    }
+
+    var periodeBaru = false;
+    try { periodeBaru = localStorage.getItem(PERIODE_KEY) === '1'; } catch (e) { periodeBaru = false; }
+
+    var dataKirim = dataTabel;
+    if (periodeBaru) {
+      var mulai = Math.min(getGrupTerkirim(), dataTabel.length);
+      dataKirim = dataTabel.slice(mulai);
+      if (dataKirim.length === 0) {
+        if (!senyap) tampilkanNotif('ℹ️ Belum ada isian baru untuk periode ini', 'info');
+        return true;
+      }
+    }
+
+    if (!senyap) tampilkanNotif('📷 Memeriksa foto keterangan...', 'info');
+    await pastikanSemuaFotoTerupload();
+
+    var payload = {
+      action: 'simpanData',
+      periodeBaru: periodeBaru,
+      header: bacaHeader(),
+      ttd: bacaTTD(),
+      dataTabel: dataKirim.map(function(grup) {
+        var ht = grup.hariTanggal || grup.bulan || '';
+        return {
+          no: grup.no || '',
+          hariTanggal: ht,
+          bulan: ht,
+          baris: (grup.baris || []).map(function(b) {
+            return {
+              kelas: b.kelas || '',
+              kehadiran: b.kehadiran || '',
+              pertemuan: b.pertemuan || '',
+              topik: b.topik || '',
+              bidang: b.bidang || '',
+              jenis: b.jenis || '',
+              keterangan: b.keterangan || '',
+              keteranganUrl: b.keteranganUrl || '',
+              keteranganGambar: b.keteranganGambar || ''
+            };
+          })
+        };
+      })
+    };
+
+    const res = await postKeBackend(payload);
+    if (res.ok) {
+      if (periodeBaru) {
+        try { localStorage.removeItem(PERIODE_KEY); } catch (e) {}
+      }
+      setGrupTerkirim(dataTabel.length);
+
+      if (!senyap) tampilkanNotif('📊 Data terkirim ke Spreadsheet (' + res.totalBaris + ' baris aktif)', 'success');
+      if (res.diarsipkan > 0) tampilkanNotif('🗂️ ' + res.diarsipkan + ' baris periode sebelumnya diduplikasi ke Sheet Riwayat', 'info');
+
+      var statusTeks = '✅ Sinkron — ' + res.totalBaris + ' baris aktif di Sheet';
+      if (res.diarsipkan > 0) statusTeks += ' | Riwayat +' + res.diarsipkan;
+      setBackendStatus(statusTeks, '#059669');
+      return true;
+    }
+    throw new Error(res.error || 'Gagal menyimpan');
+  } catch (err) {
+    if (!senyap) tampilkanNotif('❌ Gagal kirim: ' + err.message, 'error');
+    setBackendStatus('❌ Gagal sinkron', '#b91c1c');
+    return false;
+  }
 }
-if (!dataTabel || dataTabel.length === 0) {
-if (!senyap) tampilkanNotif('ℹ️ Tidak ada data baru untuk dikirim', 'info');
-return true;
-}
-var periodeBaru = false;
-try {
-periodeBaru = localStorage.getItem(PERIODE_KEY) === '1';
-} catch (e) {
-periodeBaru = false;
-}
-var payload = {
-action: 'simpanData',
-periodeBaru: periodeBaru,
-header: bacaHeader(),
-ttd: bacaTTD(),
-dataTabel: (dataTabel || []).map(function(grup) {
-var ht = grup.hariTanggal || grup.bulan || '';
-return {
-no: grup.no || '',
-hariTanggal: ht,
-bulan: ht,
-baris: (grup.baris || []).map(function(b) {
-return {
-kelas: b.kelas || '',
-kehadiran: b.kehadiran || '',
-pertemuan: b.pertemuan || '',
-topik: b.topik || '',
-bidang: b.bidang || '',
-jenis: b.jenis || '',
-keterangan: b.keterangan || '',
-keteranganUrl: b.keteranganUrl || '',
-keteranganGambar: b.keteranganGambar || ''
-};
-})
-};
-})
-};
-const res = await postKeBackend(payload);
-if (res.ok) {
-if (periodeBaru) {
-try { localStorage.removeItem(PERIODE_KEY); } catch (e) {}
-}
-if (!senyap) {
-tampilkanNotif('📊 Data terkirim ke Spreadsheet (' + res.totalBaris + ' baris)', 'success');
-}
-if (res.diarsipkan > 0) {
-tampilkanNotif('🗂️ ' + res.diarsipkan + ' baris lama diduplikasi ke Sheet Riwayat', 'info');
-}
-var statusTeks = '✅ Sinkron ' + res.totalBaris + ' baris';
-if (res.diarsipkan > 0) {
-statusTeks += ' | Duplikasi Riwayat: ' + res.diarsipkan;
-}
-setBackendStatus(statusTeks, '#059669');
-return true;
-}
-throw new Error(res.error || 'Gagal menyimpan');
-} catch (err) {
-if (!senyap) tampilkanNotif('❌ Gagal kirim: ' + err.message, 'error');
-setBackendStatus('❌ Gagal sinkron', '#b91c1c');
-return false;
-}
-}
+
 function kompresGambar(file, maksLebar, maksTinggi, cb) {
-var reader = new FileReader();
-reader.onload = function(e) {
-var img = new Image();
-img.onload = function() {
-var skala = Math.min(1, maksLebar / img.width, maksTinggi / img.height);
-var w = Math.round(img.width * skala), h = Math.round(img.height * skala);
-var c = document.createElement('canvas');
-c.width = w; c.height = h;
-c.getContext('2d').drawImage(img, 0, 0, w, h);
-cb(c.toDataURL('image/png'));
-};
-img.onerror = function() { cb(e.target.result); };
-img.src = e.target.result;
-};
-reader.readAsDataURL(file);
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    var img = new Image();
+    img.onload = function() {
+      var skala = Math.min(1, maksLebar / img.width, maksTinggi / img.height);
+      var w = Math.round(img.width * skala), h = Math.round(img.height * skala);
+      var c = document.createElement('canvas');
+      c.width = w; c.height = h;
+      c.getContext('2d').drawImage(img, 0, 0, w, h);
+      cb(c.toDataURL('image/png'));
+    };
+    img.onerror = function() { cb(e.target.result); };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
 }
 function kompresGambarJpeg(file, maksLebar, maksTinggi, cb) {
-var reader = new FileReader();
-reader.onload = function(e) {
-var img = new Image();
-img.onload = function() {
-var skala = Math.min(1, maksLebar / img.width, maksTinggi / img.height);
-var w = Math.round(img.width * skala), h = Math.round(img.height * skala);
-var c = document.createElement('canvas');
-c.width = w; c.height = h;
-var ctx = c.getContext('2d');
-ctx.fillStyle = '#ffffff';
-ctx.fillRect(0, 0, w, h);
-ctx.drawImage(img, 0, 0, w, h);
-cb(c.toDataURL('image/jpeg', 0.85));
-};
-img.onerror = function() { cb(e.target.result); };
-img.src = e.target.result;
-};
-reader.readAsDataURL(file);
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    var img = new Image();
+    img.onload = function() {
+      var skala = Math.min(1, maksLebar / img.width, maksTinggi / img.height);
+      var w = Math.round(img.width * skala), h = Math.round(img.height * skala);
+      var c = document.createElement('canvas');
+      c.width = w; c.height = h;
+      var ctx = c.getContext('2d');
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, w, h);
+      ctx.drawImage(img, 0, 0, w, h);
+      cb(c.toDataURL('image/jpeg', 0.85));
+    };
+    img.onerror = function() { cb(e.target.result); };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
 }
 async function uploadSatuTTD(tipe, base64) {
-try {
-return await postKeBackend({ action: 'uploadTtd', type: tipe, base64: base64 });
-} catch (err) {
-return { ok: false, error: err.message };
-}
+  try {
+    return await postKeBackend({ action: 'uploadTtd', type: tipe, base64: base64 });
+  } catch (err) {
+    return { ok: false, error: err.message };
+  }
 }
 async function uploadSemuaTTD() {
-if (!getBackendUrl()) {
-tampilkanNotif('⚠️ URL backend belum diatur', 'error');
-return;
-}
-if (!imgKepsekBase64 && !imgGuruBase64) {
-tampilkanNotif('⚠️ Belum ada gambar ttd.', 'error');
-return;
-}
-let sukses = 0;
-if (imgKepsekBase64) {
-const r = await uploadSatuTTD('kepsek', imgKepsekBase64);
-if (r.ok) sukses++;
-}
-if (imgGuruBase64) {
-const r = await uploadSatuTTD('guru', imgGuruBase64);
-if (r.ok) sukses++;
-}
-if (sukses > 0) tampilkanNotif('✍️ ' + sukses + ' ttd ter-upload', 'success');
-else tampilkanNotif('❌ Gagal upload', 'error');
+  if (!getBackendUrl()) { tampilkanNotif('⚠️ URL backend belum diatur', 'error'); return; }
+  if (!imgKepsekBase64 && !imgGuruBase64) { tampilkanNotif('⚠️ Belum ada gambar ttd.', 'error'); return; }
+  let sukses = 0;
+  if (imgKepsekBase64) { const r = await uploadSatuTTD('kepsek', imgKepsekBase64); if (r.ok) sukses++; }
+  if (imgGuruBase64) { const r = await uploadSatuTTD('guru', imgGuruBase64); if (r.ok) sukses++; }
+  if (sukses > 0) tampilkanNotif('✍️ ' + sukses + ' ttd ter-upload', 'success');
+  else tampilkanNotif('❌ Gagal upload', 'error');
 }
 function uploadLogo(sisi, inp) {
-var f = inp.files[0];
-if (!f) return;
-kompresGambar(f, 400, 400, function(b) {
-if (sisi === 'kiri') {
-logoKiriBase64 = b;
-setLogoKiriPreview(b);
-} else {
-logoKananBase64 = b;
-setLogoKananPreview(b);
-}
-if (!getBackendUrl()) {
-tampilkanNotif('⚠️ URL backend belum diatur', 'error');
-return;
-}
-postKeBackend({ action: 'uploadLogo', sisi: sisi, base64: b })
-.then(function(res) {
-if (res && res.ok) {
-if (sisi === 'kiri') {
-logoKiriUrl = res.url;
-try {
-localStorage.setItem('agendaBK_logoKiriUrl', res.url);
-localStorage.setItem('agendaBK_logoKiriB64', b);
-} catch (e) {}
-} else {
-logoKananUrl = res.url;
-try {
-localStorage.setItem('agendaBK_logoKananUrl', res.url);
-localStorage.setItem('agendaBK_logoKananB64', b);
-} catch (e) {}
-}
-tampilkanNotif('🖼️ Logo ' + (sisi === 'kiri' ? 'Kiri' : 'Kanan') + ' ter-upload ke Drive', 'success');
-updateLogoStatus();
-} else {
-tampilkanNotif('❌ Gagal upload logo', 'error');
-}
-})
-.catch(function() {
-tampilkanNotif('❌ Gagal upload logo', 'error');
-});
-});
+  var f = inp.files[0];
+  if (!f) return;
+  kompresGambar(f, 400, 400, function(b) {
+    if (sisi === 'kiri') { logoKiriBase64 = b; setLogoKiriPreview(b); }
+    else { logoKananBase64 = b; setLogoKananPreview(b); }
+    if (!getBackendUrl()) { tampilkanNotif('⚠️ URL backend belum diatur', 'error'); return; }
+    postKeBackend({ action: 'uploadLogo', sisi: sisi, base64: b })
+      .then(function(res) {
+        if (res && res.ok) {
+          if (sisi === 'kiri') {
+            logoKiriUrl = res.url;
+            try {
+              localStorage.setItem('agendaBK_logoKiriUrl_Sotya_Palupi_GBK_IX', res.url);
+              localStorage.setItem('agendaBK_logoKiriB64_Sotya_Palupi_GBK_IX', b);
+            } catch (e) {}
+          } else {
+            logoKananUrl = res.url;
+            try {
+              localStorage.setItem('agendaBK_logoKananUrl_Sotya_Palupi_GBK_IX', res.url);
+              localStorage.setItem('agendaBK_logoKananB64_Sotya_Palupi_GBK_IX', b);
+            } catch (e) {}
+          }
+          tampilkanNotif('🖼️ Logo ' + (sisi === 'kiri' ? 'Kiri' : 'Kanan') + ' ter-upload ke Drive', 'success');
+          updateLogoStatus();
+        } else {
+          tampilkanNotif('❌ Gagal upload logo', 'error');
+        }
+      })
+      .catch(function() { tampilkanNotif('❌ Gagal upload logo', 'error'); });
+  });
 }
 function setLogoKiriPreview(src) {
-var img = document.getElementById('logoKiriImg');
-var prev = document.getElementById('logoPreviewKiri');
-var ph = document.getElementById('logoKiriPlaceholder');
-if (img) { img.src = src; img.style.display = 'block'; }
-if (prev) { prev.src = src; prev.style.display = 'block'; }
-if (ph) ph.style.display = 'none';
+  var img = document.getElementById('logoKiriImg');
+  var prev = document.getElementById('logoPreviewKiri');
+  var ph = document.getElementById('logoKiriPlaceholder');
+  if (img) { img.src = src; img.style.display = 'block'; }
+  if (prev) { prev.src = src; prev.style.display = 'block'; }
+  if (ph) ph.style.display = 'none';
 }
 function setLogoKananPreview(src) {
-var img = document.getElementById('logoKananImg');
-var prev = document.getElementById('logoPreviewKanan');
-var ph = document.getElementById('logoKananPlaceholder');
-if (img) { img.src = src; img.style.display = 'block'; }
-if (prev) { prev.src = src; prev.style.display = 'block'; }
-if (ph) ph.style.display = 'none';
+  var img = document.getElementById('logoKananImg');
+  var prev = document.getElementById('logoPreviewKanan');
+  var ph = document.getElementById('logoKananPlaceholder');
+  if (img) { img.src = src; img.style.display = 'block'; }
+  if (prev) { prev.src = src; prev.style.display = 'block'; }
+  if (ph) ph.style.display = 'none';
 }
 function updateLogoStatus() {
-var st = document.getElementById('logoStatus');
-if (!st) return;
-var adaKiri = !!logoKiriUrl;
-var adaKanan = !!logoKananUrl;
-if (adaKiri && adaKanan) st.textContent = '✅ Logo kiri & kanan tersimpan.';
-else if (adaKiri) st.textContent = '⚠️ Baru logo kiri tersimpan.';
-else if (adaKanan) st.textContent = '⚠️ Baru logo kanan tersimpan.';
-else st.textContent = 'Belum ada logo ter-upload.';
+  var st = document.getElementById('logoStatus');
+  if (!st) return;
+  var adaKiri = !!logoKiriUrl, adaKanan = !!logoKananUrl;
+  if (adaKiri && adaKanan) st.textContent = '✅ Logo kiri & kanan tersimpan.';
+  else if (adaKiri) st.textContent = '⚠️ Baru logo kiri tersimpan.';
+  else if (adaKanan) st.textContent = '⚠️ Baru logo kanan tersimpan.';
+  else st.textContent = 'Belum ada logo ter-upload.';
 }
 function hapusLogo() {
-if (!confirm('Hapus semua logo dari dashboard? (File di Drive tidak ikut terhapus)')) return;
-logoKiriBase64 = '';
-logoKananBase64 = '';
-logoKiriUrl = '';
-logoKananUrl = '';
-try {
-localStorage.removeItem('agendaBK_logoKiriUrl');
-localStorage.removeItem('agendaBK_logoKiriB64');
-localStorage.removeItem('agendaBK_logoKananUrl');
-localStorage.removeItem('agendaBK_logoKananB64');
-} catch (e) {}
-['logoKiriImg', 'logoKananImg', 'logoPreviewKiri', 'logoPreviewKanan'].forEach(function(id) {
-var el = document.getElementById(id);
-if (el) {
-el.src = '';
-el.style.display = 'none';
-}
-});
-['logoKiriPlaceholder', 'logoKananPlaceholder'].forEach(function(id) {
-var el = document.getElementById(id);
-if (el) el.style.display = 'flex';
-});
-updateLogoStatus();
-tampilkanNotif('🗑️ Semua logo dihapus dari dashboard', 'info');
+  if (!confirm('Hapus semua logo dari dashboard? (File di Drive tidak ikut terhapus)')) return;
+  logoKiriBase64 = ''; logoKananBase64 = ''; logoKiriUrl = ''; logoKananUrl = '';
+  try {
+    localStorage.removeItem('agendaBK_logoKiriUrl_Sotya_Palupi_GBK_IX');
+    localStorage.removeItem('agendaBK_logoKiriB64_Sotya_Palupi_GBK_IX');
+    localStorage.removeItem('agendaBK_logoKananUrl_Sotya_Palupi_GBK_IX');
+    localStorage.removeItem('agendaBK_logoKananB64_Sotya_Palupi_GBK_IX');
+  } catch (e) {}
+  ['logoKiriImg', 'logoKananImg', 'logoPreviewKiri', 'logoPreviewKanan'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) { el.src = ''; el.style.display = 'none'; }
+  });
+  ['logoKiriPlaceholder', 'logoKananPlaceholder'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.style.display = 'flex';
+  });
+  updateLogoStatus();
+  tampilkanNotif('🗑️ Semua logo dihapus dari dashboard', 'info');
 }
 function muatLogoDariStorage() {
-try {
-var kiriB64 = localStorage.getItem('agendaBK_logoKiriB64');
-var kananB64 = localStorage.getItem('agendaBK_logoKananB64');
-var kiriUrl = localStorage.getItem('agendaBK_logoKiriUrl');
-var kananUrl = localStorage.getItem('agendaBK_logoKananUrl');
-if (kiriB64) {
-setLogoKiriPreview(kiriB64);
-logoKiriBase64 = kiriB64;
-logoKiriUrl = kiriUrl || '';
+  try {
+    var kiriB64 = localStorage.getItem('agendaBK_logoKiriB64_Sotya_Palupi_GBK_IX');
+    var kananB64 = localStorage.getItem('agendaBK_logoKananB64_Sotya_Palupi_GBK_IX');
+    var kiriUrl = localStorage.getItem('agendaBK_logoKiriUrl_Sotya_Palupi_GBK_IX');
+    var kananUrl = localStorage.getItem('agendaBK_logoKananUrl_Sotya_Palupi_GBK_IX');
+    if (kiriB64) { setLogoKiriPreview(kiriB64); logoKiriBase64 = kiriB64; logoKiriUrl = kiriUrl || ''; }
+    if (kananB64) { setLogoKananPreview(kananB64); logoKananBase64 = kananB64; logoKananUrl = kananUrl || ''; }
+    updateLogoStatus();
+  } catch (e) {}
 }
-if (kananB64) {
-setLogoKananPreview(kananB64);
-logoKananBase64 = kananB64;
-logoKananUrl = kananUrl || '';
-}
-updateLogoStatus();
-} catch (e) {}
-}
+
+/* ================================================================
+   GENERATE LAPORAN PDF — dari SELURUH Sheet Aktif
+   ================================================================ */
 async function generateLaporan() {
-if (!getBackendUrl()) {
-tampilkanNotif('⚠️ URL backend belum diatur', 'error');
-return;
+  if (!getBackendUrl()) { tampilkanNotif('⚠️ URL backend belum diatur', 'error'); return; }
+  tampilkanNotif('⏳ Sinkronisasi data ke Spreadsheet...', 'info');
+  const ok = await kirimKeSpreadsheet(true);
+  if (!ok) return;
+  tampilkanNotif('📄 Membuat PDF dari seluruh Sheet Aktif...', 'info');
+  try {
+    const res = await postKeBackend({ action: 'generateLaporan' });
+    if (res && res.success) {
+      tampilkanNotif('✅ PDF berhasil: ' + res.totalBaris + ' baris (D1 s.d. Dn)', 'success');
+      setBackendStatus('📄 PDF diperbarui — ' + res.totalBaris + ' baris aktif', '#059669');
+      window.open(res.pdfUrl, '_blank');
+    } else {
+      tampilkanNotif('❌ ' + (res && res.message ? res.message : 'Gagal membuat PDF'), 'error');
+      window.open(getBackendUrl() + '?page=laporan', '_blank');
+    }
+  } catch (err) {
+    tampilkanNotif('⚠️ ' + err.message + ' — membuka halaman laporan manual', 'info');
+    window.open(getBackendUrl() + '?page=laporan', '_blank');
+  }
 }
-tampilkanNotif('⏳ Sinkronisasi data ...', 'info');
-const ok = await kirimKeSpreadsheet(true);
-if (!ok) return;
-window.open(getBackendUrl() + '?page=laporan', '_blank');
-tampilkanNotif('📄 Halaman laporan dibuka.', 'info');
-}
+
 /* ====== Keterangan: builder media (URL + foto) ====== */
 function bangunMediaKeterangan(g, b, baris) {
-var adaUrl = baris.keteranganUrl && baris.keteranganUrl.trim() !== '';
-var adaFoto = baris.keteranganGambar && baris.keteranganGambar.trim() !== '';
-if (!adaUrl && !adaFoto) return '';
-var html = '<div class="ket-media">';
-if (adaUrl) {
-html += '<span class="ket-media-row">'
-+ '<a class="ket-link" href="' + escapeHtml(baris.keteranganUrl) + '" target="_blank" rel="noopener" title="' + escapeHtml(baris.keteranganUrl) + '">🔗 ' + escapeHtml(singkatTeks(baris.keteranganUrl, 30)) + '</a>'
-+ '<button class="btn-mini btn-mini-hapus" title="Hapus URL" onclick="hapusUrlKeterangan(' + g + ',' + b + ')">✖</button>'
-+ '</span>';
-}
-if (adaFoto) {
-html += '<span class="ket-media-row">'
-+ '<img class="ket-img" src="' + baris.keteranganGambar + '" alt="Foto keterangan" title="Klik untuk memperbesar" onclick="lihatFotoKeterangan(' + g + ',' + b + ')">'
-+ '<button class="btn-mini btn-mini-hapus" title="Hapus foto" onclick="hapusFotoKeterangan(' + g + ',' + b + ')">✖</button>'
-+ '</span>';
-}
-html += '</div>';
-return html;
+  var adaUrl = baris.keteranganUrl && baris.keteranganUrl.trim() !== '';
+  var adaFoto = baris.keteranganGambar && baris.keteranganGambar.trim() !== '';
+  if (!adaUrl && !adaFoto) return '';
+  var html = '<div class="ket-media">';
+  if (adaUrl) {
+    html += '<span class="ket-media-row">'
+      + '<a class="ket-link" href="' + escapeHtml(baris.keteranganUrl) + '" target="_blank" rel="noopener" title="' + escapeHtml(baris.keteranganUrl) + '">🔗 ' + escapeHtml(singkatTeks(baris.keteranganUrl, 30)) + '</a>'
+      + '<button class="btn-mini btn-mini-hapus" title="Hapus URL" onclick="hapusUrlKeterangan(' + g + ',' + b + ')">✖</button>'
+      + '</span>';
+  }
+  if (adaFoto) {
+    html += '<span class="ket-media-row">'
+      + '<img class="ket-img" src="' + baris.keteranganGambar + '" alt="Foto keterangan" title="Klik untuk memperbesar" onclick="lihatFotoKeterangan(' + g + ',' + b + ')">'
+      + '<button class="btn-mini btn-mini-hapus" title="Hapus foto" onclick="hapusFotoKeterangan(' + g + ',' + b + ')">✖</button>'
+      + '</span>';
+  }
+  html += '</div>';
+  return html;
 }
 function inputUrlKeterangan(grupIdx, barisIdx) {
-if (!dataTabel[grupIdx] || !dataTabel[grupIdx].baris[barisIdx]) return;
-var sekarang = dataTabel[grupIdx].baris[barisIdx].keteranganUrl || '';
-var input = prompt('Masukkan URL referensi untuk keterangan baris ini:', sekarang);
-if (input === null) return;
-var url = input.trim();
-if (url === '') {
-dataTabel[grupIdx].baris[barisIdx].keteranganUrl = '';
-renderTabel();
-simpanLocal(true);
-tampilkanNotif('🔗 URL keterangan dikosongkan', 'info');
-return;
-}
-if (!/^https?:\/\//i.test(url)) url = 'https://' + url;
-try { new URL(url); } catch (e) {
-tampilkanNotif('❌ Format URL tidak valid', 'error');
-return;
-}
-dataTabel[grupIdx].baris[barisIdx].keteranganUrl = url;
-renderTabel();
-simpanLocal(true);
-tampilkanNotif('🔗 URL keterangan disimpan', 'success');
+  if (!dataTabel[grupIdx] || !dataTabel[grupIdx].baris[barisIdx]) return;
+  var sekarang = dataTabel[grupIdx].baris[barisIdx].keteranganUrl || '';
+  var input = prompt('Masukkan URL referensi untuk keterangan baris ini:', sekarang);
+  if (input === null) return;
+  var url = input.trim();
+  if (url === '') {
+    dataTabel[grupIdx].baris[barisIdx].keteranganUrl = '';
+    renderTabel(); simpanLocal(true);
+    tampilkanNotif('🔗 URL keterangan dikosongkan', 'info');
+    return;
+  }
+  if (!/^https?:\/\//i.test(url)) url = 'https://' + url;
+  try { new URL(url); } catch (e) { tampilkanNotif('❌ Format URL tidak valid', 'error'); return; }
+  dataTabel[grupIdx].baris[barisIdx].keteranganUrl = url;
+  renderTabel(); simpanLocal(true);
+  tampilkanNotif('🔗 URL keterangan disimpan', 'success');
 }
 function hapusUrlKeterangan(grupIdx, barisIdx) {
-if (!dataTabel[grupIdx] || !dataTabel[grupIdx].baris[barisIdx]) return;
-dataTabel[grupIdx].baris[barisIdx].keteranganUrl = '';
-renderTabel();
-simpanLocal(true);
-tampilkanNotif('🔗 URL keterangan dihapus', 'info');
+  if (!dataTabel[grupIdx] || !dataTabel[grupIdx].baris[barisIdx]) return;
+  dataTabel[grupIdx].baris[barisIdx].keteranganUrl = '';
+  renderTabel(); simpanLocal(true);
+  tampilkanNotif('🔗 URL keterangan dihapus', 'info');
 }
-/* ====== UPLOAD FOTO KETERANGAN: langsung ke Drive agar pasti masuk PDF ====== */
-function uploadFotoKeterangan(grupIdx, barisIdx, input) {
-var f = input.files && input.files[0];
-if (!f) return;
-if (!/^image\//.test(f.type)) {
-tampilkanNotif('❌ File harus berupa gambar', 'error');
-input.value = '';
-return;
-}
-kompresGambarJpeg(f, 640, 480, function(base64) {
-if (!dataTabel[grupIdx] || !dataTabel[grupIdx].baris[barisIdx]) return;
-// Preview langsung pakai base64
-dataTabel[grupIdx].baris[barisIdx].keteranganGambar = base64;
-renderTabel();
-simpanLocal(true);
 
-if (!getBackendUrl()) {
-tampilkanNotif('⚠️ URL backend belum diatur — foto hanya tersimpan lokal', 'error');
-return;
-}
-tampilkanNotif('⏳ Meng-upload foto ke Drive...', 'info');
-postKeBackend({ action: 'uploadKeterangan', base64: base64 })
-.then(function(res) {
-if (res && res.ok && res.url) {
-if (dataTabel[grupIdx] && dataTabel[grupIdx].baris[barisIdx]) {
-dataTabel[grupIdx].baris[barisIdx].keteranganGambar = res.url;
-simpanLocal(true);
-tampilkanNotif('📷 Foto ter-upload ke Drive & siap masuk laporan PDF', 'success');
-}
-} else {
-tampilkanNotif('❌ Gagal upload foto ke Drive: ' + (res && res.error ? res.error : ''), 'error');
-}
-})
-.catch(function(err) {
-tampilkanNotif('❌ Gagal upload foto ke Drive: ' + err.message, 'error');
-});
-});
-input.value = '';
+/* ====== UPLOAD FOTO KETERANGAN: langsung ke folder Drive Sotya_Palupi_GBK_IX ====== */
+function uploadFotoKeterangan(grupIdx, barisIdx, input) {
+  var f = input.files && input.files[0];
+  if (!f) return;
+  if (!/^image\//.test(f.type)) {
+    tampilkanNotif('❌ File harus berupa gambar', 'error');
+    input.value = '';
+    return;
+  }
+  kompresGambarJpeg(f, 640, 480, function(base64) {
+    if (!dataTabel[grupIdx] || !dataTabel[grupIdx].baris[barisIdx]) return;
+    dataTabel[grupIdx].baris[barisIdx].keteranganGambar = base64;
+    renderTabel();
+    simpanLocal(true);
+    if (!getBackendUrl()) {
+      tampilkanNotif('⚠️ URL backend belum diatur — foto akan di-upload saat Kirim Data', 'error');
+      return;
+    }
+    tampilkanNotif('⏳ Meng-upload foto ke folder Drive...', 'info');
+    postKeBackend({ action: 'uploadKeterangan', base64: base64 })
+      .then(function(res) {
+        if (res && res.ok && res.url) {
+          if (dataTabel[grupIdx] && dataTabel[grupIdx].baris[barisIdx]) {
+            dataTabel[grupIdx].baris[barisIdx].keteranganGambar = res.url;
+            simpanLocal(true);
+            tampilkanNotif('📷 Foto ter-upload ke Drive & link terekap di Spreadsheet', 'success');
+          }
+        } else {
+          tampilkanNotif('❌ Gagal upload foto ke Drive: ' + (res && res.error ? res.error : ''), 'error');
+        }
+      })
+      .catch(function(err) {
+        tampilkanNotif('❌ Gagal upload foto ke Drive: ' + err.message, 'error');
+      });
+  });
+  input.value = '';
 }
 function hapusFotoKeterangan(grupIdx, barisIdx) {
-if (!confirm('Hapus foto keterangan ini?')) return;
-if (!dataTabel[grupIdx] || !dataTabel[grupIdx].baris[barisIdx]) return;
-dataTabel[grupIdx].baris[barisIdx].keteranganGambar = '';
-renderTabel();
-simpanLocal(true);
-tampilkanNotif('🗑️ Foto keterangan dihapus', 'info');
+  if (!confirm('Hapus foto keterangan ini?')) return;
+  if (!dataTabel[grupIdx] || !dataTabel[grupIdx].baris[barisIdx]) return;
+  dataTabel[grupIdx].baris[barisIdx].keteranganGambar = '';
+  renderTabel(); simpanLocal(true);
+  tampilkanNotif('🗑️ Foto keterangan dihapus', 'info');
 }
 function lihatFotoKeterangan(grupIdx, barisIdx) {
-if (!dataTabel[grupIdx] || !dataTabel[grupIdx].baris[barisIdx]) return;
-var src = dataTabel[grupIdx].baris[barisIdx].keteranganGambar;
-if (!src) return;
-var overlay = document.createElement('div');
-overlay.className = 'ket-lightbox';
-overlay.innerHTML = '<img src="' + src + '" alt="Foto keterangan">';
-overlay.addEventListener('click', function() {
-if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
-});
-document.body.appendChild(overlay);
+  if (!dataTabel[grupIdx] || !dataTabel[grupIdx].baris[barisIdx]) return;
+  var src = dataTabel[grupIdx].baris[barisIdx].keteranganGambar;
+  if (!src) return;
+  var overlay = document.createElement('div');
+  overlay.className = 'ket-lightbox';
+  overlay.innerHTML = '<img src="' + src + '" alt="Foto keterangan">';
+  overlay.addEventListener('click', function() {
+    if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
+  });
+  document.body.appendChild(overlay);
 }
+
 function renderTabel() {
-const tbody = document.getElementById('tbody-kelas9');
-tbody.innerHTML = '';
-if (!Array.isArray(dataTabel) || dataTabel.length === 0) {
-tbody.innerHTML = '<tr><td colspan="10"><div class="empty-state"><span class="icon">📭</span>Belum ada data agenda.</div></td></tr>';
-return;
-}
-dataTabel.forEach(function(grup, grupIndex) {
-const rowspan = grup.baris.length;
-grup.baris.forEach(function(baris, barisIndex) {
-const tr = document.createElement('tr');
-if (barisIndex > 0) tr.classList.add('baris-tambahan');
-var isi = '';
-if (barisIndex === 0) {
-isi += '<td rowspan="' + rowspan + '" class="cell-rowspan" contenteditable="true" data-grup="' + grupIndex + '" data-field="no">' + escapeHtml(grup.no) + '</td>';
-isi += '<td rowspan="' + rowspan + '" class="cell-rowspan" contenteditable="true" data-grup="' + grupIndex + '" data-field="hariTanggal">' + escapeHtml(grup.hariTanggal) + '</td>';
-}
-isi += '<td class="kelas-cell" contenteditable="true" data-grup="' + grupIndex + '" data-baris="' + barisIndex + '" data-field="kelas">' + escapeHtml(baris.kelas) + '</td>';
-isi += '<td contenteditable="true" data-grup="' + grupIndex + '" data-baris="' + barisIndex + '" data-field="kehadiran">' + escapeHtml(baris.kehadiran) + '</td>';
-isi += '<td contenteditable="true" data-grup="' + grupIndex + '" data-baris="' + barisIndex + '" data-field="pertemuan">' + escapeHtml(baris.pertemuan) + '</td>';
-isi += '<td contenteditable="true" data-grup="' + grupIndex + '" data-baris="' + barisIndex + '" data-field="topik">' + escapeHtml(baris.topik) + '</td>';
-isi += '<td contenteditable="true" data-grup="' + grupIndex + '" data-baris="' + barisIndex + '" data-field="bidang">' + escapeHtml(baris.bidang) + '</td>';
-isi += '<td contenteditable="true" data-grup="' + grupIndex + '" data-baris="' + barisIndex + '" data-field="jenis">' + escapeHtml(baris.jenis) + '</td>';
-isi += '<td class="keterangan-cell">'
-+ '<div class="ket-text" contenteditable="true" data-grup="' + grupIndex + '" data-baris="' + barisIndex + '">' + escapeHtml(baris.keterangan || '') + '</div>'
-+ bangunMediaKeterangan(grupIndex, barisIndex, baris)
-+ '<div class="ket-tools">'
-+ '<button class="btn-mini btn-mini-url" title="Isi / edit URL referensi" onclick="inputUrlKeterangan(' + grupIndex + ',' + barisIndex + ')">🔗 URL</button>'
-+ '<button class="btn-mini btn-mini-foto" title="Upload foto pendukung" onclick="document.getElementById(\'ketFile-' + grupIndex + '-' + barisIndex + '\').click()">📷 Foto</button>'
-+ '<input type="file" id="ketFile-' + grupIndex + '-' + barisIndex + '" accept="image/*" style="display:none" onchange="uploadFotoKeterangan(' + grupIndex + ',' + barisIndex + ', this)">'
-+ '</div>'
-+ '</td>';
-isi += '<td class="col-aksi">';
-isi += '<button class="btn-plus" onclick="tambahBarisKeGrup(' + grupIndex + ')" title="Tambah baris">➕</button>';
-isi += '<button class="btn-hapus" onclick="hapusBaris(' + grupIndex + ', ' + barisIndex + ')" title="Hapus baris">🗑️</button>';
-isi += '</td>';
-tr.innerHTML = isi;
-tbody.appendChild(tr);
-});
-});
-document.querySelectorAll('td[contenteditable="true"]').forEach(function(cell) {
-cell.addEventListener('blur', function() {
-const grupIdx = parseInt(this.dataset.grup);
-const barisIdx = parseInt(this.dataset.baris);
-const field = this.dataset.field;
-if (!dataTabel[grupIdx]) return;
-if (field === 'no' || field === 'hariTanggal') {
-dataTabel[grupIdx][field] = this.innerText.trim();
-if (field === 'hariTanggal') {
-dataTabel[grupIdx].bulan = this.innerText.trim();
-}
-} else if (!isNaN(barisIdx) && dataTabel[grupIdx].baris[barisIdx]) {
-dataTabel[grupIdx].baris[barisIdx][field] = this.innerText.trim();
-}
-this.classList.add('edited');
-simpanLocal(true);
-});
-});
-document.querySelectorAll('.ket-text[contenteditable="true"]').forEach(function(cell) {
-cell.addEventListener('blur', function() {
-const g = parseInt(this.dataset.grup);
-const b = parseInt(this.dataset.baris);
-if (dataTabel[g] && dataTabel[g].baris[b]) {
-dataTabel[g].baris[b].keterangan = this.innerText.trim();
-simpanLocal(true);
-}
-});
-cell.addEventListener('paste', function(e) {
-e.preventDefault();
-var teks = (e.clipboardData || window.clipboardData).getData('text/plain');
-document.execCommand('insertText', false, teks);
-});
-});
+  const tbody = document.getElementById('tbody-Sotya-Palupi-GBK-IX');
+  tbody.innerHTML = '';
+  if (!Array.isArray(dataTabel) || dataTabel.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="10"><div class="empty-state"><span class="icon">📭</span>Belum ada data agenda.<br><small>Data lama tetap aman di Sheet Aktif &amp; Riwayat.</small></div></td></tr>';
+    return;
+  }
+  dataTabel.forEach(function(grup, grupIndex) {
+    const rowspan = grup.baris.length;
+    grup.baris.forEach(function(baris, barisIndex) {
+      const tr = document.createElement('tr');
+      if (barisIndex > 0) tr.classList.add('baris-tambahan');
+      var isi = '';
+      if (barisIndex === 0) {
+        isi += '<td rowspan="' + rowspan + '" class="cell-rowspan" contenteditable="true" data-grup="' + grupIndex + '" data-field="no">' + escapeHtml(grup.no) + '</td>';
+        isi += '<td rowspan="' + rowspan + '" class="cell-rowspan" contenteditable="true" data-grup="' + grupIndex + '" data-field="hariTanggal">' + escapeHtml(grup.hariTanggal) + '</td>';
+      }
+      isi += '<td class="kelas-cell" contenteditable="true" data-grup="' + grupIndex + '" data-baris="' + barisIndex + '" data-field="kelas">' + escapeHtml(baris.kelas) + '</td>';
+      isi += '<td contenteditable="true" data-grup="' + grupIndex + '" data-baris="' + barisIndex + '" data-field="kehadiran">' + escapeHtml(baris.kehadiran) + '</td>';
+      isi += '<td contenteditable="true" data-grup="' + grupIndex + '" data-baris="' + barisIndex + '" data-field="pertemuan">' + escapeHtml(baris.pertemuan) + '</td>';
+      isi += '<td contenteditable="true" data-grup="' + grupIndex + '" data-baris="' + barisIndex + '" data-field="topik">' + escapeHtml(baris.topik) + '</td>';
+      isi += '<td contenteditable="true" data-grup="' + grupIndex + '" data-baris="' + barisIndex + '" data-field="bidang">' + escapeHtml(baris.bidang) + '</td>';
+      isi += '<td contenteditable="true" data-grup="' + grupIndex + '" data-baris="' + barisIndex + '" data-field="jenis">' + escapeHtml(baris.jenis) + '</td>';
+      isi += '<td class="keterangan-cell">'
+        + '<div class="ket-text" contenteditable="true" data-grup="' + grupIndex + '" data-baris="' + barisIndex + '">' + escapeHtml(baris.keterangan || '') + '</div>'
+        + bangunMediaKeterangan(grupIndex, barisIndex, baris)
+        + '<div class="ket-tools">'
+        + '<button class="btn-mini btn-mini-url" title="Isi / edit URL referensi" onclick="inputUrlKeterangan(' + grupIndex + ',' + barisIndex + ')">🔗 URL</button>'
+        + '<button class="btn-mini btn-mini-foto" title="Upload foto pendukung (masuk folder Drive Sotya_Palupi_GBK_IX)" onclick="document.getElementById(\'ketFile-' + grupIndex + '-' + barisIndex + '\').click()">📷 Foto</button>'
+        + '<input type="file" id="ketFile-' + grupIndex + '-' + barisIndex + '" accept="image/*" style="display:none" onchange="uploadFotoKeterangan(' + grupIndex + ',' + barisIndex + ', this)">'
+        + '</div>'
+        + '</td>';
+      isi += '<td class="col-aksi">';
+      isi += '<button class="btn-plus" onclick="tambahBarisKeGrup(' + grupIndex + ')" title="Tambah baris">➕</button>';
+      isi += '<button class="btn-hapus" onclick="hapusBaris(' + grupIndex + ', ' + barisIndex + ')" title="Hapus baris">🗑️</button>';
+      isi += '</td>';
+      tr.innerHTML = isi;
+      tbody.appendChild(tr);
+    });
+  });
+
+  document.querySelectorAll('td[contenteditable="true"]').forEach(function(cell) {
+    cell.addEventListener('blur', function() {
+      const grupIdx = parseInt(this.dataset.grup);
+      const barisIdx = parseInt(this.dataset.baris);
+      const field = this.dataset.field;
+      if (!dataTabel[grupIdx]) return;
+      if (field === 'no' || field === 'hariTanggal') {
+        dataTabel[grupIdx][field] = this.innerText.trim();
+        if (field === 'hariTanggal') dataTabel[grupIdx].bulan = this.innerText.trim();
+      } else if (!isNaN(barisIdx) && dataTabel[grupIdx].baris[barisIdx]) {
+        dataTabel[grupIdx].baris[barisIdx][field] = this.innerText.trim();
+      }
+      this.classList.add('edited');
+      simpanLocal(true);
+    });
+  });
+
+  document.querySelectorAll('.ket-text[contenteditable="true"]').forEach(function(cell) {
+    cell.addEventListener('blur', function() {
+      const g = parseInt(this.dataset.grup);
+      const b = parseInt(this.dataset.baris);
+      if (dataTabel[g] && dataTabel[g].baris[b]) {
+        dataTabel[g].baris[b].keterangan = this.innerText.trim();
+        simpanLocal(true);
+      }
+    });
+    cell.addEventListener('paste', function(e) {
+      e.preventDefault();
+      var teks = (e.clipboardData || window.clipboardData).getData('text/plain');
+      document.execCommand('insertText', false, teks);
+    });
+  });
 }
 function tambahBarisKeGrup(grupIndex) {
-const grup = dataTabel[grupIndex];
-if (!grup) return;
-const huruf = String.fromCharCode(65 + (grup.baris.length % 26));
-const barisTerakhir = grup.baris[grup.baris.length - 1] || {};
-grup.baris.push({
-kelas: '9' + huruf,
-kehadiran: '0/0',
-pertemuan: barisTerakhir.pertemuan || '1',
-topik: 'Topik Layanan Tambahan',
-bidang: 'Pribadi',
-jenis: 'Klasikal',
-keterangan: 'Pertemuan tambahan',
-keteranganUrl: '',
-keteranganGambar: ''
-});
-renderTabel();
-simpanLocal(true);
-tampilkanNotif('✅ Baris baru ditambahkan', 'info');
+  const grup = dataTabel[grupIndex];
+  if (!grup) return;
+  const huruf = String.fromCharCode(65 + (grup.baris.length % 26));
+  const barisTerakhir = grup.baris[grup.baris.length - 1] || {};
+  grup.baris.push({
+    kelas: '9' + huruf,
+    kehadiran: '0/0',
+    pertemuan: barisTerakhir.pertemuan || '1',
+    topik: 'Topik Layanan Tambahan',
+    bidang: 'Karir',
+    jenis: 'Klasikal',
+    keterangan: 'Pertemuan tambahan',
+    keteranganUrl: '',
+    keteranganGambar: ''
+  });
+  renderTabel(); simpanLocal(true);
+  tampilkanNotif('✅ Baris baru ditambahkan', 'info');
 }
 function tambahBarisDalamGrupTerakhir() {
-if (!dataTabel || dataTabel.length === 0) {
-tampilkanNotif('⚠️ Belum ada data', 'error');
-return;
-}
-tambahBarisKeGrup(dataTabel.length - 1);
+  if (!dataTabel || dataTabel.length === 0) { tampilkanNotif('⚠️ Belum ada data', 'error'); return; }
+  tambahBarisKeGrup(dataTabel.length - 1);
 }
 function tambahNoBaru() {
-if (!dataTabel || dataTabel.length === 0) {
-tampilkanNotif('⚠️ Belum ada data, gunakan isi data terlebih dahulu', 'error');
-}
-const noBaru = String(dataTabel.length + 1);
-dataTabel.push({
-no: noBaru,
-hariTanggal: '—',
-bulan: '—',
-baris: [{
-kelas: '9A',
-kehadiran: '0/0',
-pertemuan: '1',
-topik: 'Topik Baru',
-bidang: 'Pribadi',
-jenis: 'Klasikal',
-keterangan: '—',
-keteranganUrl: '',
-keteranganGambar: ''
-}]
-});
-// ===== ATURAN BARU: Tandai periode baru agar data sebelumnya terarsip ke Riwayat saat dikirim =====
-try { localStorage.setItem(PERIODE_KEY, '1'); } catch (e) {}
-renderTabel();
-simpanLocal(true);
-tampilkanNotif('🔢 No. ' + noBaru + ' ditambahkan — pengiriman berikutnya akan mengarsipkan data sebelumnya ke Riwayat', 'success');
+  if (!dataTabel || dataTabel.length === 0) {
+    tampilkanNotif('⚠️ Belum ada data, gunakan isi data terlebih dahulu', 'error');
+  }
+  const noBaru = String(dataTabel.length + 1);
+  dataTabel.push({
+    no: noBaru,
+    hariTanggal: '—',
+    bulan: '—',
+    baris: [{
+      kelas: '9A', kehadiran: '0/0', pertemuan: '1',
+      topik: 'Topik Baru', bidang: 'Karir', jenis: 'Klasikal',
+      keterangan: '—', keteranganUrl: '', keteranganGambar: ''
+    }]
+  });
+  try { localStorage.setItem(PERIODE_KEY, '1'); } catch (e) {}
+  renderTabel(); simpanLocal(true);
+  tampilkanNotif('🔢 No. ' + noBaru + ' ditambahkan — kirim berikutnya: batch lama → Riwayat, data baru → Sheet Aktif', 'success');
 }
 function hapusBaris(grupIndex, barisIndex) {
-if (!confirm('Yakin ingin menghapus baris ini?')) return;
-dataTabel[grupIndex].baris.splice(barisIndex, 1);
-if (dataTabel[grupIndex].baris.length === 0) dataTabel.splice(grupIndex, 1);
-renderTabel();
-simpanLocal(true);
-tampilkanNotif('🗑️ Baris dihapus', 'error');
+  if (!confirm('Yakin ingin menghapus baris ini?\n(Data yang sudah terkirim ke Sheet Aktif tetap aman.)')) return;
+  var hapusGrupSeluruhnya = dataTabel[grupIndex].baris.length === 1;
+  dataTabel[grupIndex].baris.splice(barisIndex, 1);
+  if (dataTabel[grupIndex].baris.length === 0) dataTabel.splice(grupIndex, 1);
+  if (hapusGrupSeluruhnya && grupIndex < getGrupTerkirim()) setGrupTerkirim(getGrupTerkirim() - 1);
+  renderTabel(); simpanLocal(true);
+  tampilkanNotif('🗑️ Baris dihapus dari dashboard (Sheet Aktif tetap aman)', 'error');
 }
 function kurangiBaris() {
-if (!dataTabel || dataTabel.length === 0) {
-tampilkanNotif('⚠️ Tidak ada data', 'error');
-return;
-}
-const grupTerakhir = dataTabel[dataTabel.length - 1];
-grupTerakhir.baris.pop();
-if (grupTerakhir.baris.length === 0) dataTabel.pop();
-renderTabel();
-simpanLocal(true);
-tampilkanNotif('➖ Baris terakhir dihapus', 'error');
+  if (!dataTabel || dataTabel.length === 0) { tampilkanNotif('⚠️ Tidak ada data', 'error'); return; }
+  const grupTerakhir = dataTabel[dataTabel.length - 1];
+  var idxGrup = dataTabel.length - 1;
+  grupTerakhir.baris.pop();
+  if (grupTerakhir.baris.length === 0) {
+    dataTabel.pop();
+    if (idxGrup < getGrupTerkirim()) setGrupTerkirim(getGrupTerkirim() - 1);
+  }
+  renderTabel(); simpanLocal(true);
+  tampilkanNotif('➖ Baris terakhir dihapus dari dashboard', 'error');
 }
 function simpanData() {
-const ok = simpanLocal(false);
-if (!ok) {
-tampilkanNotif('❌ Gagal menyimpan', 'error');
-return;
-}
-tampilkanNotif('💾 Data disimpan di browser', 'success');
-kirimKeSpreadsheet(true);
-simpanHeaderKeBackend();
-simpanTTDInfoKeBackend();
+  const ok = simpanLocal(false);
+  if (!ok) { tampilkanNotif('❌ Gagal menyimpan', 'error'); return; }
+  tampilkanNotif('💾 Data disimpan di browser', 'success');
+  kirimKeSpreadsheet(false);
+  simpanHeaderKeBackend();
+  simpanTTDInfoKeBackend();
 }
 function muatUlangData() {
-loadHeaderDariStorageAtauBackend();
-const tersimpan = bacaLocal();
-if (tersimpan === null) {
-tampilkanNotif('⚠️ Tidak ada data tersimpan', 'error');
-return;
-}
-try {
-const parsed = JSON.parse(tersimpan);
-dataTabel = normalisasiData(parsed);
-renderTabel();
-simpanLocal(true);
-tampilkanNotif('📂 Data berhasil dimuat ulang', 'success');
-} catch (e) {
-tampilkanNotif('❌ Data rusak', 'error');
-}
+  loadHeaderDariStorageAtauBackend();
+  const tersimpan = bacaLocal();
+  if (tersimpan === null) { tampilkanNotif('⚠️ Tidak ada data tersimpan', 'error'); return; }
+  try {
+    const parsed = JSON.parse(tersimpan);
+    dataTabel = normalisasiData(parsed);
+    setGrupTerkirim(Math.min(getGrupTerkirim(), dataTabel.length));
+    renderTabel(); simpanLocal(true);
+    tampilkanNotif('📂 Data berhasil dimuat ulang', 'success');
+  } catch (e) {
+    tampilkanNotif('❌ Data rusak', 'error');
+  }
 }
 function resetTabel() {
-if (!confirm('Yakin ingin membersihkan dashboard?\nData lama akan tetap ada di Sheet aktif dan diduplikasi ke Sheet Riwayat saat Anda menyimpan data baru.')) return;
-try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
-try { sessionStorage.removeItem(STORAGE_KEY); } catch (e) {}
-try { localStorage.setItem(PERIODE_KEY, '1'); } catch (e) {}
-dataTabel = [];
-renderTabel();
-tampilkanNotif('🧹 Dashboard dibersihkan — penyimpanan berikutnya akan menduplikasi data lama ke Riwayat', 'info');
+  if (!confirm('Yakin ingin membersihkan dashboard?\n\nData yang sudah terkirim TIDAK akan hilang dari Sheet Aktif maupun PDF.\nKirim data baru berikutnya akan menduplikasi batch terakhir ke Sheet Riwayat.')) return;
+  try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+  try { sessionStorage.removeItem(STORAGE_KEY); } catch (e) {}
+  try { localStorage.setItem(PERIODE_KEY, '1'); } catch (e) {}
+  setGrupTerkirim(0);
+  dataTabel = [];
+  renderTabel();
+  tampilkanNotif('🧹 Dashboard dibersihkan — Sheet Aktif & PDF tetap aman', 'info');
 }
 function csvEsc(s) {
-s = String(s === undefined || s === null ? '' : s);
-return s.replace(/"/g, '""');
+  s = String(s === undefined || s === null ? '' : s);
+  return s.replace(/"/g, '""');
 }
 function eksporCSV() {
-let csv = 'No,Hari/Tanggal,Kelas,Kehadiran,Pertemuan,Topik,Bidang,Jenis,Keterangan,URL Keterangan,Foto Keterangan\n';
-dataTabel.forEach(function(grup) {
-grup.baris.forEach(function(baris, index) {
-const no = index === 0 ? grup.no : '';
-const ht = index === 0 ? (grup.hariTanggal || grup.bulan || '') : '';
-csv += '"' + csvEsc(no) + '","' + csvEsc(ht) + '","' + csvEsc(baris.kelas) + '","' + csvEsc(baris.kehadiran) + '","' + csvEsc(baris.pertemuan) + '","' + csvEsc(baris.topik) + '","' + csvEsc(baris.bidang) + '","' + csvEsc(baris.jenis) + '","' + csvEsc(baris.keterangan) + '","' + csvEsc(baris.keteranganUrl || '') + '","' + csvEsc(baris.keteranganGambar ? '[ada foto]' : '') + '"\n';
-});
-});
-const blob = new Blob(['\ufeff' + csv], { type: 'text/csv;charset=utf-8;' });
-const link = document.createElement('a');
-link.href = URL.createObjectURL(blob);
-link.download = 'Agenda-Belajar-Kelas-IX.csv';
-link.click();
-tampilkanNotif('⬇️ CSV diunduh', 'success');
+  let csv = 'No,Hari/Tanggal,Kelas,Kehadiran,Pertemuan,Topik,Bidang,Jenis,Keterangan,URL Keterangan,Foto Keterangan\n';
+  dataTabel.forEach(function(grup) {
+    grup.baris.forEach(function(baris, index) {
+      const no = index === 0 ? grup.no : '';
+      const ht = index === 0 ? (grup.hariTanggal || grup.bulan || '') : '';
+      csv += '"' + csvEsc(no) + '","'
+        + csvEsc(ht) + '","'
+        + csvEsc(baris.kelas) + '","'
+        + csvEsc(baris.kehadiran) + '","'
+        + csvEsc(baris.pertemuan) + '","'
+        + csvEsc(baris.topik) + '","'
+        + csvEsc(baris.bidang) + '","'
+        + csvEsc(baris.jenis) + '","'
+        + csvEsc(baris.keterangan) + '","'
+        + csvEsc(baris.keteranganUrl || '') + '","'
+        + csvEsc(baris.keteranganGambar ? (baris.keteranganGambar.indexOf('data:') === 0 ? '[foto belum upload]' : baris.keteranganGambar) : '') + '"\n';
+    });
+  });
+  const blob = new Blob(['\ufeff' + csv], { type: 'text/csv;charset=utf-8;' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = 'Agenda-Belajar-Sotya_Palupi_GBKIX.csv';
+  link.click();
+  tampilkanNotif('⬇️ CSV diunduh', 'success');
 }
+
 /* ====== HEADER KOP: persistence localStorage + backend ====== */
 const HEADER_IDS = ['headerGovernment', 'headerSchool', 'headerAddress', 'headerContact'];
 function applyHeaderData(headerData) {
-HEADER_IDS.forEach(function(id) {
-var el = document.getElementById(id);
-if (el && headerData[id] !== undefined && headerData[id] !== '') {
-el.innerText = headerData[id];
-}
-});
+  HEADER_IDS.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el && headerData[id] !== undefined && headerData[id] !== '') el.innerText = headerData[id];
+  });
 }
 function saveHeaderToStorage() {
-var headerData = {};
-HEADER_IDS.forEach(function(id) {
-var el = document.getElementById(id);
-if (el) headerData[id] = el.innerText.trim();
-});
-try {
-localStorage.setItem(HEADER_STORAGE_KEY, JSON.stringify(headerData));
-} catch (e) {}
-return headerData;
+  var headerData = {};
+  HEADER_IDS.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) headerData[id] = el.innerText.trim();
+  });
+  try { localStorage.setItem(HEADER_STORAGE_KEY, JSON.stringify(headerData)); } catch (e) {}
+  return headerData;
 }
 function loadHeaderDariStorage() {
-try {
-var saved = localStorage.getItem(HEADER_STORAGE_KEY);
-if (!saved) return null;
-var headerData = JSON.parse(saved);
-var adaIsi = false;
-HEADER_IDS.forEach(function(id) {
-if (headerData[id] && headerData[id] !== '') adaIsi = true;
-});
-return adaIsi ? headerData : null;
-} catch (e) { return null; }
+  try {
+    var saved = localStorage.getItem(HEADER_STORAGE_KEY);
+    if (!saved) return null;
+    var headerData = JSON.parse(saved);
+    var adaIsi = false;
+    HEADER_IDS.forEach(function(id) { if (headerData[id] && headerData[id] !== '') adaIsi = true; });
+    return adaIsi ? headerData : null;
+  } catch (e) { return null; }
 }
 async function muatHeaderDariBackend() {
-try {
-var url = getBackendUrl();
-if (!url) return null;
-var res = await fetch(url + '?action=getHeader');
-var data = await res.json();
-if (data.ok && data.header) {
-var adaIsi = false;
-HEADER_IDS.forEach(function(id) {
-if (data.header[id] && data.header[id] !== '') adaIsi = true;
-});
-return adaIsi ? data.header : null;
-}
-} catch (e) { console.error('Gagal muat header dari backend:', e); }
-return null;
+  try {
+    var url = getBackendUrl();
+    if (!url) return null;
+    var res = await fetch(url + '?action=getHeader');
+    var data = await res.json();
+    if (data.ok && data.header) {
+      var adaIsi = false;
+      HEADER_IDS.forEach(function(id) { if (data.header[id] && data.header[id] !== '') adaIsi = true; });
+      return adaIsi ? data.header : null;
+    }
+  } catch (e) { console.error('Gagal muat header dari backend:', e); }
+  return null;
 }
 async function loadHeaderDariStorageAtauBackend() {
-var dariLocal = loadHeaderDariStorage();
-if (dariLocal) { applyHeaderData(dariLocal); return; }
-var dariBackend = await muatHeaderDariBackend();
-if (dariBackend) {
-applyHeaderData(dariBackend);
-try { localStorage.setItem(HEADER_STORAGE_KEY, JSON.stringify(dariBackend)); } catch (e) {}
-}
+  var dariLocal = loadHeaderDariStorage();
+  if (dariLocal) { applyHeaderData(dariLocal); return; }
+  var dariBackend = await muatHeaderDariBackend();
+  if (dariBackend) {
+    applyHeaderData(dariBackend);
+    try { localStorage.setItem(HEADER_STORAGE_KEY, JSON.stringify(dariBackend)); } catch (e) {}
+  }
 }
 async function simpanHeaderKeBackend() {
-try {
-var headerData = saveHeaderToStorage();
-var url = getBackendUrl();
-if (!url) return;
-await postKeBackend({ action: 'simpanHeader', header: headerData });
-} catch (e) { console.error('Gagal simpan header ke backend:', e); }
+  try {
+    var headerData = saveHeaderToStorage();
+    var url = getBackendUrl();
+    if (!url) return;
+    await postKeBackend({ action: 'simpanHeader', header: headerData });
+  } catch (e) { console.error('Gagal simpan header ke backend:', e); }
 }
 var debounceHeaderTimer = null;
 function debounceSimpanHeaderKeBackend() {
-if (debounceHeaderTimer) clearTimeout(debounceHeaderTimer);
-debounceHeaderTimer = setTimeout(function() { simpanHeaderKeBackend(); }, 1500);
+  if (debounceHeaderTimer) clearTimeout(debounceHeaderTimer);
+  debounceHeaderTimer = setTimeout(function() { simpanHeaderKeBackend(); }, 1500);
 }
+
 /* ====== TTD INFO: persistence localStorage + backend ====== */
 function bacaTTDInfoDariForm() {
-return {
-kota: document.getElementById('kotaKepsek').value.trim(),
-tanggal: document.getElementById('tanggalKepsek').value.trim(),
-namaKepsek: document.getElementById('namaKepsek').value.trim(),
-nipKepsek: document.getElementById('nipKepsek').value.trim(),
-namaGuru: document.getElementById('namaGuruTTD').value.trim(),
-nipGuru: document.getElementById('nipGuruTTD').value.trim()
-};
+  return {
+    kota: document.getElementById('kotaKepsek').value.trim(),
+    tanggal: document.getElementById('tanggalKepsek').value.trim(),
+    namaKepsek: document.getElementById('namaKepsek').value.trim(),
+    nipKepsek: document.getElementById('nipKepsek').value.trim(),
+    namaGuru: document.getElementById('namaGuruTTD').value.trim(),
+    nipGuru: document.getElementById('nipGuruTTD').value.trim()
+  };
 }
 function applyTTDInfoKeForm(ttdInfo) {
-if (!ttdInfo) return;
-if (ttdInfo.kota !== undefined && ttdInfo.kota !== '') document.getElementById('kotaKepsek').value = ttdInfo.kota;
-if (ttdInfo.tanggal !== undefined && ttdInfo.tanggal !== '') document.getElementById('tanggalKepsek').value = ttdInfo.tanggal;
-if (ttdInfo.namaKepsek !== undefined && ttdInfo.namaKepsek !== '') document.getElementById('namaKepsek').value = ttdInfo.namaKepsek;
-if (ttdInfo.nipKepsek !== undefined && ttdInfo.nipKepsek !== '') document.getElementById('nipKepsek').value = ttdInfo.nipKepsek;
-if (ttdInfo.namaGuru !== undefined && ttdInfo.namaGuru !== '') document.getElementById('namaGuruTTD').value = ttdInfo.namaGuru;
-if (ttdInfo.nipGuru !== undefined && ttdInfo.nipGuru !== '') document.getElementById('nipGuruTTD').value = ttdInfo.nipGuru;
-updatePreviewTTD();
+  if (!ttdInfo) return;
+  if (ttdInfo.kota !== undefined && ttdInfo.kota !== '') document.getElementById('kotaKepsek').value = ttdInfo.kota;
+  if (ttdInfo.tanggal !== undefined && ttdInfo.tanggal !== '') document.getElementById('tanggalKepsek').value = ttdInfo.tanggal;
+  if (ttdInfo.namaKepsek !== undefined && ttdInfo.namaKepsek !== '') document.getElementById('namaKepsek').value = ttdInfo.namaKepsek;
+  if (ttdInfo.nipKepsek !== undefined && ttdInfo.nipKepsek !== '') document.getElementById('nipKepsek').value = ttdInfo.nipKepsek;
+  if (ttdInfo.namaGuru !== undefined && ttdInfo.namaGuru !== '') document.getElementById('namaGuruTTD').value = ttdInfo.namaGuru;
+  if (ttdInfo.nipGuru !== undefined && ttdInfo.nipGuru !== '') document.getElementById('nipGuruTTD').value = ttdInfo.nipGuru;
+  updatePreviewTTD();
 }
 function simpanTTDInfoKeStorage() {
-var ttdInfo = bacaTTDInfoDariForm();
-try {
-localStorage.setItem(TTD_INFO_STORAGE_KEY, JSON.stringify(ttdInfo));
-} catch (e) {}
-return ttdInfo;
+  var ttdInfo = bacaTTDInfoDariForm();
+  try { localStorage.setItem(TTD_INFO_STORAGE_KEY, JSON.stringify(ttdInfo)); } catch (e) {}
+  return ttdInfo;
 }
 function muatTTDInfoDariStorage() {
-try {
-var saved = localStorage.getItem(TTD_INFO_STORAGE_KEY);
-if (!saved) return null;
-var ttdInfo = JSON.parse(saved);
-var adaIsi = false;
-Object.keys(ttdInfo).forEach(function(key) {
-if (ttdInfo[key] && ttdInfo[key] !== '') adaIsi = true;
-});
-return adaIsi ? ttdInfo : null;
-} catch (e) { return null; }
+  try {
+    var saved = localStorage.getItem(TTD_INFO_STORAGE_KEY);
+    if (!saved) return null;
+    var ttdInfo = JSON.parse(saved);
+    var adaIsi = false;
+    Object.keys(ttdInfo).forEach(function(key) { if (ttdInfo[key] && ttdInfo[key] !== '') adaIsi = true; });
+    return adaIsi ? ttdInfo : null;
+  } catch (e) { return null; }
 }
 async function muatTTDInfoDariBackend() {
-try {
-var url = getBackendUrl();
-if (!url) return null;
-var res = await fetch(url + '?action=getTTDInfo');
-var data = await res.json();
-if (data.ok && data.ttdInfo) {
-var adaIsi = false;
-Object.keys(data.ttdInfo).forEach(function(key) {
-if (data.ttdInfo[key] && data.ttdInfo[key] !== '') adaIsi = true;
-});
-return adaIsi ? data.ttdInfo : null;
-}
-} catch (e) { console.error('Gagal muat TTD info dari backend:', e); }
-return null;
+  try {
+    var url = getBackendUrl();
+    if (!url) return null;
+    var res = await fetch(url + '?action=getTTDInfo');
+    var data = await res.json();
+    if (data.ok && data.ttdInfo) {
+      var adaIsi = false;
+      Object.keys(data.ttdInfo).forEach(function(key) { if (data.ttdInfo[key] && data.ttdInfo[key] !== '') adaIsi = true; });
+      return adaIsi ? data.ttdInfo : null;
+    }
+  } catch (e) { console.error('Gagal muat TTD info dari backend:', e); }
+  return null;
 }
 async function muatTTDInfoDariStorageAtauBackend() {
-var dariLocal = muatTTDInfoDariStorage();
-if (dariLocal) { applyTTDInfoKeForm(dariLocal); return; }
-var dariBackend = await muatTTDInfoDariBackend();
-if (dariBackend) {
-applyTTDInfoKeForm(dariBackend);
-try { localStorage.setItem(TTD_INFO_STORAGE_KEY, JSON.stringify(dariBackend)); } catch (e) {}
-}
+  var dariLocal = muatTTDInfoDariStorage();
+  if (dariLocal) { applyTTDInfoKeForm(dariLocal); return; }
+  var dariBackend = await muatTTDInfoDariBackend();
+  if (dariBackend) {
+    applyTTDInfoKeForm(dariBackend);
+    try { localStorage.setItem(TTD_INFO_STORAGE_KEY, JSON.stringify(dariBackend)); } catch (e) {}
+  }
 }
 async function simpanTTDInfoKeBackend() {
-try {
-var ttdInfo = simpanTTDInfoKeStorage();
-var url = getBackendUrl();
-if (!url) return;
-await postKeBackend({ action: 'simpanTTDInfo', ttdInfo: ttdInfo });
-} catch (e) { console.error('Gagal simpan TTD info ke backend:', e); }
+  try {
+    var ttdInfo = simpanTTDInfoKeStorage();
+    var url = getBackendUrl();
+    if (!url) return;
+    await postKeBackend({ action: 'simpanTTDInfo', ttdInfo: ttdInfo });
+  } catch (e) { console.error('Gagal simpan TTD info ke backend:', e); }
 }
 var debounceTTDInfoTimer = null;
 function debounceSimpanTTDInfoKeBackend() {
-if (debounceTTDInfoTimer) clearTimeout(debounceTTDInfoTimer);
-debounceTTDInfoTimer = setTimeout(function() { simpanTTDInfoKeBackend(); }, 1500);
+  if (debounceTTDInfoTimer) clearTimeout(debounceTTDInfoTimer);
+  debounceTTDInfoTimer = setTimeout(function() { simpanTTDInfoKeBackend(); }, 1500);
 }
+
 function previewGambar(inp, prevId, contId, type) {
-var f = inp.files[0];
-if (!f) return;
-kompresGambar(f, 500, 320, function(b) {
-document.getElementById(prevId).src = b;
-document.getElementById(prevId).classList.add('active');
-document.getElementById(contId).innerHTML = '<img src="' + b + '" style="max-height:80px;max-width:200px">';
-if (type === 'kepsek') imgKepsekBase64 = b;
-else imgGuruBase64 = b;
-if (getBackendUrl()) {
-uploadSatuTTD(type, b).then(function(res) {
-if (res && res.ok) tampilkanNotif('✍️ TTD ' + (type === 'kepsek' ? 'Kepsek' : 'Guru BK') + ' ter-upload', 'success');
-});
-}
-});
+  var f = inp.files[0];
+  if (!f) return;
+  kompresGambar(f, 500, 320, function(b) {
+    document.getElementById(prevId).src = b;
+    document.getElementById(prevId).classList.add('active');
+    document.getElementById(contId).innerHTML = '<img src="' + b + '" style="max-height:80px;max-width:200px">';
+    if (type === 'kepsek') imgKepsekBase64 = b; else imgGuruBase64 = b;
+    if (getBackendUrl()) {
+      uploadSatuTTD(type, b).then(function(res) {
+        if (res && res.ok) tampilkanNotif('✍️ TTD ' + (type === 'kepsek' ? 'Kepsek' : 'Guru BK') + ' ter-upload', 'success');
+      });
+    }
+  });
 }
 function updatePreviewTTD() {
-document.getElementById('previewTanggalKepsek').textContent =
-(document.getElementById('kotaKepsek').value || '[Kota]') + ', ' +
-(document.getElementById('tanggalKepsek').value || '...');
-document.getElementById('previewNamaKepsek').textContent =
-document.getElementById('namaKepsek').value ? '(' + document.getElementById('namaKepsek').value + ')' : '(...................................................)';
-document.getElementById('previewNipKepsek').textContent =
-document.getElementById('nipKepsek').value || '................................';
-document.getElementById('previewNamaGuru').textContent =
-document.getElementById('namaGuruTTD').value ? '(' + document.getElementById('namaGuruTTD').value + ')' : '(...................................................)';
-document.getElementById('previewNipGuru').textContent =
-document.getElementById('nipGuruTTD').value || '................................';
+  document.getElementById('previewTanggalKepsek').textContent =
+    (document.getElementById('kotaKepsek').value || '[Kota]') + ', ' +
+    (document.getElementById('tanggalKepsek').value || '...');
+  document.getElementById('previewNamaKepsek').textContent =
+    document.getElementById('namaKepsek').value ? '(' + document.getElementById('namaKepsek').value + ')' : '(...................................................)';
+  document.getElementById('previewNipKepsek').textContent =
+    document.getElementById('nipKepsek').value || '................................';
+  document.getElementById('previewNamaGuru').textContent =
+    document.getElementById('namaGuruTTD').value ? '(' + document.getElementById('namaGuruTTD').value + ')' : '(...................................................)';
+  document.getElementById('previewNipGuru').textContent =
+    document.getElementById('nipGuruTTD').value || '................................';
 }
 function muatData() {
-const tersimpan = bacaLocal();
-if (tersimpan !== null) {
-try {
-const parsed = JSON.parse(tersimpan);
-dataTabel = normalisasiData(parsed);
-if (dataTabel.length > 0) tampilkanNotif('📂 Data tersimpan dimuat', 'info');
-} catch (e) {}
+  const tersimpan = bacaLocal();
+  if (tersimpan !== null) {
+    try {
+      const parsed = JSON.parse(tersimpan);
+      dataTabel = normalisasiData(parsed);
+      if (dataTabel.length > 0) tampilkanNotif('📂 Data tersimpan dimuat', 'info');
+    } catch (e) {}
+  }
+  setGrupTerkirim(Math.min(getGrupTerkirim(), dataTabel.length));
+  renderTabel();
 }
-renderTabel();
-}
-window.addEventListener('beforeunload', function() {
-simpanLocal(true);
-});
+window.addEventListener('beforeunload', function() { simpanLocal(true); });
 window.addEventListener('DOMContentLoaded', function() {
-muatData();
-loadHeaderDariStorageAtauBackend();
-muatTTDInfoDariStorageAtauBackend();
-HEADER_IDS.forEach(function(id) {
-var el = document.getElementById(id);
-if (el) {
-el.addEventListener('input', function() { saveHeaderToStorage(); });
-el.addEventListener('blur', function() {
-saveHeaderToStorage();
-debounceSimpanHeaderKeBackend();
-});
-}
-});
-var ttdInfoInputs = ['kotaKepsek', 'tanggalKepsek', 'namaKepsek', 'nipKepsek', 'namaGuruTTD', 'nipGuruTTD'];
-ttdInfoInputs.forEach(function(id) {
-var el = document.getElementById(id);
-if (el) {
-el.addEventListener('input', function() {
-updatePreviewTTD();
-simpanTTDInfoKeStorage();
-});
-el.addEventListener('blur', function() {
-updatePreviewTTD();
-simpanTTDInfoKeStorage();
-debounceSimpanTTDInfoKeBackend();
-});
-}
-});
-muatLogoDariStorage();
-var be = document.getElementById('backendUrl');
-if (be) be.value = getBackendUrl();
-if (getBackendUrl()) setBackendStatus('🔗 URL backend terpasang', '#0369a1');
+  muatData();
+  loadHeaderDariStorageAtauBackend();
+  muatTTDInfoDariStorageAtauBackend();
+  HEADER_IDS.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) {
+      el.addEventListener('input', function() { saveHeaderToStorage(); });
+      el.addEventListener('blur', function() {
+        saveHeaderToStorage();
+        debounceSimpanHeaderKeBackend();
+      });
+    }
+  });
+  var ttdInfoInputs = ['kotaKepsek', 'tanggalKepsek', 'namaKepsek', 'nipKepsek', 'namaGuruTTD', 'nipGuruTTD'];
+  ttdInfoInputs.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) {
+      el.addEventListener('input', function() { updatePreviewTTD(); simpanTTDInfoKeStorage(); });
+      el.addEventListener('blur', function() {
+        updatePreviewTTD();
+        simpanTTDInfoKeStorage();
+        debounceSimpanTTDInfoKeBackend();
+      });
+    }
+  });
+  muatLogoDariStorage();
+  var be = document.getElementById('backendUrl');
+  if (be) be.value = getBackendUrl();
+  if (getBackendUrl()) setBackendStatus('🔗 URL backend terpasang', '#0369a1');
 });
 </script>
 </body>
